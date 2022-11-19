@@ -33,8 +33,21 @@ p {
   padding-bottom: 20px;
 }
 
+
+
+/* Pre-Loader */
+#pre-loader{
+  background: #000000 url("../img/pre-loader.gif") no-repeat center center;
+  background-size: 15%;
+
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
 /*Header Styling*/
-.inner-container {
+#bg-image {
   height: 750px;
   position: relative;
   top: 10px;
@@ -79,7 +92,7 @@ p {
 }
 
 /*Feature Section Styling*/
-.feature-image {
+#bg-image-2 {
   height: 750px;
   position: relative;
   top: 10px;
@@ -93,7 +106,7 @@ p {
   background-size: cover;
   z-index: -999999;
 }
-.feature-image h1 {
+#bg-image-2 h1 {
   color: white;
   text-align: center;
   filter: drop-shadow(0.05em 0.05em rgb(234, 230, 222));
@@ -109,9 +122,9 @@ p {
   text-align: center;
 }
 
-.section-image-01 {
+#bg-image-3 {
   position: relative;
-  top: -190px;
+   top: -190px; 
   margin-top: 200px;
   height: 250px;
   background-image: url("../img/feature-image.jpg");
@@ -121,9 +134,9 @@ p {
   width: 50%;
 }
 
-.section-image-02 {
+#bg-image-4 {
   position: relative;
-  top: -190px;
+  top: -190px; 
   height: 250px;
   background-image: url("../img/feature-image.jpg");
   background-position: center;
@@ -133,9 +146,9 @@ p {
   width: 50%;
 }
 
-.section-image-03 {
+#bg-image-5 {
   position: relative;
-  top: -190px;
+   top: -190px; 
   height: 250px;
   background-image: url("../img/feature-image.jpg");
   background-position: center;
@@ -278,7 +291,7 @@ p {
 }
 
 /* Testimonial Section Styling */
-.parallax {
+#parallax {
   /* The image used */
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0.791)),
