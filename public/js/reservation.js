@@ -1,5 +1,3 @@
-
-
 (function ($) {
   "use strict";
   $("#datepicker")
@@ -42,21 +40,5 @@
         console.log(data);
       },
     });
-
-    // const headers = {
-    //   "Content-Type": "application/x-www-form-urlencoded",
-    //   "Access-Control-Allow-Origin": "*",
-    // };
-
-    // axios
-    //   .post("http://localhost:9090/api/reservations", FormData, {
-    //     headers: headers,
-    //   })
-    //   .then((response) => {
-
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   });
 })(jQuery);

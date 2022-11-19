@@ -14,6 +14,11 @@ section.outer-section {
   padding-bottom: 175px;
   text-align: center;
 }
+section.footer-section{
+  padding-bottom: 0px !important;
+  text-align: center;
+  color: #ffff;
+}
 p {
   line-height: 30px;
   text-align: center;
@@ -394,6 +399,38 @@ li.ui-timepicker-selected,
   color: #212529 !important;
 }
 
+
+/* Footer Area Styling */
+.footer-area{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0.791)), url(../img/feature-image.jpg);
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+ 
+}
+
+.row.footer-customizer {
+  position: relative;
+  top: 100px;
+}
+.card-text{
+   /* font-size: 3vw; */
+   text-align: left;
+   line-height: normal;
+   font-weight: 100;
+}
+.footer-image{
+  width: 100px;
+}
+.footer-text{
+      /* font-size: 3vw; */
+      text-align: left;
+      line-height: normal;
+      font-weight: 100;
+}
 @media (max-width: 575.98px) {
   /*Feature Section Styling*/
   .section-image-03 {
