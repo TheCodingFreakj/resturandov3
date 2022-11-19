@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resturando</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <!-- Datepicker Css-->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+  <!-- Timepicker Css-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/timepicker@1.11.12/jquery.timepicker.min.css">
+  <!-- Tiny Slider Css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+  <!-- Custom Theme Css -->
+  <link rel="stylesheet" href="./css/all.min.css" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+  <!-- Header Section Start  -->
+  <header>
+    <!-- Hero Image Starts Here -->
+    <div class="container-fluid">
+      <div class="inner-container">
+        <!-- Nav Section Starts Here -->
+        <div class="z-index-n1 bg-opacity-10 position-absolute w-100 p-3">
+          <nav class="navbar navbar-expand-lg navbar-light d-flex p-2 mt-9 custom-background">
+            <a class="navbar-brand w-10 p-3" href="#">
+              <img class="w-80" src="img/logolight.png" height="32" alt="company-logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mx-auto custom-navbar">
+                <li class="nav-item active">
+                  <a class="nav-link ms-5 fs-5 custom-color m" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link ms-5 fs-5 custom-color" href="#">Reservation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link ms-5 fs-5 custom-color" href="#">Receipes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link ms-5 fs-5 custom-color" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link ms-5 fs-5 custom-color" href="#">Shop</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <!-- Nav Section Ends Here -->
+      </div>
+
+      <!-- Hero Image Ends Here -->
+    </div>
+    <div class="container z-index-n1 custom-hero-text">
+      <h1>Delicious Food</h1>
+      <p>Potato is a delitious restaurant website template</p>
+    </div>
+  </header>
+  <!-- Header Section End -->
+
+  <!-- Explore Section Start -->
+  <section class="outer-section">
+    <h2 class="section-header">Explore Us</h2>
+    <div class="container-lg text-center">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <div class="explore-image">
+            <img class="w-100 h-50" src="img/explore.jpg" alt="explore image" />
+          </div>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <div class="explore-content">
+            <p class="content">
+              Cras ut viverra eros. Phasellus sollicitudin sapien id luctus
+              tempor. Sed hend rerit inter dum sagittis. Donec nunc lacus,
+              dapibus nec interdum eget, ultrices eget justo. Nam purus lacus,
+              efficitur eget laoreet sed, finibus nec neque. Cras eget enim in
+              diam dapibus sagittis. In massa est, dignissim in libero ac,
+              fringilla ornare mi. Etiam interdum ligula purus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore Section End -->
+
+  <!-- Feature Section Start -->
+  <section class="outer-section">
+    <!-- <div class="container text-center"> -->
+    <div class="row w-85 gx-0 text-center">
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="z-index-n1 text-center feature-image">
+          <h1 class="section-header header-light">Our Feature</h1>
+          <p class="content-featured">Little things make us best in town</p>
+          <div class="d-lg-flex d-md-block flex-lg-column text-center custom-flex-containers">
+            <div class="align-self-lg-start section-image-01 rounded-5">
+              Flex item 1
+            </div>
+            <div class="align-self-lg-center section-image-02 rounded-5">
+              Flex item 2
+            </div>
+            <div class="align-self-lg-end section-image-03 rounded-5">
+              Flex item 3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+  </section>
+  <!-- Feature Section End -->
+
+  <!-- Menu Section Start -->
+  <section class="outer-section">
+    <h2 class="section-header">Our Menu</h2>
+    <p>These fine folks trusted the award winning restaurant.</p>
+    <div class="card custom-card-config">
+      <div class="card-body">
+        <div class="container-lg container-md container-sm text-center">
+          <div class="row justify-content-md-center outer-container-customizer">
+            <div class="col-lg-2 col-md-6 col-sm-6 filter">
+              <a style="text-decoration: none; color: black" class="all active" data-filter="all" href="#"
+                role="button">All</a>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 filter">
+              <a style="text-decoration: none; color: black" class="starters" data-filter="starters" href="#"
+                role="button">Starters</a>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 filter">
+              <a style="text-decoration: none; color: black" class="breakfast" data-filter="breakfast" href="#"
+                role="button">Breakfast</a>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 filter">
+              <a style="text-decoration: none; color: black" class="lunch" data-filter="lunch" href="#"
+                role="button">Lunch</a>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 filter">
+              <a style="text-decoration: none; color: black" class="dinner" data-filter="dinner" href="#"
+                role="button">Dinner</a>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-6 filter">
+              <a style="text-decoration: none; color: black" class="dinner" data-filter="desserts" href="#"
+                role="button">Desserts</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div
+          class="container-lg container-md container-sm text-center d-flex flex-lg-row flex-md-column flex-sm-column p-10 custom-card-config-content">
+          <div class="col-lg-6 col-md-12 col-sm-12 boxes">
+            <div class="desserts" data-category="desserts">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+            <div class="desserts" data-category="desserts">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+            <div class="dinner" data-category="dinner">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+            <div class="breakfast" data-category="breakfast">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+            <div class="starters" data-category="starters">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-sm-12 boxes">
+            <div class="desserts" data-category="desserts">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+            <div class="desserts" data-category="desserts">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+            <div class="dinner" data-category="dinner">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+            <div class="breakfast" data-category="breakfast">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+            <div class="starters" data-category="starters">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <p class="content-menu">ENGLISH ASPARAGUS</p>
+                  <p class="content-menu-para">
+                    pellentesque enim. Aliquam tempor
+                  </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">$14.95</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="glow-on-hover" type="button">More From Our Menu</button>
+  </section>
+  <!-- Menu Section End -->
+
+  <!-- Testimonial Section Start -->
+  <section class="outer-section">
+    <div class="row w-85 gx-0 text-center">
+      <div class="col-lg-12 col-md-12">
+        <div class="parallax">
+          <div class="slider-container">
+            <ul class="controls" id="customize-controls" aria-label="Carousel Navigation" tabindex="0">
+              <li class="prev" data-controls="prev" aria-controls="customize" tabindex="-1">
+                <i class="fas fa-angle-left fa-5x"></i>
+              </li>
+              <li class="next" data-controls="next" aria-controls="customize" tabindex="-1">
+                <i class="fas fa-angle-right fa-5x"></i>
+              </li>
+            </ul>
+            <div class="my-slider">
+              <div class="slider-item">
+                <div class="card-container">
+                  <h2>Person Name, Area</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec interdum quam at blandit malesuada. Fusce quis nunc
+                    pretium sem imperdiet viverra ut quis velit. Nulla nec
+                    velit eleifend, tincidunt magna et, posuere ipsum. Sed
+                    suscipit, erat eget malesuada cursus, magna mi ullamcorper
+                    turpis
+                  </p>
+                </div>
+              </div>
+
+              <div class="slider-item">
+                <div class="card-container">
+                  <h2>Person Name, Area</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec interdum quam at blandit malesuada. Fusce quis nunc
+                    pretium sem imperdiet viverra ut quis velit. Nulla nec
+                    velit eleifend, tincidunt magna et, posuere ipsum. Sed
+                    suscipit, erat eget malesuada cursus, magna mi ullamcorper
+                    turpis
+                  </p>
+                </div>
+              </div>
+
+              <div class="slider-item">
+                <div class="card-container">
+                  <h2>Person Name, Area</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec interdum quam at blandit malesuada. Fusce quis nunc
+                    pretium sem imperdiet viverra ut quis velit. Nulla nec
+                    velit eleifend, tincidunt magna et, posuere ipsum. Sed
+                    suscipit, erat eget malesuada cursus, magna mi ullamcorper
+                    turpis
+                  </p>
+                </div>
+              </div>
+              <div class="slider-item">
+                <div class="card-container">
+                  <h2>Person Name, Area</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec interdum quam at blandit malesuada. Fusce quis nunc
+                    pretium sem imperdiet viverra ut quis velit. Nulla nec
+                    velit eleifend, tincidunt magna et, posuere ipsum. Sed
+                    suscipit, erat eget malesuada cursus, magna mi ullamcorper
+                    turpis
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonial Section End -->
+
+  <!-- Reservation Section Start -->
+  <section class="outer-section">
+    <h2 class="section-header">Reservation</h2>
+    <p>Book a table online. Leads will reach in your email.</p>
+    <div class="card">
+      <div class="card-body">
+
+        <form id="my-form">
+          <div class="container text-center p-10">
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="InputEmail" class="form-label">Email address</label>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="InputEmail" name="email" 
+                      aria-describedby="emailHelp" />
+                    <i class="fa-solid fa-envelope custom-font"></i>
+                  </div>
+                  <div id="emailHelp" class="form-text">
+                    We'll never share your email with anyone else.
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="InputDate" class="form-label">Date</label>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="datepicker" name="date" 
+                      aria-describedby="dateHelp" />
+                    <i class="fa fa-calendar custom-font" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="InputName" class="form-label">Name</label>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="InputName" name="name" 
+                      aria-describedby="nameHelp" />
+                    <i class="fa-regular fa-file-signature custom-font"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="InputTime" class="form-label">Time</label>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="datetime" name="time" 
+                      aria-describedby="timeHelp" />
+                    <i class="fa-solid fa-clock custom-font"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="mb-3">
+                  <label for="InputGuests" class="form-label">Guests</label>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="InputGuests" name="guests" 
+                      aria-describedby="guestsHelp" />
+                    <i class="fa-solid fa-person custom-font"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="InputPhone" class="form-label">Phone Number</label>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="InputPhone" name="phone" 
+                      aria-describedby="phoneHelp" />
+                    <i class="fa-solid fa-phone custom-font "></i>
+                  </div>
+
+                  <div id="phoneHelp" class="form-text">
+                    We'll never share your phone with anyone else.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="sendmessage" style="display:none">Your message has been sent successfully.</div>
+          <button id="submit-button" class="glow-on-hover" type="submit" >Book Now</button>
+        </form>
+      </div>
+
+    </div>
+    </div>
+
+  </section>
+
+  <!-- Reservation Section End -->
+
+
+
+
+  <!-- Tiny Slider Include -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+  <!-- Jquery Include -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <!-- Date Picker JS -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <!-- Time Picker JS -->
+  <script src="https://cdn.jsdelivr.net/npm/timepicker@1.11.12/jquery.timepicker.js"></script>
+  <!-- Custom Theme JS -->
+  <script src="./js/reservation.js"></script>
+  <script src="./js/tiny-slider.js"></script>
+  <script src="./js/main.js"></script>
+  
+</body>
+
+</html>
+
+
+<!-- http://preview.themeforest.net/item/restaurant-website-template-responsive-html5/full_screen_preview/13841323 -->
