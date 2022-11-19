@@ -35,7 +35,7 @@
     console.log(FormData);
 
     $.ajax({
-      url: "http://localhost:9090/api/reservations",
+      url: "https://resturando.herokuapp.com/api/reservations",
       type: "POST",
       data: FormData,
       success: function (data) {
