@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nodemon server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,7 @@
     "express": "^4.18.2",
     "jQuery": "^1.7.4",
     "mysql": "^2.18.1",
+    "nodemon": "^2.0.20",
     "tiny-slider": "^2.9.4"
   }
 }
