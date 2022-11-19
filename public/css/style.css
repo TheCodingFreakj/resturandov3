@@ -46,13 +46,25 @@ p {
   z-index: 100;
 }
 
-/*Header Styling*/
+/*Global Header Styling*/
 #bg-image {
   height: 750px;
   position: relative;
   top: 10px;
   background-color: #000000;
   background-image: url("../img/header-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(50%);
+}
+
+#bg-image-shop {
+  height: 500px;
+  position: relative;
+  top: 10px;
+  background-color: #000000;
+  background-image: url("../img/indian-condiments-with-copy-space-view.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -72,6 +84,13 @@ p {
 .custom-hero-text {
   position: relative;
   top: -500px;
+  color: #ffff;
+  text-align: center;
+  vertical-align: middle;
+}
+.custom-blog-hero-text{
+  position: relative;
+  top: -300px;
   color: #ffff;
   text-align: center;
   vertical-align: middle;
@@ -443,6 +462,19 @@ li.ui-timepicker-selected,
       text-align: left;
       line-height: normal;
       font-weight: 100;
+}
+
+
+
+
+
+/* ***********************Blog Page************************* */
+
+
+/* Product Section Styling */
+
+.custom-gap{
+  margin-bottom: 30px;
 }
 @media (max-width: 575.98px) {
   /*Feature Section Styling*/
