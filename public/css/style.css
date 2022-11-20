@@ -10,11 +10,18 @@ body {
   font-size: 20px;
   color: var(--secondary);
 }
+h2,
+h3,
+h4,
+h5 {
+  color: var(--primary);
+  font-weight: 700;
+}
 section.outer-section {
   padding-bottom: 175px;
   text-align: center;
 }
-section.footer-section{
+section.footer-section {
   padding-bottom: 0px !important;
   text-align: center;
   color: #ffff;
@@ -22,6 +29,15 @@ section.footer-section{
 p {
   line-height: 30px;
   text-align: center;
+}
+
+.custom-links {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+.custom-links:hover {
+  color: var(--primary);
 }
 
 .section-header {
@@ -33,10 +49,8 @@ p {
   padding-bottom: 20px;
 }
 
-
-
 /* Pre-Loader */
-#pre-loader{
+#pre-loader {
   background: #000000 url("../img/pre-loader.gif") no-repeat center center;
   background-size: 15%;
 
@@ -88,7 +102,7 @@ p {
   text-align: center;
   vertical-align: middle;
 }
-.custom-blog-hero-text{
+.custom-blog-hero-text {
   position: relative;
   top: -300px;
   color: #ffff;
@@ -143,7 +157,7 @@ p {
 
 #bg-image-3 {
   position: relative;
-   top: -190px; 
+  top: -190px;
   margin-top: 200px;
   height: 250px;
   background-image: url("../img/feature-image.jpg");
@@ -155,7 +169,7 @@ p {
 
 #bg-image-4 {
   position: relative;
-  top: -190px; 
+  top: -190px;
   height: 250px;
   background-image: url("../img/feature-image.jpg");
   background-position: center;
@@ -167,7 +181,7 @@ p {
 
 #bg-image-5 {
   position: relative;
-   top: -190px; 
+  top: -190px;
   height: 250px;
   background-image: url("../img/feature-image.jpg");
   background-position: center;
@@ -431,51 +445,119 @@ li.ui-timepicker-selected,
   color: #212529 !important;
 }
 
-
 /* Footer Area Styling */
-.footer-area{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0.791)), url(../img/feature-image.jpg);
+.footer-area {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0.791)),
+    url(../img/feature-image.jpg);
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
- 
 }
 
 .row.footer-customizer {
   position: relative;
   top: 100px;
 }
-.card-text{
-   /* font-size: 3vw; */
-   text-align: left;
-   line-height: normal;
-   font-weight: 100;
+.card-text {
+  /* font-size: 3vw; */
+  text-align: left;
+  line-height: normal;
+  font-weight: 100;
 }
-.footer-image{
+.footer-image {
   width: 100px;
 }
-.footer-text{
-      /* font-size: 3vw; */
-      text-align: left;
-      line-height: normal;
-      font-weight: 100;
+.footer-text {
+  /* font-size: 3vw; */
+  text-align: left;
+  line-height: normal;
+  font-weight: 100;
 }
 
+/* ***********************Product Page************************* */
+/* Basic styling */
 
+.product-basic-styling {
+  font-size: 16px;
+  color: var(--secondary);
 
-
-
-/* ***********************Blog Page************************* */
-
+}
 
 /* Product Section Styling */
 
-.custom-gap{
+.custom-gap {
   margin-bottom: 30px;
 }
+
+.list-group {
+  --bs-list-group-color: var(--secondary) !important;
+}
+
+.table {
+  --bs-table-color: var(--secondary) !important;
+}
+
+/* Single Product Page Styling */
+.product-image {
+  width: 400px;
+  height: 100%;
+}
+
+.icons-text {
+  background: var(--secondary);
+  color: #fff;
+  border-radius: 50%;
+  padding: 9%;
+}
+
+/* Cart Section */
+#add-cart {
+  position: fixed;
+display: none;
+}
+#table {
+  background: linear-gradient(rgb(255 203 72), #000000);
+  color: #ffff;
+}
+
+.slider-class {
+  animation: 0.5s slide-right;
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+.slider-remove {
+  animation: 0.5s slide-left;
+}
+
+@keyframes slide-left {
+  from {
+    margin-right: 0%;
+  }
+  to {
+    margin-right: -100%;
+  }
+}
+
+.custom-index {
+  position: fixed;
+  z-index: 100;
+  background: linear-gradient(rgb(255 203 72), #000000);
+  color: #ffff;
+  height: 99.9vh;
+  width: 525px;
+}
+
 @media (max-width: 575.98px) {
   /*Feature Section Styling*/
   .section-image-03 {

@@ -1,11 +1,15 @@
+// Rendering The Product Page
 $(function () {
   "use strict";
   //get elements
   const container = document.getElementById("display-products");
   const toggleCart = document.getElementById("add-cart");
   const cartContainer = document.getElementById("add");
-  //Declarations
+  let paramString = window.location.href.split("?")[1];
+  let queryString = new URLSearchParams(paramString);
 
+  //default declaration
+  let cartsAdded = JSON.parse(localStorage.getItem("addToCart"));
   let contentCart = null;
   const apiResult = [
     {
@@ -202,10 +206,72 @@ $(function () {
       price: "$100",
     },
   ];
+
   if (apiResult.length === 0) {
     container.innerHTML += `<h2>No Product Found</h2>`;
   }
-console.log( JSON.parse(localStorage.getItem("addToCart")));
+
+  const showNutritionStats = (nutrientStats) => {
+    return nutrientStats
+      .map((n) => {
+        return `
+  <tbody>
+      <tr>
+          <td>${n.Nutrient}</td>
+          <td>${n.DV}</td>
+          <td>${n.Percentage}</td>
+  
+      </tr>
+  </tbody>
+  `;
+      })
+      .join("");
+  };
+
+  const showIngredients = (ingredients) => {
+    return ingredients
+      .map((n) => {
+        return `
+      <li class="list-group-item text-left">
+      <div class="container text-left">
+      <div class="row">
+        <div class="col-2">
+        <i class="fa-solid fa-list icons-text "></i>
+        </div>
+        <div class="col-10 text-left" style="text-align: left">
+        ${n}
+        </div>
+        
+      </div>
+    </div>
+    </li>
+    `;
+      })
+      .join("");
+  };
+
+  const showDirections = (content) => {
+    return content
+      .map((n) => {
+        return `
+        <p class="content">
+        <div class="container text-left">
+      <div class="row">
+        <div class="col-1">
+        <i class="fa-solid fa-list-check icons-text"></i>
+        </div>
+        <div class="col-11 text-left" style="text-align: left">
+        ${n}
+        </div>
+        
+      </div>
+    </div>
+      </p>
+    `;
+      })
+      .join("");
+  };
+
   //Add To Cart Funtionality
   const AddToCart = (product) => {
     let productsAdded = [];
@@ -213,14 +279,14 @@ console.log( JSON.parse(localStorage.getItem("addToCart")));
       JSON.parse(localStorage.getItem("addToCart")) === [] ||
       JSON.parse(localStorage.getItem("addToCart")) === null
     ) {
-   
-
-      localStorage.setItem("addToCart", JSON.stringify({
+      productsAdded.push({
         id: product.dataId,
         price: product.dataPrice,
         title: product.dataTitle,
         quantity: product.dataQuantity,
-      }));
+      });
+
+      localStorage.setItem("addToCart", JSON.stringify(productsAdded));
     } else {
       JSON.parse(localStorage.getItem("addToCart")).push({
         id: product.dataId,
@@ -228,12 +294,10 @@ console.log( JSON.parse(localStorage.getItem("addToCart")));
         title: product.dataTitle,
         quantity: product.dataQuantity,
       });
-
-      console.log("b,b",JSON.parse(localStorage.getItem("addToCart")));
+      
     }
   };
-
-  const configureProducts = () => {
+  const configureProductDate = (id) => {
     $(document).on("click", "p#add-to-cart", function () {
       var dataQuantity = $("p#add-to-cart").attr("data-quantity");
       var dataTitle = $("p#add-to-cart").attr("data-title");
@@ -247,48 +311,92 @@ console.log( JSON.parse(localStorage.getItem("addToCart")));
       };
       AddToCart(selectedObject);
     });
-    apiResult.forEach((result, idx) => {
-      // Create card element
-      const card = document.createElement("div");
-      card.classList = "card-body";
-
-      // Construct card content
-      const content = `
-        <div class="col-xl-4 col-md-6 col-sm-12 custom-gap">
-            <div class="card" style="width: 18rem; margin: 0  auto">
-                <img src=${result.image} class="card-img-top" alt="...">
-                <div class="card-body">
-                    <a href="productpages.html?id=${
-                      result.id
-                    }" class="custom-links"> 
-                    <h5 class="card-title" >${result.title}</h5>
-                    </a>
+    apiResult.map((product) => {
+      if (product.id === id) {
+        let content = `<div class="container text-center">
+        <div class="row justify-content-evenly">
+        <div class="card-body d-xl-flex justify-content-xl-end">
+                <p class="card-link" id="add-to-cart" data-quantity=${Number(
+                  product.quantity
+                )} data-id=${Number(product.id)} data-price=${
+          product.price
+        } data-title=${
+          product.title
+        }><i class="fa-solid fa-cart-shopping" ></i> Add To Cart</a>
+                <p class="card-link"><i class="fa-solid fa-heart"></i>Favorite</a>
+            </div>
+            <div class="col-4">
+                <img class="product-image" src="img/explore.jpg" alt="explore image" />
+            </div>
+            <div class="col-4">
+                <div class="product-lists">
+                    <h4>Nutrition</h4>
+                    <div class="content">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nutrition</th>
+                                    <th scope="col">DV</th>
+                                    <th scope="col">Percentage</th>
+                                </tr>
+                            </thead>
+                            ${showNutritionStats(product.nutrition)}
+                        </table>
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></li>
-                    <li class="list-group-item">${result.price}</li>
   
-                </ul>
-                <div class="card-body d-xl-flex justify-content-xl-around">
-                    <p class="card-link"  id="add-to-cart" data-quantity=${Number(
-                      result.quantity
-                    )} data-id=${Number(result.id)} data-price=${
-        result.price
-      } data-title=${
-        result.title
-      }><i class="fa-solid fa-cart-shopping"></i> Add To Cart</a>
-                    <p class="card-link"><i class="fa-solid fa-heart"></i>Favorite</a>
-                </div>
+                
             </div>
         </div>
-      `;
+    </div>
+    <div class="container text-center">
+        <div class="row justify-content-evenly">
+            <div class="col-4">
+                <h4>Description</h4>
+                <p class="content">
+                    Cras ut viverra eros. Phasellus sollicitudin sapien id luctus
+                    tempor. Sed hend rerit inter dum sagittis. Donec nunc lacus,
+                    dapibus nec interdum eget, ultrices eget justo. Nam purus lacus,
+                    efficitur eget laoreet sed, finibus nec neque. Cras eget enim in
+                    diam dapibus sagittis. In massa est, dignissim in libero ac,
+                    fringilla ornare mi. Etiam interdum ligula purus.
+                </p>
+            </div>
+            <div class="col-4">
+                <h4>Ingredients</h4>
+                <ul class="list-group">
+                    ${showIngredients(product.ingredients)}
+                </ul>
+    
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="row justify-content-evenly">
+            <h4>Direction</h4>
+            <div class="col-12">
+                <div class="d-flex flex-column mb-3 justify-content-start">
+                    <div class="p-2">
+                        ${showDirections(product.direction)}
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </div>
+    </div>`;
 
-      // Append newyly created card element to the container
-      container.innerHTML += content;
+        container.innerHTML += content;
+      }
     });
   };
-  configureProducts();
+  for (let pair of queryString.entries()) {
+    configureProductDate(Number(pair[1]));
+  }
+
   $(document).on("click", "div#close-cart", function () {
     toggleCart.classList.remove("slider-class", "custom-index");
     toggleCart.classList.add("slider-remove");
@@ -297,23 +405,24 @@ console.log( JSON.parse(localStorage.getItem("addToCart")));
       toggleCart.classList.remove("slider-remove");
     }, 1000);
   });
+
   $(document).on("click", "p#add-to-cart", function () {
     contentCart =
       JSON.parse(localStorage.getItem("addToCart")) !== null &&
       JSON.parse(localStorage.getItem("addToCart"))
         .map((item) => {
-          $(document).on("click", "#close-row", function () {
+          $(document).on("click", "th#close-row", function () {
             console.log(item);
           });
           return `
-      <tr >
-      <th class="close-row" scope="row">X</th>
-      <td>${item.title}</td>
-      <td>${item.price}</td>
-      <td>${item.quantity}</td>
-      <td>${item.title}</td>    
-      </tr>        
-          `;
+    <tr >
+    <th class="close-row" scope="row">X</th>
+    <td>${item.title}</td>
+    <td>${item.price}</td>
+    <td>${item.quantity}</td>
+    <td>${item.title}</td>    
+    </tr>        
+        `;
         })
         .join("");
     cartContainer.innerHTML += contentCart;
@@ -325,6 +434,5 @@ console.log( JSON.parse(localStorage.getItem("addToCart")));
     contentCart = null;
     cartContainer.innerHTML = "";
   });
-
-  console.log(JSON.parse(localStorage.getItem("addToCart")));
+  console.log("cartsAdded", JSON.parse(localStorage.getItem("addToCart")));
 });

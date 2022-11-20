@@ -1,4 +1,8 @@
 //https://www.youtube.com/watch?v=VRqB2XGZ9IA
+//https://codepen.io/hesguru/pen/BaybqXv
+// https://codepen.io/hesguru/pen/BaybqXv -->
+//https://dev.to/madsstoumann/star-rating-using-a-single-input-i0l -->
+// https://stackoverflow.com/questions/22607150/getting-the-url-parameters-inside-the-html-page
 // Menu Section
 (function ($) {
   "use strict";
