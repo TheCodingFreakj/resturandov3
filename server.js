@@ -27,6 +27,8 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 
 app.use("/api/reservations", ReservationRouter);
+
+
 app.use(express.static(path.resolve(__dirname, "public")));
 app.get('/', (request, response) => {
     response.sendFile(path.resolve(__dirname, 'public/index.html'));

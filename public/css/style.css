@@ -106,17 +106,17 @@ p {
   position: fixed;
   z-index: 100;
 }
-
+/* https://resturando.herokuapp.com/img/explore.jpg */
 /*Global Header Styling*/
 #bg-image {
   height: 750px;
   position: relative;
   top: 10px;
   background-color: #000000;
-  background-image: url("../img/header-image.jpg");
+  background-image: url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/header-image-email.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: cover; */
+   background-size: cover;
   filter: brightness(50%);
 }
 
