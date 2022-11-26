@@ -499,7 +499,7 @@ $(function () {
                 <p class="card-link"><i class="fa-solid fa-heart"></i>Favorite</a>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                <img class="product-image" src="img/explore.jpg" alt="explore image" />
+                <img class="product-image" src=${product.image} alt="explore image" />
             </div>
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="product-lists">

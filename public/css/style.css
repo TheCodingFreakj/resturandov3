@@ -116,7 +116,7 @@ p {
   background-image: url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/header-image-email.jpg");
   background-position: center;
   background-repeat: no-repeat;
-   background-size: cover;
+  background-size: cover;
   filter: brightness(50%);
 }
 
@@ -215,7 +215,10 @@ p {
   top: -190px;
   margin-top: 200px;
   height: 250px;
-  background-image: url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg");
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.218)),
+    url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg");
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -226,7 +229,9 @@ p {
   position: relative;
   top: -190px;
   height: 250px;
-  background-image: url("https: //ik .imagekit .io/vi 9aepz 6c /Resturando/img/cookies gf 43494f 23_ 1280jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.218)),
+    url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/cookies-gf43494f23_1280.jpg");
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -238,14 +243,24 @@ p {
   position: relative;
   top: -190px;
   height: 250px;
-  background-image: url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.218)),
+    url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg");
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: -50px;
   width: 50%;
 }
-
+.featured-dish {
+  font-size: 40px;
+  position: relative;
+  top: 60px;
+  color: white;
+  text-align: center;
+  filter: drop-shadow(0.05em 0.05em rgb(234, 230, 222));
+  mix-blend-mode: difference;
+}
 .custom-flex-containers {
   z-index: 1;
   position: relative;
@@ -560,6 +575,10 @@ li.ui-timepicker-selected,
 
 /* Product Section Styling */
 
+.custom-image-style {
+  height: 190px;
+}
+
 .custom-gap {
   margin-bottom: 30px;
 }
@@ -753,7 +772,6 @@ div.bg-images-blog {
 @media (max-width: 575.98px) {
   /* Basic Styling */
 
-
   section.outer-section {
     padding-bottom: 80px;
   }
@@ -892,7 +910,6 @@ div.bg-images-blog {
 
 @media (max-width: 767.98px) {
   /* Basic Styling */
-
 
   section.outer-section {
     padding-bottom: 80px;

@@ -488,7 +488,7 @@ $(function () {
             <div id="food-card" class="card" style="width: 18rem; margin: 0  auto">
                 <img src=${
                   result.image
-                } class="card-img-top" alt="feature-image">
+                } class="card-img-top custom-image-style" alt="feature-image">
                 <div class="card-body">
                     <a href="productpages.html?id=${
                       result.id
