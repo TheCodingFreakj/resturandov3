@@ -672,18 +672,20 @@ div.bg-images-blog {
 }
 
 .custom-title {
- font-weight: 700;
- 
+  font-weight: 700;
+
 }
 
 .custom-dates {
   font-size: 16px;
 }
+
 .card>.list-group {
   border-top: inherit;
   border-bottom: inherit;
   list-style: none;
 }
+
 /* Gallery Pages */
 
 .gallery {
@@ -790,6 +792,18 @@ div.bg-images-blog {
     width: 100%;
   }
 
+  #bg-image-3 {
+    width: 100%;
+  }
+
+  #bg-image-4 {
+    width: 100%;
+  }
+
+  #bg-image-5 {
+    width: 100%;
+  }
+
   /*Menu Section Styling*/
   .outer-container-customizer {
     width: 100%;
@@ -830,15 +844,21 @@ div.bg-images-blog {
     font-size: 16px;
   }
 
+  /* Reservation Table */
+  .datepicker table {
+    width: 100% !important;
+    z-index: 99 !important;
+  }
   /* Single Product Page Styling */
 
   .product-image {
     width: 100%;
-    
+
   }
 }
 
 @media (max-width: 767.98px) {
+
   /* Navbar Styling */
   .container-fluid {
     z-index: 99;
@@ -885,7 +905,17 @@ div.bg-images-blog {
   .section-image-02 {
     width: 100%;
   }
+  #bg-image-3 {
+    width: 100%;
+  }
 
+  #bg-image-4 {
+    width: 100%;
+  }
+
+  #bg-image-5 {
+    width: 100%;
+  }
   /*Menu Section Styling*/
   .outer-container-customizer {
     width: 100%;
@@ -921,16 +951,17 @@ div.bg-images-blog {
     padding: 0 0.5rem;
     font-size: 16px;
   }
-  
+
   /* Single Product Page Styling */
 
   .product-image {
     width: 100%;
-    
+
   }
 }
 
 @media (max-width: 991.98px) {
+
   /* Navbar Styling */
   .container-fluid {
     z-index: 99;
@@ -977,7 +1008,17 @@ div.bg-images-blog {
   .section-image-02 {
     width: 100%;
   }
+  #bg-image-3 {
+    width: 100%;
+  }
 
+  #bg-image-4 {
+    width: 100%;
+  }
+
+  #bg-image-5 {
+    width: 100%;
+  }
   /*Menu Section Styling*/
   .outer-container-customizer {
     width: 100%;
@@ -1012,12 +1053,12 @@ div.bg-images-blog {
     padding: 0 0.5rem;
     font-size: 16px;
   }
-  
+
   /* Single Product Page Styling */
 
   .product-image {
     width: 100%;
-    
+
   }
 }
 

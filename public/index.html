@@ -27,53 +27,104 @@
     <!-- Hero Image Starts Here -->
     <div class="container-fluid">
       <div id=bg-image class="lazy">
-        <!-- Nav Section Starts Here -->
-        <div class="z-index-n1 bg-opacity-10 position-absolute w-100 p-3">
-          <nav class="navbar navbar-expand-lg navbar-light d-flex p-2 mt-9 custom-background">
+       <!-- Nav Section Starts Here -->
+       <div class="z-index-n1 bg-opacity-10 position-absolute w-100 p-3">
+        <nav class="navbar navbar-expand-lg bg-light custom-background">
+          <div class="container-fluid">
             <a class="navbar-brand w-10 p-3" href="#">
-                <img class="w-80" src="img/logolight.png" height="32" alt="company-logo" />
+              <img
+                class="w-80"
+                src="img/logolight.png"
+                height="32"
+                alt="company-logo"
+              />
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarTogglerDemo01"
+              aria-controls="navbarTogglerDemo01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto custom-navbar">
-                    <li class="nav-item active">
-                        <a class="nav-link ms-5 fs-5 custom-color m" href="./index.html">Home <span
-                                class="sr-only">(current)</span></a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <ul class="navbar-nav mx-auto custom-navbar">
+                <li class="nav-item">
+                  <a
+                    class="nav-link ms-5 fs-5 custom-color m"
+                    href="./index.html"
+                    >Home</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link ms-5 fs-5 nav-link dropdown-toggle custom-color "
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    >Pages</a
+                  >
+                  <ul class="show-dropdown">
+                    <li>
+                      <a
+                        class="dropdown-item custom-item-style"
+                        href="./aboutus.html"
+                        >About Us</a
+                      >
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link ms-5 fs-5 nav-link dropdown-toggle custom-color" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                        <ul class="show-dropdown">
-                            <li><a class="dropdown-item custom-item-style" href="#">About Us</a></li>
-                            <li><a class="dropdown-item custom-item-style" href="#">Gallery</a></li>
-                            <li><a class="dropdown-item custom-item-style" href="#">404Page</a></li>
-                            <li>
-                                <hr class="dropdown-divider custom-item-style">
-                            </li>
-                            <li><a class="dropdown-item custom-item-style" href="#">Short Codes</a></li>
-                        </ul>
+                    <li>
+                      <a
+                        class="dropdown-item custom-item-style"
+                        href="./gallery.html"
+                        >Gallery</a
+                      >
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link ms-5 fs-5 custom-color" href="#">Receipes</a>
+                    <li>
+                      <a
+                        class="dropdown-item custom-item-style"
+                        href="./404.html"
+                        >404Page</a
+                      >
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link ms-5 fs-5 custom-color" href="./blog.html">Blog</a>
+                    <li>
+                      <hr class="dropdown-divider custom-item-style" />
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link ms-5 fs-5 custom-color" href="./shop.html">Shop</a>
+                    <li>
+                      <a class="dropdown-item custom-item-style" href="#"
+                        >Short Codes</a
+                      >
                     </li>
-                </ul>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link ms-5 fs-5 custom-color" href="#"
+                    >Receipes</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link ms-5 fs-5 custom-color"
+                    href="./blog.html"
+                    >Blog</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link ms-5 fs-5 custom-color"
+                    href="./shop.html"
+                    >Shop</a
+                  >
+                </li>
+              </ul>
             </div>
+          </div>
         </nav>
-        </div>
-        <!-- Nav Section Ends Here -->
       </div>
-
+      <!-- Nav Section Ends Here -->
+      </div>
       <!-- Hero Image Ends Here -->
     </div>
     <div class="container z-index-n1 custom-hero-text">
@@ -382,11 +433,10 @@
     <p>Book a table online. Leads will reach in your email.</p>
     <div class="card">
       <div class="card-body">
-
         <form id="my-form">
           <div class="container text-center p-10">
             <div class="row">
-              <div class="col">
+              <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="mb-3">
                   <label for="InputEmail" class="form-label">Email address</label>
                   <div class="form-group">
@@ -399,7 +449,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col">
+              <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="mb-3">
                   <label for="InputDate" class="form-label">Date</label>
                   <div class="form-group">
@@ -408,7 +458,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col">
+              <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="mb-3">
                   <label for="InputName" class="form-label">Name</label>
                   <div class="form-group">
@@ -419,7 +469,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col">
+              <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="mb-3">
                   <label for="InputTime" class="form-label">Time</label>
 
@@ -430,7 +480,7 @@
                 </div>
               </div>
 
-              <div class="col">
+              <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="mb-3">
                   <label for="InputGuests" class="form-label">Guests</label>
                   <div class="form-group">
@@ -440,7 +490,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col">
+              <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="mb-3">
                   <label for="InputPhone" class="form-label">Phone Number</label>
                   <div class="form-group">
@@ -557,6 +607,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   <!-- Jquery Include -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <!-- Bootstrap Include -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Date Picker JS -->
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
