@@ -125,7 +125,7 @@ p {
   position: relative;
   top: 10px;
   background-color: #000000;
-  background-image: url("../img/indian-condiments-with-copy-space-view.jpg");
+  background-image: url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/vegetables-ge8fccf0e8_1280.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -187,7 +187,7 @@ p {
   background: var(--secondary);
   /* fallback */
   background-image: linear-gradient(rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0.791)),
-    url("../img/feature-image.jpg");
+    url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/feature-image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -215,7 +215,7 @@ p {
   top: -190px;
   margin-top: 200px;
   height: 250px;
-  background-image: url("../img/feature-image.jpg");
+  background-image: url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -226,7 +226,7 @@ p {
   position: relative;
   top: -190px;
   height: 250px;
-  background-image: url("../img/feature-image.jpg");
+  background-image: url("https: //ik .imagekit .io/vi 9aepz 6c /Resturando/img/cookies gf 43494f 23_ 1280jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -238,7 +238,7 @@ p {
   position: relative;
   top: -190px;
   height: 250px;
-  background-image: url("../img/feature-image.jpg");
+  background-image: url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -391,7 +391,7 @@ p {
   /* The image used */
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0.791)),
-    url("../img/feature-image.jpg");
+    url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/raspberries-g1c95018cf_1280.jpg");
   /* Set a specific height */
   min-height: 500px;
   /* Create the parallax scrolling effect */
@@ -518,7 +518,7 @@ li.ui-timepicker-selected,
 /* Footer Area Styling */
 .footer-area {
   background-image: linear-gradient(rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0.791)),
-    url(../img/feature-image.jpg);
+    url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/raspberries-g1c95018cf_1280.jpg");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
