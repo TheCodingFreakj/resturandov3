@@ -30,8 +30,6 @@
       date,
     };
 
-    console.log(FormData);
-
     $.ajax({
       url: "https://resturando.herokuapp.com/api/reservations",
       type: "POST",

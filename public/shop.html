@@ -20,7 +20,7 @@
 <body>
   <div id="pre-loader"></div>
   <div id="add-cart">
-    <div class="container-sm">
+    <div class="container-md">
       <div id="close-cart" class="row text-end p-2">
         <div class="col-12">X</div>
       </div>
@@ -31,7 +31,6 @@
             <th scope="col">Product Name</th>
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
-            <th scope="col">Total</th>
           </tr>
         </thead>
         <tbody id="add">
@@ -40,55 +39,10 @@
       <div id="empty-cart" >Empty</div>
     </div>
   </div>
-  <!-- Header Section Starts -->
-  <header>
-    <!-- Hero Image Starts Here -->
-    <div class="container-fluid">
-      <div id="bg-image-shop" class="lazy">
-        <!-- Nav Section Starts Here -->
-        <div class="z-index-n1 bg-opacity-10 position-absolute w-100 p-3">
-          <nav class="navbar navbar-expand-lg navbar-light d-flex p-2 mt-9 custom-background">
-            <a class="navbar-brand w-10 p-3" href="#">
-              <img class="w-80" src="img/logolight.png" height="32" alt="company-logo" />
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- Header Section Starts -->
+    <div w3-include-html="./common/header.html"></div>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mx-auto custom-navbar">
-                <li class="nav-item active">
-                  <a class="nav-link ms-5 fs-5 custom-color m" href="./index.html">Home <span
-                      class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link ms-5 fs-5 custom-color" href="#">Reservation</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link ms-5 fs-5 custom-color" href="#">Receipes</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link ms-5 fs-5 custom-color" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link ms-5 fs-5 custom-color" href="./shop.html">Shop</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <!-- Nav Section Ends Here -->
-      </div>
-
-      <!-- Hero Image Ends Here -->
-    </div>
-    <div class="container z-index-n1 custom-blog-hero-text">
-      <h1>Shop Your Fav</h1>
-      <p>Potato is a delitious restaurant website template</p>
-    </div>
-  </header>
-  <!-- Header Section End -->
+    <!-- Header Section End -->
 
   <!-- Products Show Section Starts -->
   <section class="outer-section">
@@ -120,97 +74,18 @@
 
     <!-- Filter Options End -->
 
-    <div class="container text-center">
+    <div class="container text-center dynamic-render">
       <div id="display-products" class="row"></div>
     </div>
   </section>
   <!-- Products Show Section Ends -->
 
-  <!-- Footer Section Start -->
-  <section class="footer-section">
+    <!-- Footer Section Start -->
+ 
+    <div w3-include-html="./common/footer.html"></div>
+    <!-- Footer Section End -->
 
-    <div class="card">
-      <div class="card-body">
-        <div class="row w-85 gx-0 text-center">
-          <div class="col-lg-12 col-md-12">
-            <div class="footer-area lazy">
-              <div class="row footer-customizer">
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                  <div class="mb-3">
-                    <div class="card text-bg-dark p-3">
-                      <div class="card-body">
-                        <h5 class="card-title">About</h5>
-
-                        <p class="badge text-wrap footer-text ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Maecenas faucibus
-                          fermentum vulputate. Aenean dignissim erat non tempor blandit. Duis vitae quam dolor. </p>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                  <div class="mb-3">
-                    <div class="card text-bg-dark p-3">
-                      <div class="card-body">
-                        <h5 class="card-title">Recent Posts</h5>
-                        <div class="container text-center">
-                          <div class="row ">
-                            <div class="col-xl-6 col-lg-12 col-md-12"><img loading="lazy" class="footer-image"
-                                src="./img/header-image.jpg" /></div>
-                            <div class="col-xl-6 col-lg-12 col-md-12">
-                              <p class="badge  text-wrap footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Maecenas faucibus
-                                fermentum vulputate.</p>
-                            </div>
-                            <div class="col-xl-6 col-lg-12 col-md-12"><img loading="lazy" class="footer-image"
-                                src="./img/header-image.jpg" /></div>
-                            <div class="col-xl-6 col-lg-12 col-md-12">
-                              <p class="badge  text-wrap footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Maecenas faucibus
-                                fermentum vulputate.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                  <div class="mb-3">
-                    <div class="card text-bg-dark p-3">
-                      <div class="card-body">
-                        <h5 class="card-title">Visit Us</h5>
-                        <div class="d-flex flex-column mb-3">
-                          <div class="p-2">
-                            <div class="d-flex flex-row justify-content-evenly"><i class="fa-brands fa-facebook-f"></i>
-                              <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-linkedin-in"></i>
-                            </div>
-                          </div>
-                          <div class="p-2">
-                            <p class="badge  text-wrap footer-text">Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Maecenas faucibus
-                              fermentum vulputate.</p>
-                          </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    </div>
-
-  </section>
-
-  <!-- Footer Section End -->
+    
   <!-- Jquery Include -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <!-- Bootstrap Include -->

@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resturando</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <!--  -->
+    <!-- Tiny Slider Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
     <link rel="stylesheet" href="./css/all.min.css" />
 
     <!-- Bootstrap Css -->
@@ -17,59 +18,52 @@
     <link rel="stylesheet" href="./css/style.css" />
 </head>
 
-
-<body id="conditional-styling" class="product-basic-styling">
+<body>
     <div id="pre-loader"></div>
-    <div id="add-cart">
-        <div class="container-md">
-          <div id="close-cart" class="row text-end p-2">
-            <div class="col-12">X</div>
-          </div>
-          <table id="table" class="table">
-            <thead>
-              <tr>
-                <th scope="col">Action</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-              </tr>
-            </thead>
-            <tbody id="add">
-            </tbody>
-          </table>
-          <div id="empty-cart" >Empty</div>
-        </div>
-      </div>
+
     <!-- Header Section Starts -->
     <div w3-include-html="./common/header.html"></div>
 
     <!-- Header Section End -->
 
-    <!-- Products Page Section Starts -->
+    <!-- Blog Section Starts -->
     <section class="outer-section">
-        <div class="container text-center">
-            <div class="row">
-                <div class="card">
-                    <div id="display-products" class="card-body">
+        <div class="container-xl container-lg container-md container-sm text-center">
+            <div class="row" >
+                <div class="col-xl-9 col-lg-9 col-sm-12 col-md-12">
+                    <div id="outer-container">
+                    </div>
+
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-12 col-md-12 text-start">
+                    <div id="categories-container" class="p-5">
+                        <h2>Catgories</h2>
+                    </div>
+
+                    <div id="recentposts-container" class="p-5">
+                        <h2>Recent Posts</h2>
+
                     </div>
                 </div>
             </div>
+        </div>
     </section>
-    <!-- Products Page Section Ends -->
+    <!-- Blog Section Ends -->
 
     <!-- Footer Section Start -->
  
     <div w3-include-html="./common/footer.html"></div>
     <!-- Footer Section End -->
 
-
-
     <!-- Jquery Include -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Tiny Slider Include -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
     <!-- Bootstrap Include -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Shop Include -->
-    <script src="./js/productpages.js"></script>
+    <script src="./js/blog.js"></script>
     <!-- Main Include -->
     <script src="./js/main.js"></script>
 </body>
