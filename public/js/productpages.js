@@ -26,7 +26,7 @@ $(function () {
     {
       id: 1,
       quantity: 33,
-      title: "title1",
+      title: "This is Title-One",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -36,7 +36,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -58,7 +58,7 @@ $(function () {
     {
       id: 2,
       quantity: 14,
-      title: "title2",
+      title: "This is Title-Two",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -68,7 +68,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -90,7 +90,7 @@ $(function () {
     {
       id: 3,
       quantity: 133,
-      title: "title3",
+      title: "This is Title-Three",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -100,7 +100,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -123,7 +123,7 @@ $(function () {
     {
       id: 4,
       quantity: 30,
-      title: "title6",
+      title: "This is Title-four",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -133,7 +133,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -155,7 +155,7 @@ $(function () {
     {
       id: 5,
       quantity: 3340,
-      title: "title5",
+      title: "This is Title-Five",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -165,7 +165,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/vegetables-ge8fccf0e8_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -187,7 +187,7 @@ $(function () {
     {
       id: 6,
       quantity: 60,
-      title: "title144",
+      title: "This is Title-Six",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -197,7 +197,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/meal-g97705a369_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -219,7 +219,7 @@ $(function () {
     {
       id: 7,
       quantity: 44,
-      title: "title7",
+      title: "This is Title-Seven",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -229,7 +229,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -251,7 +251,7 @@ $(function () {
     {
       id: 8,
       quantity: 84,
-      title: "title8",
+      title: "This is Title-Eight",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -261,7 +261,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/indian-condiments-with-copy-space-view.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -283,7 +283,7 @@ $(function () {
     {
       id: 9,
       quantity: 94,
-      title: "title9",
+      title: "This is Title-Ten",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -293,7 +293,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/high-angle-delicious-pita.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -315,7 +315,7 @@ $(function () {
     {
       id: 10,
       quantity: 14,
-      title: "title10",
+      title: "This is Title-Ten",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -325,7 +325,7 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "./img/indian-condiments-with-copy-space-view.jpg",
+      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/cookies-gf43494f23_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
