@@ -214,7 +214,7 @@
         <div class="custom-container">
             <div class="d-lg-flex d-xl-flex d-md-flex d-sm-flex flex-lg-row flex-xl-row flex-sm-column flex-md-column">
                 <div class="col-lg-7 col-xl-7 col-md-12 col-sm-12">
-                    <img loading="lazy" class="sidebar-image" src=${blogs.imageSlider[0]} />
+                    <img loading="lazy" class="sidebar-image" src=${blogs.imageSlider[0]} alt="sidebar-image" />
                 </div>
                 <div class="col-md-12 col-sm-12 offset-md-2">
                     <p class="text-start custom-title">${blogs.title}</p>

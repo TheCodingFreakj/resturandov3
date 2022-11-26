@@ -153,7 +153,7 @@
           <div class="container ">
               <div class="d-flex flex-row ">
                   <div class="col-lg-7 ">
-                      <img loading="lazy" class="sidebar-image" src=${blogs.imageSlider[0]} />
+                      <img loading="lazy" class="sidebar-image" src=${blogs.imageSlider[0]} alt="sidebar-image"/>
                   </div>
                   <div class="col-lg-5 offset-md-4">
                       <p class="text-start custom-title">${blogs.title}</p>

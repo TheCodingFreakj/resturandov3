@@ -116,7 +116,7 @@ p {
   background-image: url("../img/header-image.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  /* background-size: cover; */
   filter: brightness(50%);
 }
 
@@ -753,9 +753,7 @@ div.bg-images-blog {
 @media (max-width: 575.98px) {
   /* Basic Styling */
 
-  #bg-image {
-    background-size: 100%;
-  }
+
   section.outer-section {
     padding-bottom: 80px;
   }
@@ -895,9 +893,7 @@ div.bg-images-blog {
 @media (max-width: 767.98px) {
   /* Basic Styling */
 
-  #bg-image {
-    background-size: 100%;
-  }
+
   section.outer-section {
     padding-bottom: 80px;
   }
@@ -1024,10 +1020,6 @@ div.bg-images-blog {
 
 @media (max-width: 991.98px) {
   /* Basic Styling */
-
-  #bg-image {
-    background-size: 100%;
-  }
   section.outer-section {
     padding-bottom: 80px;
   }
