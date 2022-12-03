@@ -1,5 +1,5 @@
 import { createConnection } from "mysql";
-import { HOST, USER, PASSWORD, DB } from "../../config/db.config.js";
+import { HOST, USER, PASSWORD, DB ,PORT} from "../../config/db.config.js";
 
 // Create a connection to the database
 const connection = createConnection({
@@ -7,6 +7,7 @@ const connection = createConnection({
   user: USER,
   password: PASSWORD,
   database: DB,
+  port:PORT
 });
 
 // open the MySQL connection
