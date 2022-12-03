@@ -623,7 +623,7 @@ $(function () {
     apiResult.map((product) => {
       if (product.id === id) {
         let content = `<div class="container text-center">
-        <div class="row justify-content-md-around justify-content-xl-evenly">
+        <div class="row justify-content-md-around ">
         <div class="card-body d-xl-flex flex-sm-column flex-md-column justify-content-xl-end">
                 <p class="card-link" id="add-to-cart" data-quantity=${Number(
           product.quantity

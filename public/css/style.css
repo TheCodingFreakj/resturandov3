@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap");
 
-/*Basic Styling*/
+/*******************************************Basic Styling********************************************/
 :root {
   --primary: #000000;
   --secondary: #401b1b;
@@ -37,8 +37,9 @@ h5 {
 }
 
 .custom-paragraph {
-  color: #ffff!important;
- }
+  color: #ffff !important;
+}
+
 .custom-color:hover+.show-dropdown {
   display: inline-block;
   position: fixed;
@@ -101,7 +102,7 @@ p {
   padding-bottom: 20px;
 }
 
-/* Pre-Loader */
+/*******************************************Pre-Loader********************************************/
 #pre-loader {
   background: #000000 url("../img/pre-loader.gif") no-repeat center center;
   background-size: 15%;
@@ -112,8 +113,7 @@ p {
   z-index: 100;
 }
 
-/* https://resturando.herokuapp.com/img/explore.jpg */
-/*Global Header Styling*/
+/*******************************************Global Header Styling********************************************/
 #bg-image {
   height: 750px;
   position: relative;
@@ -213,9 +213,10 @@ table.table-cart {
   justify-content: space-between;
 
 }
-.custom-cart-col{
+
+.custom-cart-col {
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   margin-bottom: 3%;
 }
 
@@ -233,13 +234,13 @@ span#cart-num {
 }
 
 
-/*Explore Section Styling*/
+/*******************************************Home Page-Explore Section Styling********************************************/
 
 .content {
   text-align: left;
 }
 
-/*Feature Section Styling*/
+/*******************************************Home Page-Feature Section Styling********************************************/
 #bg-image-2 {
   height: 750px;
   position: relative;
@@ -329,7 +330,7 @@ span#cart-num {
   position: relative;
 }
 
-/*Menu Section Styling*/
+/*******************************************Home Page-Menu Section Styling********************************************/
 .outer-container-customizer {
   width: 60%;
   margin: auto;
@@ -466,7 +467,7 @@ span#cart-num {
   }
 }
 
-/* Testimonial Section Styling */
+/*******************************************Home Page-Testimonial Section Styling********************************************/
 #parallax {
   background-image: linear-gradient(rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0.791)),
     url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/raspberries-g1c95018cf_1280.jpg");
@@ -555,7 +556,7 @@ span#cart-num {
   padding: 0 0.5rem;
 }
 
-/* Reservation Section Styling */
+/*******************************************Home Page-Reservation Section Styling********************************************/
 #my-form {
   color: var(--secondary);
 }
@@ -603,7 +604,7 @@ li.ui-timepicker-selected,
   width: 397px !important;
 }
 
-/* Footer Area Styling */
+/********************************************************* Footer Area Styling *********************************************/
 .footer-area {
   background-image: linear-gradient(rgba(0, 0, 0, 0.886), rgba(0, 0, 0, 0.791)),
     url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/raspberries-g1c95018cf_1280.jpg");
@@ -643,7 +644,7 @@ li.ui-timepicker-selected,
   font-weight: 100;
 }
 
-/* ***********************Product Page************************* */
+/* **************************************************Product Page Styling******************************************************** */
 /* Basic styling */
 
 .product-basic-styling {
@@ -679,7 +680,7 @@ div#food-card {
   --bs-table-color: var(--secondary) !important;
 }
 
-/* Single Product Page Styling */
+/* **************************************************Single Product Page Styling**************************************************/
 div#display-products {
   color: var(--secondary);
 }
@@ -760,7 +761,7 @@ tbody#add {
   color: #15be39;
 }
 
-/* ***********************Blog Page************************* */
+/* **************************************************Blog Page Styling******************************************************** */
 .blog-container {
   border-radius: 5px;
   color: var(--primary);
@@ -806,7 +807,7 @@ div#categories-container {
   color: var(--secondary);
 }
 
-/* Gallery Pages */
+/* **************************************************Gallery Page Styling******************************************************** */
 
 .gallery {
   display: flex;
@@ -869,12 +870,14 @@ div#categories-container {
 
 
 
-/* About Us Page */
+/* **************************************************About us Page Styling******************************************************** */
 img.about-us {
   width: 90%;
   position: relative;
   top: -90px
 }
+
+
 
 .clip-animation {
   animation: clip 1s infinite
@@ -898,7 +901,7 @@ img.about-us {
   color: var(--secondary);
 }
 
-/* Menu View Stylings */
+/* **************************************************Menu Views Page Styling******************************************************** */
 img.menu-view {
   width: 90%;
 
@@ -1097,285 +1100,81 @@ img.menu-view {
   margin: 2% 2%;
 }
 
-/* ************************************ Responsive Custom Styling ************************* */
+/* **************************************************404 Page Styling******************************************************** */
 
-
-@media (max-width: 575.98px) {
-  /* Basic Styling */
-
-  section.outer-section {
-    padding-bottom: 80px;
-    cursor: pointer;
-  }
-
-  .custom-hero-text {
-    position: relative;
-    top: -200px;
-    z-index: 1;
-    color: #ffff;
-    text-align: center;
-    vertical-align: middle;
-  }
-
-  .custom-hero-text h1 {
-    font-size: 40px;
-  }
-
-  .custom-hero-text p {
-    font-size: 17px;
-    text-align: center;
-  }
-
-  /* Navbar Styling */
-
-  .custom-color:hover+.show-dropdown {
-    display: block;
-    position: relative;
-    background-color: var(--secondary);
-    color: #fff;
-    list-style: none;
-    padding: 2%;
-
-  }
-
-  .show-dropdown:hover {
-    display: block;
-    position: relative;
-    z-index: 0;
-    background-color: var(--secondary);
-    color: #fff;
-    list-style: none;
-    padding: 2%;
-    width: 25%;
-  }
-
-
-
-  /*Feature Section Styling*/
-  .section-image-03 {
-    width: 100%;
-  }
-
-  .section-image-01 {
-    width: 100%;
-  }
-
-  .section-image-02 {
-    width: 100%;
-  }
-
-  #bg-image-3 {
-    width: 100%;
-  }
-
-  #bg-image-4 {
-    width: 100%;
-  }
-
-  #bg-image-5 {
-    width: 100%;
-  }
-
-  /*Menu Section Styling*/
-  .outer-container-customizer {
-    width: 100%;
-  }
-
-  .outer-container-customizer {
-    width: 0%;
-  }
-
-  .content-menu {
-    text-align: center;
-  }
-
-  .content-menu-para {
-    text-align: center;
-  }
-
-  .no-records {
-    left: -2%;
-    position: relative;
-  }
-
-  /* Testimonial Section Styling */
-
-  .card-container {
-    width: 100%;
-  }
-
-  .card-container h2 {
-    color: #fff;
-    margin: 0 0 0.25rem;
-  }
-
-  .card-container p {
-    margin: 0;
-    color: #fff;
-    padding: 0 0.5rem;
-    font-size: 16px;
-  }
-
-  /* Reservation Table */
-  .datepicker table {
-    width: 100% !important;
-    z-index: 99 !important;
-  }
-
-
-  /* Single Product Page Styling */
-
-  .product-image {
-    width: 100%;
-  }
-
-  /* Gallery */
-
-  .gallery {
-    display: block;
-    padding: 2px;
-    transition: 0.3s;
-  }
-
-  .gallery__column {
-    width: 100%;
-  }
-}
-
-@media (max-width: 767.98px) {
-  /* Basic Styling */
-
-  section.outer-section {
-    padding-bottom: 80px;
-  }
-
-  .custom-hero-text {
-    position: relative;
-    top: -300px;
-    z-index: 99;
-    color: #ffff;
-    text-align: center;
-    vertical-align: middle;
-  }
-
-  /* Navbar Styling */
-  .container-fluid {
-    z-index: 99;
-    position: relative;
-  }
-
-  .custom-color:hover+.show-dropdown {
-    display: block;
-    position: relative;
-    z-index: 0;
-    width: 100%;
-    background-color: var(--secondary);
-    color: #fff;
-    list-style: none;
-    padding: 2%;
-    width: 100%;
-  }
-
-  .show-dropdown:hover {
-    display: block;
-    position: relative;
-    z-index: 0;
-    width: 100%;
-    background-color: var(--secondary);
-    color: #fff;
-    list-style: none;
-    padding: 2%;
-    width: 100%;
-  }
-
-  .custom-blog-hero-text {
-    top: -100px;
-  }
-
-
-
-  /*Feature Section Styling*/
-  .section-image-03 {
-    width: 100%;
-  }
-
-  .section-image-01 {
-    width: 100%;
-  }
-
-  .section-image-02 {
-    width: 100%;
-  }
-
-  #bg-image-3 {
-    width: 100%;
-  }
-
-  #bg-image-4 {
-    width: 100%;
-  }
-
-  #bg-image-5 {
-    width: 100%;
-  }
-
-  /*Menu Section Styling*/
-  .outer-container-customizer {
-    width: 100%;
-  }
-
-  .content-menu {
-    text-align: center;
-  }
-
-  .content-menu-para {
-    text-align: center;
-  }
-
-  .no-records {
-    left: -2%;
-    position: relative;
-  }
-
-  /* Testimonial Section Styling */
-
-  .card-container {
-    width: 100%;
-  }
-
-  .card-container h2 {
-    color: #fff;
-    margin: 0 0 0.25rem;
-  }
-
-  .card-container p {
-    margin: 0;
-    color: #fff;
-    padding: 0 0.5rem;
-    font-size: 16px;
-  }
-
-  /* Single Product Page Styling */
-
-  .product-image {
-    width: 100%;
-  }
-
-  /* Gallery */
-
-  .gallery {
-    display: block;
-    padding: 2px;
-    transition: 0.3s;
-  }
-
-  .gallery__column {
-    width: 100%;
-  }
+.fourzerofourerror {
+  box-sizing: 0;
+  margin: 0;
+  padding: 0;
+  cursor: url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg"), auto;
 }
 
 
-/* ShortCodes */
+
+.fourzerofourerror {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 4rem);
+  margin: 0 auto;
+}
+
+
+.fourzerofourerror aside {
+  background-image: url("https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 25px 100%;
+  width: 50%;
+}
+
+.fourzerofourerror aside img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.fourzerofourerror main {
+  text-align: center;
+  color: var(--primary);
+  margin-left: 4%;
+}
+
+main h1 {
+  font-family: "Fontdiner Swanky", cursive;
+  font-size: 4rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+main p {
+  margin-bottom: 2.5rem;
+}
+
+main p em {
+  font-style: italic;
+  color: var(--primary)
+}
+
+main button {
+  font-family: "Fontdiner Swanky", cursive;
+  font-size: 20px;
+  color: #ffff;
+  border: none;
+  background-color: var(--primary);
+  padding: 1rem 2.5rem;
+  transform: skew(-5deg);
+  transition: all 0.1s ease;
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/4424790/cursors-eye.png"), auto;
+}
+
+main button:hover {
+  background-color: var(--secondary);
+  color: #ffff;
+  transform: scale(1);
+}
+
+
+/* **************************************************ShortCode Page Styling******************************************************** */
 
 
 .custom-margin {
@@ -1849,7 +1648,7 @@ section {
   margin: 1em;
 }
 
-@media screen and (min-width: 66.25em) {
+/* @media screen and (min-width: 66.25em) {
   .pricing-palden .pricing-item {
     margin: 1em -0.5em;
   }
@@ -1859,7 +1658,7 @@ section {
     z-index: 10;
     box-shadow: 0 0 20px rgba(46, 59, 125, 0.23);
   }
-}
+} */
 
 .pricing-palden .pricing-deco {
   border-radius: 10px 10px 0 0;
@@ -2199,6 +1998,304 @@ button:hover {
   background: #5eb105;
 }
 
+/* ************************************ Responsive Custom Styling ***************************************************/
+
+
+@media (max-width: 575.98px) {
+  /* Basic Styling */
+
+  section.outer-section {
+    padding-bottom: 80px;
+    cursor: pointer;
+  }
+
+  .custom-hero-text {
+    position: relative;
+    top: -200px;
+    z-index: 1;
+    color: #ffff;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .custom-hero-text h1 {
+    font-size: 40px;
+  }
+
+  .custom-hero-text p {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  /* Navbar Styling */
+
+  .custom-color:hover+.show-dropdown {
+    display: block;
+    position: relative;
+    background-color: var(--secondary);
+    color: #fff;
+    list-style: none;
+    padding: 2%;
+
+  }
+
+  .show-dropdown:hover {
+    display: block;
+    position: relative;
+    z-index: 0;
+    background-color: var(--secondary);
+    color: #fff;
+    list-style: none;
+    padding: 2%;
+    width: 25%;
+  }
+
+
+
+  /*Feature Section Styling*/
+  .section-image-03 {
+    width: 100%;
+  }
+
+  .section-image-01 {
+    width: 100%;
+  }
+
+  .section-image-02 {
+    width: 100%;
+  }
+
+  #bg-image-3 {
+    width: 100%;
+  }
+
+  #bg-image-4 {
+    width: 100%;
+  }
+
+  #bg-image-5 {
+    width: 100%;
+  }
+
+  /*Menu Section Styling*/
+  .outer-container-customizer {
+    width: 100%;
+  }
+
+  .outer-container-customizer {
+    width: 0%;
+  }
+
+  .content-menu {
+    text-align: center;
+  }
+
+  .content-menu-para {
+    text-align: center;
+  }
+
+  .no-records {
+    left: -2%;
+    position: relative;
+  }
+
+  /* Testimonial Section Styling */
+
+  .card-container {
+    width: 100%;
+  }
+
+  .card-container h2 {
+    color: #fff;
+    margin: 0 0 0.25rem;
+  }
+
+  .card-container p {
+    margin: 0;
+    color: #fff;
+    padding: 0 0.5rem;
+    font-size: 16px;
+  }
+
+  /* Reservation Table */
+  .datepicker table {
+    width: 100% !important;
+    z-index: 99 !important;
+  }
+
+
+  /* Single Product Page Styling */
+
+  .product-image {
+    width: 100%;
+  }
+
+  /* Gallery */
+
+  .gallery {
+    display: block;
+    padding: 2px;
+    transition: 0.3s;
+  }
+
+  .gallery__column {
+    width: 100%;
+  }
+
+
+  /* Menu View */
+  .custom-flex {
+    width: 100%;
+    left: 0;
+  }
+  .menu-container {
+    margin: 2% 2%;
+    width: 100%;
+}
+
+.menu-container .menu-card {
+  width: 100%;
+  margin: 0 auto;
+}
+  
+}
+
+@media (max-width: 767.98px) {
+  /* Basic Styling */
+
+  section.outer-section {
+    padding-bottom: 80px;
+  }
+
+  .custom-hero-text {
+    position: relative;
+    top: -300px;
+    z-index: 99;
+    color: #ffff;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  /* Navbar Styling */
+  .container-fluid {
+    z-index: 99;
+    position: relative;
+  }
+
+  .custom-color:hover+.show-dropdown {
+    display: block;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    background-color: var(--secondary);
+    color: #fff;
+    list-style: none;
+    padding: 2%;
+    width: 100%;
+  }
+
+  .show-dropdown:hover {
+    display: block;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    background-color: var(--secondary);
+    color: #fff;
+    list-style: none;
+    padding: 2%;
+    width: 100%;
+  }
+
+  .custom-blog-hero-text {
+    top: -100px;
+  }
+
+
+
+  /*Feature Section Styling*/
+  .section-image-03 {
+    width: 100%;
+  }
+
+  .section-image-01 {
+    width: 100%;
+  }
+
+  .section-image-02 {
+    width: 100%;
+  }
+
+  #bg-image-3 {
+    width: 100%;
+  }
+
+  #bg-image-4 {
+    width: 100%;
+  }
+
+  #bg-image-5 {
+    width: 100%;
+  }
+
+  /*Menu Section Styling*/
+  .outer-container-customizer {
+    width: 100%;
+  }
+
+  .content-menu {
+    text-align: center;
+  }
+
+  .content-menu-para {
+    text-align: center;
+  }
+
+  .no-records {
+    left: -2%;
+    position: relative;
+  }
+
+  /* Testimonial Section Styling */
+
+  .card-container {
+    width: 100%;
+  }
+
+  .card-container h2 {
+    color: #fff;
+    margin: 0 0 0.25rem;
+  }
+
+  .card-container p {
+    margin: 0;
+    color: #fff;
+    padding: 0 0.5rem;
+    font-size: 16px;
+  }
+
+  /* Single Product Page Styling */
+
+  .product-image {
+    width: 100%;
+  }
+
+  /* Gallery */
+
+  .gallery {
+    display: block;
+    padding: 2px;
+    transition: 0.3s;
+  }
+
+  .gallery__column {
+    width: 100%;
+  }
+
+  /* Menu View */
+  .custom-flex {
+    width: 100%;
+  }
+}
 
 
 @media (max-width: 991.98px) {
@@ -2328,6 +2425,11 @@ button:hover {
   }
 
   .gallery__column {
+    width: 100%;
+  }
+
+  /* Menu View */
+  .custom-flex {
     width: 100%;
   }
 }
