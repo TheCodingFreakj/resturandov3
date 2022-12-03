@@ -1,5 +1,5 @@
-export const HOST = "mysql-98641-0.cloudclusters.net";
-export const USER = "admin";
-export const PASSWORD = "kbA5oT7c";
-export const DB = "resturando";
-export const PORT = 19038;
+export const HOST = process.env.HOST;
+export const USER = process.env.USER;
+export const PASSWORD = process.env.PASSWORD;
+export const DB = process.env.DB;
+export const PORT = process.env.PORT;
