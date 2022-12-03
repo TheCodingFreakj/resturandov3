@@ -52,7 +52,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link ms-5 fs-5 custom-color" href="#">Receipes</a>
+                  <a class="nav-link ms-5 fs-5 custom-color" href="./reservations.html">Reservations</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link ms-5 fs-5 custom-color" href="./blog.html">Blog</a>
