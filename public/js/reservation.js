@@ -31,7 +31,7 @@
     };
 
     $.ajax({
-      url: "https://resturando.herokuapp.com/api/reservations",
+      url: "https://resturando.onrender.com/api/reservations",
       type: "POST",
       data: FormData,
       success: function (data) {
