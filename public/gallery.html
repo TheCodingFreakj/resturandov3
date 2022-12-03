@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resturando</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <!-- Tiny Slider Css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
     <link rel="stylesheet" href="./css/all.min.css" />
 
     <!-- Bootstrap Css -->
@@ -16,31 +18,36 @@
 
     <!-- Custom Theme Css -->
     <link rel="stylesheet" href="./css/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="pre-loader"></div>
 
     <!-- Header Section Starts -->
-    <div w3-include-html="./common/header.html"></div>
+    <div id="header-main"></div>
+    <div w3-include-html="./common/gallery-banner.html"></div>
 
     <!-- Header Section End -->
 
     <!-- Gallery Section Starts -->
     <section class="outer-section">
-        <div class="card">
-            <div class="card-body">
-        <div id="gallery" class="gallery">
+      <div class="card">
+        <div class="card-body">
+          <div id="gallery" class="gallery"></div>
+          <div id="loadMore">
+            <button id="submit-button" class="glow-on-hover" type="submit">
+              Load More
+            </button>
+          </div>
         </div>
-        </div>
-        </div>
-
+      </div>
     </section>
     <!-- Gallery Section Ends -->
 
     <!-- Footer Section Start -->
- 
+
     <div w3-include-html="./common/footer.html"></div>
+    <div w3-include-html="./common/gallery-banner.html"></div>
     <!-- Footer Section End -->
 
     <!-- Jquery Include -->
@@ -50,10 +57,11 @@
 
     <!-- Bootstrap Include -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Common Header Include -->
+    <script src="./common/header.js"></script>
     <!-- Shop Include -->
     <script src="./js/gallery.js"></script>
     <!-- Main Include -->
     <script src="./js/main.js"></script>
-</body>
-
+  </body>
 </html>

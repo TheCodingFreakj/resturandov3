@@ -22,7 +22,9 @@
     <div id="pre-loader"></div>
 
     <!-- Header Section Starts -->
-    <div w3-include-html="./common/header.html"></div>
+    <!-- Common Header Include -->
+    <div id="header-main"></div>
+    <div w3-include-html="./common/shortcode-banner.html"></div>
 
     <!-- Header Section End -->
 
@@ -106,46 +108,46 @@
                     <div class="page-header">
                         <h2>Custom Tables</h2>
                     </div>
-                    <table border="12">
-                        <thead>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col" colspan="2">Liked Food & price</th>
+                    <table class="table-demo" border="12">
+                        <thead class="thead">
+                            <th class="th" scope="col">Name</th>
+                            <th class="th" scope="col">Email</th>
+                            <th class="th" scope="col">Phone</th>
+                            <th class="th" scope="col" colspan="2">Liked Food & price</th>
                         </thead>
 
-                        <tbody>
+                        <tbody class="tbody">
                             <tr class="data">
-                                <th scope="row">Goerge Alley</th>
-                                <td>alley@example.com</td>
-                                <td>444444</td>
-                                <td>Asparagus</td>
-                                <td>40$</td>
+                                <th class="th" scope="row">Goerge Alley</th>
+                                <td class="td">alley@example.com</td>
+                                <td class="td">444444</td>
+                                <td class="td">Asparagus</td>
+                                <td class="td">40$</td>
                             </tr>
 
                             <tr class="data">
-                                <th scope="row">Goerge Alley</th>
-                                <td>alley@example.com</td>
-                                <td>444444</td>
-                                <td>Asparagus</td>
-                                <td>40$</td>
+                                <th class="th" scope="row">Goerge Alley</th>
+                                <td class="td">alley@example.com</td>
+                                <td class="td">444444</td>
+                                <td class="td">Asparagus</td>
+                                <td class="td">40$</td>
                             </tr>
 
 
                             <tr class="data">
-                                <th scope="row">Goerge Alley</th>
-                                <td>alley@example.com</td>
-                                <td>444444</td>
-                                <td>Asparagus</td>
-                                <td>40$</td>
+                                <th class="th" scope="row">Goerge Alley</th>
+                                <td class="td">alley@example.com</td>
+                                <td class="td">444444</td>
+                                <td class="td">Asparagus</td>
+                                <td class="td">40$</td>
                             </tr>
 
                             <tr class="data">
-                                <th scope="row">Goerge Alley</th>
-                                <td>alley@example.com</td>
-                                <td>444444</td>
-                                <td>Asparagus</td>
-                                <td>40$</td>
+                                <th class="th" scope="row">Goerge Alley</th>
+                                <td class="td">alley@example.com</td>
+                                <td class="td">444444</td>
+                                <td class="td">Asparagus</td>
+                                <td class="td">40$</td>
                             </tr>
 
                         </tbody>
@@ -688,7 +690,10 @@
 
     <!-- Bootstrap Include -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Common Header Include -->
+    <script src="./common/header.js"></script>
+    <!-- App Cart Include -->
+    <script src="./js/app.js"></script>
     <!-- Main Include -->
     <script src="./js/main.js"></script>
     <script>

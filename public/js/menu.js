@@ -1,81 +1,10 @@
-$(function () {
-  "use strict";
-  //get elements
-  const container = document.getElementById("display-products");
-  const toggleCart = document.getElementById("add-cart");
-  const cartContainer = document.getElementById("add");
+// Menu Section
+(function ($) {
+    "use strict";
 
-  //Declarations
-  let contentCart = null;
-  let productsAdded = [];
-
-  // Cart Item Model
-  class cartAdd {
-    constructor(id, price, title, quantity,image) {
-      this.id = id;
-      this.price = price;
-      this.title = title;
-      this.quantity = quantity;
-      this.image = image;
-    }
-  }
-  const data = {
-    currentRating: 0,
-    ratings: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }],
-  };
-  let ids = [];
-  setTimeout(() => {
-    let content = document.getElementsByTagName("ul");
-
-    for (let i = 0; i < content.length; i++) {
-      if (content[i].classList.contains("list-group")) {
-        var li = document.createElement("li");
-        li.classList.add("add-list");
-
-        data.ratings.map((item) => {
-          const a = document.createElement("a");
-          li.appendChild(a);
-          a.innerHTML = "&starf;";
-          a.id = item.id;
-          content[i].appendChild(li);
-          const lis = content[i].getElementsByClassName("add-list");
-          const listItems = lis[0].querySelectorAll("a");
-
-          listItems.forEach((element, idx) => {
-            a.addEventListener("click", (e) => {
-              const currentId = Number(e.target.id);
-
-              ids.push(Number(element.getAttribute("id")));
-
-              const toFindDuplicates = (arry) =>
-                arry.filter((item, index) => arry.indexOf(item) !== index);
-              const duplicateElementa = toFindDuplicates(ids);
-
-              if (duplicateElementa.length > 1) {
-                lis[0].childNodes.forEach((data) => {
-                  data.classList.remove("active");
-                });
-                duplicateElementa.forEach((data) => {
-                  if (listItems[data - 1] !== undefined) {
-                    console.log(Number(listItems[data - 1].getAttribute("id")));
-                    console.log(duplicateElementa);
-                    listItems[data - 1].classList.add("active");
-                  }
-                });
-              }
-
-              if (ids.includes(Number(listItems[idx].getAttribute("id")))) {
-                listItems[idx].classList.add("active");
-              }
-            });
-          });
-        });
-      }
-    }
-  }, 2000);
-
-  //Api Call
-  const apiResult = [
+    const orderContainer = document.getElementById("order");
+   //Api Call
+   const apiResult = [
     {
       id: 1,
       quantity: 33,
@@ -408,444 +337,189 @@ $(function () {
       price: "$100",
     },
   ];
+    //********************************Orders From Menu Page********************************************* */
 
-  //No Data From Api Call
-  if (apiResult.length === 0) {
-    container.innerHTML += `<h2>No Product Found</h2>`;
-  }
-
-  //*************************** Update Cart On Navbar*********************************** */
-  const upDateCartOnNavbar = ()=>{
-
-
-    let cartOnNavbar = document.getElementById("tbody-cart");
-  
-    let sum = 0;
-    let sumDecrease = 0;
-    let idsNav = [];
-    let contentNav = "";
-    let contentCartNav = "";
-  
-    let spanCartCount = document.getElementById("cart-num");
-  
-    if (
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart")).length !== 0
-    ) {
-  
-  
-      spanCartCount.innerHTML = JSON.parse(
-        localStorage.getItem("addToCart")
-      ).length;
-  
-      // ******************************** Runs When Add Cart Items **********************************//
-      contentNav =
-        JSON.parse(localStorage.getItem("addToCart")) !== null ||
-        JSON.parse(localStorage.getItem("addToCart")) !== []
-          ? JSON.parse(localStorage.getItem("addToCart"))
-              .map((item) => {
-                let ReplacedAmount = item.price.replace(/\$/g, "");
-                idsNav.push(Number(ReplacedAmount));
-                return `<tr class="custom-cart-row">
-            <th scope="row">
-              <img class="cart-img"
-                src=${item.image}
-                alt="cart-item-image" />
-            </th>
-            <td>${item.title}</td>
-            <td>${item.price}</td>
-            <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
-          </tr>`;
-              })
-              .join("")
-          : `No Food Items In The Cart Yet!`;
-      sum = idsNav.reduce((accumulator, value) => {
-        return accumulator + value;
-      }, 0);
-      contentNav +=
-        JSON.parse(localStorage.getItem("addToCart")) !== null ||
-        JSON.parse(localStorage.getItem("addToCart")) !== []
-          ? ` 
-        <td>Total</td>
-        <td>$ ${sum}</td>
-        <tr class="custom-cart-col">
-        <td>
-          <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
-        </td>
-        <td>
-        </td>
-        </tr>`
-          : `No Food Items In The Cart Yet!`;
-      cartOnNavbar.innerHTML = contentNav;
-  
-      //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
-      $(document).on("click", "td#close-row-cart", function (event) {
-     
-        var dataId = event.target.getAttribute("data-itemid");
-        let itemsInCart = JSON.parse(localStorage.getItem("addToCart"));
-        itemsInCart = itemsInCart.filter(function (obj) {
-          return obj.id !== dataId.toString();
-        });
-  
-        let updatedItems = itemsInCart.map(({ price }) =>
-          Number(price.replace(/\$/g, ""))
-        );
-        localStorage.setItem("addToCart", JSON.stringify(itemsInCart));
-        spanCartCount.innerHTML = JSON.parse(
-          localStorage.getItem("addToCart")
-        ).length;
-        contentCartNav =
-          JSON.parse(localStorage.getItem("addToCart")).length !== 0
-            ? JSON.parse(localStorage.getItem("addToCart"))
-                .map((item) => {
-                  return `<tr class="custom-cart-row">
-            <th scope="row">
-              <img class="cart-img"
-                src=${item.image}
-                alt="cart-item-image" />
-            </th>
-            <td>${item.title}</td>
-            <td>${item.price}</td>
-            <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
-          </tr>`;
-                })
-                .join("")
-            : `No Food Items In The Cart Yet!`;
-  
-        sumDecrease = updatedItems.reduce((accumulator, value) => {
-          return accumulator + value;
-        }, 0);
-  
-        contentCartNav +=
-          JSON.parse(localStorage.getItem("addToCart")).length !== 0
-            ? ` 
-        <td>Total</td>
-        <td>$ ${sumDecrease} </td>
-        <tr class="custom-cart-col">
-        <td>
-          <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
-        </td>
-        <td></td>
-        </tr>`
-            : ``;
-            cartOnNavbar.innerHTML = contentCartNav;
-  
-        if(JSON.parse(localStorage.getItem("addToCart")).length === 0){
-          contentNav = "No Food Items In The Cart Yet!";
-          cartOnNavbar.innerHTML = contentNav;
-          spanCartCount.innerHTML = JSON.parse(localStorage.getItem("addToCart")).length;
-        }
+    const configureOrders = ()=>{
+        apiResult.forEach((result) => {
+          // Construct card content
+          const content = `
+          <div class="menu-container" data-cat=${result.category}>
+          <div class="menu-card">
+              <div class="imgBx">
+                  <img class="menu-view"
+                      src=${result.image}
+                      alt="menu-view-one">
+              </div>
     
-      });
-  
-  
-    } else {
-      contentNav = "No Food Items In The Cart Yet!";
-      cartOnNavbar.innerHTML = contentNav;
-      spanCartCount.innerHTML = "0";
-    }
-  }
-
-upDateCartOnNavbar()
-  //******************* Add To Cart Functionality ******************//
-  const AddToCart = (product) => {
-    if (JSON.parse(localStorage.getItem("addToCart")) === null) {
-      localStorage.removeItem("addToCart");
-      productsAdded.length = 0;
-      contentCart = null;
-      cartContainer.innerHTML = "";
-    } else {
-      if (JSON.parse(localStorage.getItem("addToCart")).length === 0) {
-        localStorage.removeItem("addToCart");
-        productsAdded.length = 0;
-        contentCart = null;
-        cartContainer.innerHTML = "";
-      }
-    }
-    let newCartItem = new cartAdd(
-      product.dataId,
-      product.dataPrice,
-      product.dataTitle,
-      product.dataQuantity,
-      product.dataImg
-    );
-    productsAdded.push(newCartItem);
-    const array3 = [
-      ...productsAdded,
-      ...JSON.parse(localStorage.getItem("addToCart")) || [],
-    ];
-    localStorage.setItem("addToCart", JSON.stringify(array3));
-    // if (JSON.parse(localStorage.getItem("addToCart")) !== null) {
-    if (productsAdded.length > 1) {
-      productsAdded = [
-        ...new Map(
-          JSON.parse(localStorage.getItem("addToCart")).map((item) => [
-            item["id"],
-            item,
-          ])
-        ).values(),
-      ];
-
-      localStorage.setItem("addToCart", JSON.stringify(productsAdded));
-    }
-
-    contentCart =
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          return `
-      <tr >
-      <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-      <td>${item.title}</td>
-      <td>${item.price}</td>
-      <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
-      </tr>        
+              <div class="contentBx">
+    
+                  <h2>${result.title}</h2>
+    
+                  <div class="size">
+                      <h3>Quantity :</h3>
+                      <span>${Number(
+                        result.quantity
+                      )}</span>
+                  </div>
+                  <a href="productpages.html?id=${result.id
+                  }">Order Now</a>
+              </div>
+    
+          </div>
+      </div>
           `;
-        })
-        .join("");
-    cartContainer.innerHTML = contentCart;
-    toggleCart.classList.add("slider-class", "custom-index");
-    toggleCart.style.display = "block";
-    upDateCartOnNavbar()
-  };
-
-  //******************* Rendering Fetched Products Dynamically ******************//
-  const configureProducts = () => {
-    $(document).on("click", "p#add-to-cart", function (event) {
-      var dataQuantity = event.target.getAttribute("data-quantity");
-      var dataTitle = event.target.getAttribute("data-title");
-      var dataPrice = event.target.getAttribute("data-price");
-      var dataId = event.target.getAttribute("data-id");
-      var dataImg = event.target.getAttribute("data-image");
-      let selectedObject = {
-        dataQuantity,
-        dataTitle,
-        dataPrice,
-        dataId,
-        dataImg
-      };
-
-      AddToCart(selectedObject);
-    });
-
-    apiResult.forEach((result) => {
-      // Construct card content
-      const content = `
-        <div  class="col-xl-4 col-md-6 col-sm-12 custom-gap sliced-content ">
-            <div id="food-card" class="card" style="width: 18rem; margin: 0  auto">
-                <img src=${result.image
-        } class="card-img-top custom-image-style" alt="feature-image">
-                <div class="card-body">
-                    <a href="productpages.html?id=${result.id
-        }" class="custom-links"> 
-                    <h5 class="card-title" >${result.title}</h5>
-                    </a>
-                </div>
-                <ul data-group="target-stars" class="list-group list-group-flush">
-
-                    <li class="list-group-item">${result.price}</li>
-                </ul>
-                <div class="card-body d-xl-flex justify-content-xl-around">
-                    <p class="card-link"  id="add-to-cart" data-quantity=${Number(
-          result.quantity
-        )} data-id=${Number(result.id)} data-price=${result.price
-        } data-title=${result.title
-        }" data-image=${result.image}><i class="fa-solid fa-cart-shopping"></i> Add To Cart</a>
-                    <p class="card-link"><i class="fa-solid fa-heart"></i>Favorite</a>
-                </div>
-            </div>
-        </div>
-      `;
-
-      // Append newyly created card element to the container
-      container.innerHTML += content;
-    });
-  };
-  configureProducts();
-
-  //Load More Feature
-  var work = document.querySelector("#display-products");
-  var items = Array.from(work.querySelectorAll(".sliced-content"));
-  var loadMore = document.getElementById("loadMore");
-  let maxItems = 3;
-  let loadItems = 3;
-  let hiddenClass = "hiddenStyle";
-
-
-  items.forEach(function (item, index) {
-    if (index > maxItems - 1) {
-      item.classList.add(hiddenClass);
-    }
-  });
-
-  loadMore.addEventListener("click", function () {
-    [].forEach.call(document.querySelectorAll("." + hiddenClass), function (
-      item,
-      index
-    ) {
-      if (index < loadItems) {
-        item.classList.remove(hiddenClass);
-      }
-
-      if (document.querySelectorAll("." + hiddenClass).length === 0) {
-        loadMore.style.display = "none";
-      }
-    });
-  });
-
-  //******************* Runs When User Wants To Cancel Edit Quanity From Cart View  ******************//
-  const removeInput = (itemObj) => {
-    return `<td >${itemObj.quantity} <i data-idx=${itemObj.id} id=update-cart class="fa-solid fa-pen-to-square"></i></td>`;
-  };
-  $(document).on("click", "i#remove-quantity", function (event) {
-    contentCart =
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          return (
-            `
-    <tr >
-    <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-    <td>${item.title}</td>
-    <td>${item.price}</td>
     
-    ` +
-            removeInput(item) +
-            `
-    </tr>        
-        `
-          );
-        })
-        .join("");
-    cartContainer.innerHTML = contentCart;
-    toggleCart.classList.add("slider-class", "custom-index");
-    toggleCart.style.display = "block";
-  });
+          // Append newyly created card element to the container
+          orderContainer.innerHTML += content;
+        });
+      }
+      configureOrders();
+        //*************************** Update Cart On Navbar*********************************** */
+        const upDateCartOnNavbar = ()=>{
 
-  //******************* Runs When User Wants To Enter The Edit Quanity From Cart View  ******************//
-  const renderInput = (itemObj, itemId, id) => {
-    if (itemId === id) {
-      return `<td><div class='input-group input-group-sm mb-3'>
-        <input type='text' class='form-control' placeholder='Quantity' aria-label='Quantity' id='add-value' aria-describedby='basic-addon1'>
-        <div class="d-flex flex-column">
-        <i id='add-quantity' data-itemId=${itemId} class='fa-solid fa-check'></i>
-        <i data-itemId=${itemId} data-id=${id} id='remove-quantity' class='fa-solid fa-circle-xmark'd></i>
-        </div>
-        </input>
-        </div></td>`;
-    } else {
-      return `<td >${itemObj.quantity} <i data-idx=${itemObj.id} id=update-cart class="fa-solid fa-pen-to-square"></i></td>`;
-    }
-  };
 
-  $(document).on("click", "i#update-cart", function (event) {
-    var idx = event.target.getAttribute("data-idx");
-    contentCart =
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          return (
-            `
-    <tr >
-    <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-    <td>${item.title}</td>
-    <td>${item.price}</td>
-    
-    ` +
-            renderInput(item, item.id, idx) +
-            `
-    </tr>        
-        `
-          );
-        })
-        .join("");
-    cartContainer.innerHTML = contentCart;
-    toggleCart.classList.add("slider-class", "custom-index");
-    toggleCart.style.display = "block";
-  });
-
-  //******************* Runs When User Escapes The Cart View ******************//
-  $(document).on("click", "div#close-cart", function () {
-    toggleCart.classList.remove("slider-class", "custom-index");
-    toggleCart.classList.add("slider-remove");
-    toggleCart.style.display = "none";
-    setTimeout(function () {
-      toggleCart.classList.remove("slider-remove");
-    }, 1000);
-  });
-
-  //******************* Runs When User Wants To To Update Quanity From Items From Cart View  ******************//
-  $(document).on("click", "#add-quantity", function (event) {
-    const inputQuantity = document.getElementById("add-value"); // get input from the DOM
-    const inputQuantityValue = inputQuantity.value;
-
-    var idx = event.target.getAttribute("data-itemId");
-    console.log(idx);
-    let cartItems = JSON.parse(localStorage.getItem("addToCart"));
-    cartItems = cartItems.map(function (obj) {
-      if (idx.toString() === obj.id) {
-        if (inputQuantityValue !== "") {
-          obj.quantity = inputQuantityValue;
+          let cartOnNavbar = document.getElementById("tbody-cart");
+        
+          let sum = 0;
+          let sumDecrease = 0;
+          let idsNav = [];
+          let contentNav = "";
+          let contentCartNav = "";
+        
+          let spanCartCount = document.getElementById("cart-num");
+        
+          if (
+            JSON.parse(localStorage.getItem("addToCart")) !== null &&
+            JSON.parse(localStorage.getItem("addToCart")).length !== 0
+          ) {
+        
+        
+            spanCartCount.innerHTML = JSON.parse(
+              localStorage.getItem("addToCart")
+            ).length;
+        
+            // ******************************** Runs When Add Cart Items **********************************//
+            contentNav =
+              JSON.parse(localStorage.getItem("addToCart")) !== null ||
+              JSON.parse(localStorage.getItem("addToCart")) !== []
+                ? JSON.parse(localStorage.getItem("addToCart"))
+                    .map((item) => {
+                      let ReplacedAmount = item.price.replace(/\$/g, "");
+                      idsNav.push(Number(ReplacedAmount));
+                      return `<tr class="custom-cart-row">
+                  <th scope="row">
+                    <img class="cart-img"
+                      src=${item.image}
+                      alt="cart-item-image" />
+                  </th>
+                  <td>${item.title}</td>
+                  <td>${item.price}</td>
+                  <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
+                </tr>`;
+                    })
+                    .join("")
+                : `No Food Items In The Cart Yet!`;
+            sum = idsNav.reduce((accumulator, value) => {
+              return accumulator + value;
+            }, 0);
+            contentNav +=
+              JSON.parse(localStorage.getItem("addToCart")) !== null ||
+              JSON.parse(localStorage.getItem("addToCart")) !== []
+                ? ` 
+              <td>Total</td>
+              <td>$ ${sum}</td>
+              <tr class="custom-cart-col">
+              <td>
+                <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
+              </td>
+              <td>
+              </td>
+              </tr>`
+                : `No Food Items In The Cart Yet!`;
+            cartOnNavbar.innerHTML = contentNav;
+        
+            //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
+            $(document).on("click", "td#close-row-cart", function (event) {
+           
+              var dataId = event.target.getAttribute("data-itemid");
+              let itemsInCart = JSON.parse(localStorage.getItem("addToCart"));
+              itemsInCart = itemsInCart.filter(function (obj) {
+                return obj.id !== dataId.toString();
+              });
+        
+              let updatedItems = itemsInCart.map(({ price }) =>
+                Number(price.replace(/\$/g, ""))
+              );
+              localStorage.setItem("addToCart", JSON.stringify(itemsInCart));
+              spanCartCount.innerHTML = JSON.parse(
+                localStorage.getItem("addToCart")
+              ).length;
+              contentCartNav =
+                JSON.parse(localStorage.getItem("addToCart")).length !== 0
+                  ? JSON.parse(localStorage.getItem("addToCart"))
+                      .map((item) => {
+                        return `<tr class="custom-cart-row">
+                  <th scope="row">
+                    <img class="cart-img"
+                      src=${item.image}
+                      alt="cart-item-image" />
+                  </th>
+                  <td>${item.title}</td>
+                  <td>${item.price}</td>
+                  <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
+                </tr>`;
+                      })
+                      .join("")
+                  : `No Food Items In The Cart Yet!`;
+        
+              sumDecrease = updatedItems.reduce((accumulator, value) => {
+                return accumulator + value;
+              }, 0);
+        
+              contentCartNav +=
+                JSON.parse(localStorage.getItem("addToCart")).length !== 0
+                  ? ` 
+              <td>Total</td>
+              <td>$ ${sumDecrease} </td>
+              <tr class="custom-cart-col">
+              <td>
+                <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
+              </td>
+              <td></td>
+              </tr>`
+                  : ``;
+                  cartOnNavbar.innerHTML = contentCartNav;
+        
+              if(JSON.parse(localStorage.getItem("addToCart")).length === 0){
+                contentNav = "No Food Items In The Cart Yet!";
+                cartOnNavbar.innerHTML = contentNav;
+                spanCartCount.innerHTML = JSON.parse(localStorage.getItem("addToCart")).length;
+              }
+          
+            });
+        
+        
+          } else {
+            contentNav = "No Food Items In The Cart Yet!";
+            cartOnNavbar.innerHTML = contentNav;
+            spanCartCount.innerHTML = "0";
+          }
         }
-        localStorage.setItem("addToCart", JSON.stringify(cartItems));
-      }
-    });
-    contentCart =
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          console.log(item);
-          return `
-<tr >
-<th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-<td>${item.title}</td>
-<td>${item.price}</td>
-<td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
-</tr>        
-    `;
-        })
-        .join("");
-    cartContainer.innerHTML = contentCart;
-    toggleCart.classList.add("slider-class", "custom-index");
-    toggleCart.style.display = "block";
-  });
+  upDateCartOnNavbar()
+  })(jQuery);
+  
 
-  //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
-  $(document).on("click", "th#close-row", function (event) {
-    var dataId = event.target.getAttribute("data-idx");
-    let itemsInCart = JSON.parse(localStorage.getItem("addToCart"));
-    itemsInCart = itemsInCart.filter(function (obj) {
-      return obj.id !== dataId.toString();
-    });
-    localStorage.setItem("addToCart", JSON.stringify(itemsInCart));
 
-    contentCart =
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          return `
-    <tr >
-    <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-    <td>${item.title}</td>
-    <td>${item.price}</td>
-    <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
-    </tr>        
-        `;
-        })
-        .join("");
 
-    cartContainer.innerHTML = contentCart;
-    toggleCart.classList.add("slider-class", "custom-index");
-    toggleCart.style.display = "block";
-    upDateCartOnNavbar()
-  });
 
-  //******************* Runs When User Hit On Empty Button ON Ui ******************//
 
-  $(document).on("click", "div#empty-cart", function () {
-    localStorage.removeItem("addToCart");
-    productsAdded.length = 0;
-    contentCart = null;
-    cartContainer.innerHTML = "";
-  });
-});
+
+
+
+
+
+
+
+
+
+

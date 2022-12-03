@@ -1,99 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resturando</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <!--  -->
+    <link rel="stylesheet" href="./css/all.min.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resturando</title>
-  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-  <!--  -->
-  <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
 
-  <!-- Bootstrap Css -->
-  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- Custom Theme Css -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-  <!-- Custom Theme Css -->
-  <link rel="stylesheet" href="./css/style.css" />
-</head>
-
-<body>
-  <div id="pre-loader"></div>
-  <div id="add-cart">
-    <div class="container-md">
-      <div id="close-cart" class="row text-end p-2">
-        <div class="col-12">X</div>
+  <body>
+    <div id="pre-loader"></div>
+    <div id="add-cart">
+      <div class="container-md">
+        <div id="close-cart" class="row text-end p-2">
+          <div class="col-12">X</div>
+        </div>
+        <table id="table" class="table">
+          <thead>
+            <tr>
+              <th scope="col">Action</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+            </tr>
+          </thead>
+          <tbody id="add"></tbody>
+        </table>
+        <div id="empty-cart">Empty</div>
       </div>
-      <table id="table" class="table">
-        <thead>
-          <tr>
-            <th scope="col">Action</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-          </tr>
-        </thead>
-        <tbody id="add">
-        </tbody>
-      </table>
-      <div id="empty-cart" >Empty</div>
     </div>
-  </div>
     <!-- Header Section Starts -->
-    <div w3-include-html="./common/header.html"></div>
-
+    <div id="header-main"></div>
+    <div w3-include-html="./common/shop-banner.html"></div>
     <!-- Header Section End -->
 
-  <!-- Products Show Section Starts -->
-  <section class="outer-section">
-    <!-- Filter Options Starts -->
+    <!-- Products Show Section Starts -->
+    <section class="outer-section">
+      <!-- Filter Options Starts -->
 
-    <div class="container text-center custom-gap">
-      <div class="row">
-        <div class="col-xl-8">
-          <div class="d-xl-flex">
-            <div class="dropdown-center">
-              <button class="btn border border-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Sort By Food
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Action two</a></li>
-                <li><a class="dropdown-item" href="#">Action three</a></li>
-              </ul>
+      <div class="container text-center custom-gap">
+        <div class="row">
+          <div class="col-xl-8">
+            <div class="d-xl-flex">
+              <div class="dropdown-center">
+                <button
+                  class="btn border border-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Sort By Food
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Action two</a></li>
+                  <li><a class="dropdown-item" href="#">Action three</a></li>
+                </ul>
+              </div>
+
+              <i class="fa-solid fa-check mt-1 mx-4"></i>
             </div>
-
-            <i class="fa-solid fa-check mt-1 mx-4"></i>
           </div>
+
+          <div class="col-xl-4">Showing 6 Out 10 Results</div>
         </div>
-
-        <div class="col-xl-4">Showing 6 Out 10 Results</div>
       </div>
-    </div>
 
-    <!-- Filter Options End -->
+      <!-- Filter Options End -->
 
-    <div class="container text-center dynamic-render">
-      <div id="display-products" class="row"></div>
-    </div>
-  </section>
-  <!-- Products Show Section Ends -->
+      <div class="container text-center dynamic-render">
+        <div id="display-products" class="row"></div>
+        <div id="loadMore">
+          <button id="submit-button" class="glow-on-hover" type="submit">
+            Load More
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Products Show Section Ends -->
 
     <!-- Footer Section Start -->
- 
+
     <div w3-include-html="./common/footer.html"></div>
     <!-- Footer Section End -->
 
-    
-  <!-- Jquery Include -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <!-- Bootstrap Include -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Shop Include -->
-  <script src="./js/shop.js"></script>
-  <!-- Main Include -->
-  <script src="./js/main.js"></script>
-</body>
+    <!-- Jquery Include -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- Bootstrap Include -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="./js/cartnavbar"></script> -->
 
+    <!-- Shop Include -->
+    <script src="./js/shop.js"></script>
+      
+    <!-- Common Header Include -->
+    <script src="./common/header.js"></script>
+      <!-- Common Cart Include -->
+      <!-- <script src="./js/cartnavbar.js"></script> -->
+    <!-- Main Include -->
+    <script src="./js/main.js"></script>
+  </body>
 </html>

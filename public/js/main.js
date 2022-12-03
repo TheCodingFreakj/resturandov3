@@ -3,6 +3,9 @@
 (function ($) {
   "use strict";
 
+
+  // Menu style One
+
   var $filters = $(".filter [data-filter]"),
     $boxes = $(".boxes [data-category]");
   $filters.on("click", function (e) {
@@ -31,6 +34,40 @@
       }
 
       $($boxes).not($el).hide();
+    }
+  });
+
+
+  // Menu style Two
+
+  var $filtersv2 = $(".filter-menu2 [data-fill]"),
+    $boxesv2 = $(".custom-flex [data-cat]");
+  $filtersv2.on("click", function (e) {
+    e.preventDefault();
+    var $thisv2 = $(this);
+
+    $filtersv2.removeClass("active");
+    $thisv2.addClass("active");
+
+    var $selectedFilterv2 = $thisv2.attr("data-fill");
+
+
+    if ($selectedFilterv2 === "all") {
+      $boxesv2.addClass("is-animated").fadeIn(450);
+    } else {
+      var $elv2 = $('[data-cat = "' + $selectedFilterv2 + '"]')
+        .addClass("is-animated")
+        .fadeIn(450);
+
+      if ($elv2.length == 0) {
+        $(".custom-flex:nth-child(1)").after(
+          '<p class="no-records">Currently We Are Not Delivering This Item! Check Later</p>'
+        );
+      } else {
+        $(".no-records").remove();
+      }
+
+      $($boxesv2).not($elv2).hide();
     }
   });
 
@@ -98,7 +135,7 @@
       // On-page links
       if (
         location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
+        this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
         // Figure out element to scroll to
@@ -151,57 +188,89 @@
       if (file) {
         /* Make an HTTP request using the attribute value as the file name: */
         xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
+        xhttp.onreadystatechange = function () {
           if (this.readyState == 4) {
-            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+            if (this.status == 404) { elmnt.innerHTML = "<h1>Page not found.</h1>"; }
             /* Remove the attribute, and call this function once more: */
             elmnt.removeAttribute("w3-include-html");
             includeHTML();
           }
         }
         xhttp.open("GET", file, true);
-        xhttp.send();
+        xhttp.send();   
         /* Exit the function: */
         return;
       }
     }
+
+
   }
   const tabs = document.querySelectorAll('[data-tab-value]')
   const tabInfos = document.querySelectorAll('[data-tab-info]')
 
   tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-          const target = document
-              .querySelector(tab.dataset.tabValue);
+    tab.addEventListener('click', () => {
+      const target = document
+        .querySelector(tab.dataset.tabValue);
 
-          tabInfos.forEach(tabInfo => {
-              tabInfo.classList.remove('active')
-          })
-          target.classList.add('active');
+      tabInfos.forEach(tabInfo => {
+        tabInfo.classList.remove('active')
       })
+      target.classList.add('active');
+    })
   })
 
   const accordionBtns = document.querySelectorAll(".accordion");
 
-accordionBtns.forEach((accordion) => {
-  accordion.onclick = function () {
-    this.classList.toggle("is-open");
+  accordionBtns.forEach((accordion) => {
+    accordion.onclick = function () {
+      this.classList.toggle("is-open");
 
-    let content = this.nextElementSibling;
-    console.log(content);
+      let content = this.nextElementSibling;
+      console.log(content);
 
-    if (content.style.maxHeight) {
-      //this is if the accordion is open
-      content.style.maxHeight = null;
-    } else {
-      //if the accordion is currently closed
-      content.style.maxHeight = content.scrollHeight + "px";
-      console.log(content.style.maxHeight);
+      if (content.style.maxHeight) {
+        //this is if the accordion is open
+        content.style.maxHeight = null;
+      } else {
+        //if the accordion is currently closed
+        content.style.maxHeight = content.scrollHeight + "px";
+        console.log(content.style.maxHeight);
+      }
+    };
+  });
+
+    // Load More Functionality For 
+    var work = document.querySelector("#outer-container");
+  var items = Array.from(work.querySelectorAll(".sliced-content"));
+  var loadMore = document.getElementById("loadMore");
+  let maxItems = 3;
+  let loadItems = 3;
+  let hiddenClass = "hiddenStyle";
+
+
+  items.forEach(function (item, index) {
+    if (index > maxItems - 1) {
+      item.classList.add(hiddenClass);
     }
-  };
-});
+  });
 
+  loadMore.addEventListener("click", function () {
+    [].forEach.call(document.querySelectorAll("." + hiddenClass), function (
+      item,
+      index
+    ) {
+      if (index < loadItems) {
+        item.classList.remove(hiddenClass);
+      }
 
+      if (document.querySelectorAll("." + hiddenClass).length === 0) {
+        loadMore.style.display = "none";
+      }
+    });
+  });
+
+ 
 
 })(jQuery);
