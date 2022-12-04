@@ -1,5 +1,5 @@
 import Reservation from "../models/reservation.model.js";
-
+import moment from "moment/moment.js";
 // Create and Save a new Reservation
 export function create(req, res) {
   // Validate request
@@ -9,7 +9,8 @@ export function create(req, res) {
     });
   }
 
-
+  var timesel = moment(req.body.time, ["h:mm A"]).format("HH:mm");
+    console.log(timesel);
   // Create a Reservation
   const reservation = new Reservation({
     name: req.body.name,
@@ -17,7 +18,7 @@ export function create(req, res) {
     date: new Date(req.body.date),
     phone: req.body.phone,
     guests: req.body.guests,
-    time: req.body.time,
+    time: timesel,
   });
 
   // Save Reservation in the database
