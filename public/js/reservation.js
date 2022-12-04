@@ -37,14 +37,25 @@
       //url: "https://resturando.onrender.com/api/reservations",
       type: "POST",
       data: FormData,
-      success: function () {
-        $("#sendmessage").css("diplay", "block");
-        $("#sendmessage").text("Succesfully rserved");
+      success: function (data) {
+        console.log(data);
+        $("#sendmessage").removeClass(
+          "hideSuccessMessage"
+        );
+        $("#sendmessage").addClass("showSuccessMessage");
+        $("#sendmessage").text(
+          `${data.message} for ${data.ReservationData[5]} on ${new Date(
+            data.ReservationData[7]
+          )} from ${data.ReservationData[2]} to ${data.ReservationData[3]})`
+        );
       },
-      error: function ( ) {
-  
-        $("#errormessage").css("diplay", "block");
-        $("#errormessage").text("Table could not be reserved");
+      error: function (err) {
+        console.log(err); 
+        $("#errormessage").removeClass(
+          "hideErrorMessage"
+        );
+        $("#errormessage").addClass("showErrorMessage");
+        $("#errormessage").text(err.responseJSON.message);
       },
     });
   });

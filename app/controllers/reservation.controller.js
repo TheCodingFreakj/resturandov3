@@ -95,7 +95,6 @@ export function createReservationProcess(req, res) {
                             "Some error occurred while creating the reservation.",
                         });
                       }
-                   
 
                       Users.searchUserByPhone(user, (err, fields, user) => {
                         if (err) {
@@ -105,7 +104,7 @@ export function createReservationProcess(req, res) {
                               "Some error occurred while creating the reservation.",
                           });
                         }
-                        console.log("searchExistingUser", user,fields);
+                        console.log("searchExistingUser", user, fields);
                         TableAllotment.createReservation(
                           req.body,
                           results,
@@ -121,6 +120,7 @@ export function createReservationProcess(req, res) {
 
                             res.status(200).send({
                               message: "Reservation Done",
+                              ReservationData: results,
                             });
                           }
                         );
@@ -136,3 +136,5 @@ export function createReservationProcess(req, res) {
     }
   });
 }
+export function updatedReservation(req, res) {}
+export function freeTableReservation(req, res) {}

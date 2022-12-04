@@ -101,7 +101,20 @@ p {
   text-align: center;
   padding-bottom: 20px;
 }
+.showSuccessMessage{
+  display: block;
+}
 
+.hideSuccessMessage{
+  display: none;
+}
+.showErrorMessage{
+  display: block;
+}
+
+.hideErrorMessage{
+  display: none;
+}
 /*******************************************Pre-Loader********************************************/
 #pre-loader {
   background: #000000 url("../img/pre-loader.gif") no-repeat center center;
