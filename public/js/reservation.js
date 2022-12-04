@@ -39,8 +39,8 @@
     };
 
     $.ajax({
-      url: "http://localhost:9090/api/reservations",
-      // url: "https://resturando.onrender.com/api/reservations",
+      //url: "http://localhost:9090/api/reservations",
+       url: "https://resturando.onrender.com/api/reservations",
       type: "POST",
       data: FormData,
       success: function (data) {
