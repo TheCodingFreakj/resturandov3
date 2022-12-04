@@ -9,18 +9,12 @@ export function create(req, res) {
     });
   }
 
-  // Converting date into timestamp
-  const date = new Date(req.body.date);
-
-  // ✅ Get timestamp in Milliseconds
-  const timestampDate = date.getTime();
-  console.log(timestampDate);
 
   // Create a Reservation
   const reservation = new Reservation({
     name: req.body.name,
     email: req.body.email,
-    date: timestampDate,
+    date: new Date(req.body.date),
     phone: req.body.phone,
     guests: req.body.guests,
     time: req.body.time,
