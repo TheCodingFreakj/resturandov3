@@ -1,6 +1,6 @@
 import  Reservation  from "../models/reservation.model.js";
 
-// Create and Save a new Tutorial
+// Create and Save a new Reservation
 export function create(req, res) {
   // Validate request
   if (!req.body) {
@@ -9,7 +9,9 @@ export function create(req, res) {
     });
   }
 
-  // Create a Tutorial
+  console.log(req.body);
+
+  // Create a Reservation
   const reservation = new Reservation({
     name: req.body.name,
     email: req.body.email,
@@ -19,7 +21,7 @@ export function create(req, res) {
     time: req.body.time,
   });
 
-  // Save Tutorial in the database
+  // Save Reservation in the database
   Reservation.create(reservation, (err, data) => {
     if (err)
       res.status(500).send({

@@ -6,10 +6,11 @@ class Reservations {
   constructor(reservation) {
     this.name = reservation.name;
     this.email = reservation.email;
-    this.date = reservation.date;
+    this.date = STR_TO_DATE(reservation.date, "%m/%d/%Y");
     this.phone = reservation.phone;
     this.guests = reservation.guests;
-    this.time = STR_TO_DATE(reservation.time, "%m/%d/%Y");
+    this.time = reservation.time;
+    // this.time = STR_TO_DATE(reservation.time, "%m/%d/%Y");
   }
   static create(newReservation, result) {
     connection.query(
