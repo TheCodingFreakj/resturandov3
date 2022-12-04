@@ -26,9 +26,7 @@
     var time = $("#my-form").find('input[name="time"]').val();
     var date = $("#my-form").find('input[name="date"]').val();
     
-  
-   
-    console.log(dataIN24Hours);
+
     var FormData = {
       email,
       name,
