@@ -6,7 +6,7 @@ class Reservations {
   constructor(reservation) {
     this.name = reservation.name;
     this.email = reservation.email;
-    this.date = STR_TO_DATE(reservation.date, "%m/%d/%Y");
+    this.date = reservation.date;
     this.phone = reservation.phone;
     this.guests = reservation.guests;
     this.time = reservation.time;
