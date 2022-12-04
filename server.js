@@ -3,7 +3,7 @@ import cors from "cors";
 import path from "path";
 import * as dotenv from 'dotenv' 
 dotenv.config();
-console.log(process.env)
+
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

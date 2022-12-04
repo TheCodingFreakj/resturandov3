@@ -1,4 +1,4 @@
-import  Reservation  from "../models/reservation.model.js";
+import Reservation from "../models/reservation.model.js";
 
 // Create and Save a new Reservation
 export function create(req, res) {
@@ -9,13 +9,18 @@ export function create(req, res) {
     });
   }
 
-  console.log(req.body);
+  // Converting date into timestamp
+  const date = new Date(req.body.date);
+
+  // ✅ Get timestamp in Milliseconds
+  const timestampDate = date.getTime();
+  console.log(timestampDate);
 
   // Create a Reservation
   const reservation = new Reservation({
     name: req.body.name,
     email: req.body.email,
-    date: req.body.date,
+    date: timestampDate,
     phone: req.body.phone,
     guests: req.body.guests,
     time: req.body.time,
