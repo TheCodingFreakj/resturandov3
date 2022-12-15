@@ -43,13 +43,19 @@ class TableAllotment {
     });
   }
 
-  static addBookingHours(tableId, bookingDurationToHour, timesel, result) {
-    var tableaHoursForBooking = `INSERT INTO timewindows (fk_table_id, starttime, endtime) VALUES(?,?,?)`;
+  static addBookingHours(
+    tableId,
+    bookingDurationToHour,
+    timesel,
+    date,
+    result
+  ) {
+    var tableaHoursForBooking = `INSERT INTO timewindows (fk_table_id, starttime, endtime , date) VALUES(?,?,?,?)`;
     let startTime = timesel;
     let endTime = bookingDurationToHour;
     connection.query(
       tableaHoursForBooking,
-      [tableId, startTime, endTime],
+      [tableId, startTime, endTime, date],
       (err, results, fields) => {
         if (err) {
           console.log("error: ", err);
@@ -61,6 +67,7 @@ class TableAllotment {
           tableId,
           bookingDurationToHour,
           timesel,
+          date
         };
 
         result(null, dataToSend);
@@ -129,27 +136,10 @@ class TableAllotment {
           result(err, null);
           return;
         }
-   
+
         result(null, ReservationData);
       }
     );
   }
 }
 export default TableAllotment;
-
-//script to trucncate forign table table
-// SET foreign_key_checks = 0;
-
-// drop table `reservations`;
-
-// SET foreign_key_checks = 1;
-
-//Create table
-// CREATE TABLE student (
-//     id INT PRIMARY KEY,
-//     first_name VARCHAR(100) NOT NULL,
-//     last_name VARCHAR(100) NOT NULL,
-//     city_id INT,
-//           CONSTRAINT fk_student_city_id
-//           FOREIGN KEY (city_id) REFERENCES city(id)
-//     );

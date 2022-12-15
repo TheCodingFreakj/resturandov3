@@ -9,8 +9,8 @@ export function createReservationProcess(req, res) {
       message: "Content can not be empty!",
     });
   }
-
-  var timesel = moment(req.body.time, ["h:mm A"]).format("HH:mm");
+ 
+  var timesel = moment(req.body.time, ["h:mm A"]).format("HH:MM A");
   var dataSelected = null;
 
   const user = new Users({
@@ -26,9 +26,13 @@ export function createReservationProcess(req, res) {
       });
 
     if (userExisting === true) {
-      res.status(500).send({
-        message: "User Already Exists",
-      });
+      Users.deleteUser(user, (err, data) => {
+        console.log(data);
+        res.status(200).send({
+          ReservationData: data,
+        });
+      })
+
     }
 
     if (userExisting === false) {
@@ -63,19 +67,45 @@ export function createReservationProcess(req, res) {
                 });
               }
               var time = timesel;
-              var totalInMinutes =
-                parseInt(time.split(":")[0]) * 60 +
-                parseInt(time.split(":")[1]);
-              var otherMinutes = 120;
-              var grandTotal = otherMinutes + totalInMinutes;
-              var bookH = Math.floor(grandTotal / 60);
-              var bookM = grandTotal % 60;
-              var bookingDurationToHour = bookH + ":" + bookM;
+              console.log(timesel);
+      
 
+              function addTimeToString(timeString, addHours, addMinutes) {
+                // The third argument is optional.
+                if (addMinutes === undefined) {
+                  addMinutes = 0;
+                }
+                // Parse the time string. Extract hours, minutes, and am/pm.
+                var match = /(\d+):(\d+)\s+(\w+)/.exec(timeString),
+                  hours = parseInt(match[1], 10) % 12,
+                  minutes = parseInt(match[2], 10),
+                  modifier = match[3].toLowerCase();
+                // Convert the given time into minutes. Add the desired amount.
+                if (modifier[0] == "p") {
+                  hours += 12;
+                }
+                var newMinutes = (hours + addHours) * 60 + minutes + addMinutes,
+                  newHours = Math.floor(newMinutes / 60) % 24;
+                // Now figure out the components of the new date string.
+                newMinutes %= 60;
+                var newModifier = newHours < 12 ? "am" : "pm",
+                  hours12 = newHours < 12 ? newHours : newHours % 12;
+                if (hours12 == 0) {
+                  hours12 = 12;
+                }
+                // Glue it all together.
+                var minuteString = (newMinutes >= 10 ? "" : "0") + newMinutes;
+                return hours12 + ":" + minuteString + " " + newModifier;
+              }
+
+              var bookingDurationToHour = addTimeToString(timesel, 2, 0);
+
+              console.log(bookingDurationToHour);
               TableAllotment.addBookingHours(
                 windowsSet,
                 bookingDurationToHour,
-                timesel,
+                req.body.time,
+                req.body.date,
                 (err, timewindows) => {
                   if (err) {
                     res.status(500).send({
@@ -138,3 +168,4 @@ export function createReservationProcess(req, res) {
 }
 export function updatedReservation(req, res) {}
 export function freeTableReservation(req, res) {}
+//98798798789831

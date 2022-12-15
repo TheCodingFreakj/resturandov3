@@ -39,21 +39,22 @@
       data: FormData,
       success: function (data) {
         console.log(data);
-        $("#sendmessage").removeClass(
-          "hideSuccessMessage"
-        );
+        $("#sendmessage").removeClass("hideSuccessMessage");
         $("#sendmessage").addClass("showSuccessMessage");
-        $("#sendmessage").text(
-          `${data.message} for ${data.ReservationData[5]} on ${new Date(
-            data.ReservationData[7]
-          )} from ${data.ReservationData[2]} to ${data.ReservationData[3]})`
-        );
+
+        if (data.message !== undefined) {
+          $("#sendmessage").text(
+            `${data.message} for ${data.ReservationData[5]} on ${new Date(
+              data.ReservationData[7]
+            )} from ${data.ReservationData[2]} to ${data.ReservationData[3]})`
+          );
+        } else {
+          $("#sendmessage").text(`${data.ReservationData}`);
+        }
       },
       error: function (err) {
-        console.log(err); 
-        $("#errormessage").removeClass(
-          "hideErrorMessage"
-        );
+        console.log(err);
+        $("#errormessage").removeClass("hideErrorMessage");
         $("#errormessage").addClass("showErrorMessage");
         $("#errormessage").text(err.responseJSON.message);
       },
