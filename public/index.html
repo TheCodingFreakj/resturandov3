@@ -28,7 +28,8 @@
     <div class="container-fluid custom-style">
       <div id=bg-image class="lazy">
         <!-- Nav Section Starts Here -->
-        <div class="z-index-n1 bg-opacity-10 position-absolute w-100 p-3">
+        <!-- z-index-n1 bg-opacity-10 position-absolute w-100 p-3 -->
+        <div class="nav-bar">
           <nav class="navbar navbar-expand-lg bg-light custom-background">
             <div class="container-fluid">
               <a class="navbar-brand w-10 p-3" href="#">
@@ -46,7 +47,7 @@
                     <a class="nav-link ms-5 fs-5 custom-color m" href="./index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link ms-5 fs-5 nav-link dropdown-toggle custom-color " role="button"
+                    <a class="nav-link  ms-5 fs-5 nav-link dropdown-toggle custom-color " role="button"
                       data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
                     <ul class="show-dropdown">
                       <li>
@@ -80,23 +81,24 @@
                     <a class="nav-link ms-5 fs-5 custom-color" href="./shop.html">Shop</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link ms-5 fs-5 nav-link dropdown-toggle custom-color " role="button"
+                    <a class="nav-link ms-5 fs-5 nav-link dropdown-toggle custom-color " id="custom-color-cart" role="button"
                       data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-cart-shopping"></i><span
                         id="cart-num"></span></a>
-                    <ul id="cart-form" class="show-dropdown ">
-                      <div class="header-cart">
-                        <h4>Shopping Cart</h4>
-                      </div>
-                      <table class="table-cart">
-
-                        <tbody id="tbody-cart" style="color: #ffff">
-
-                        </tbody>
-                      </table>
-
-
-
-                    </ul>
+                        <ul id="cart-form" class="show-dropdown">
+                          <div class="header-cart">
+                            <h4>Shopping Cart</h4>
+                          </div>
+                          <table class="table-cart">
+                    
+                            <tbody id="tbody-cart" style="color: #ffff">
+                    
+                            </tbody>
+                          </table>
+                    
+                    
+                    
+                        </ul>
+                  
                   </li>
                 </ul>
               </div>
@@ -104,13 +106,16 @@
           </nav>
         </div>
         <!-- Nav Section Ends Here -->
+
+        <div class="container custom-hero-text">
+          <h1>Delicious Food</h1>
+          <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
+        </div>
       </div>
       <!-- Hero Image Ends Here -->
     </div>
-    <div class="container custom-hero-text">
-      <h1>Delicious Food</h1>
-      <p>Potato is a delitious restaurant website template</p>
-    </div>
+ 
+ 
   </header>
   <!-- Header Section End -->
 
@@ -524,7 +529,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                   <div class="mb-3">
-                    <div class="card text-bg-dark p-3">
+                    <div class="card text-bg-dark ">
                       <div class="card-body">
                         <h5 class="card-title footer-title ">Recent Posts</h5>
                         <div class="container text-center">

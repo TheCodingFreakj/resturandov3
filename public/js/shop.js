@@ -632,7 +632,7 @@ upDateCartOnNavbar()
       // Construct card content
       const content = `
         <div  class="col-xl-4 col-md-6 col-sm-12 custom-gap sliced-content ">
-            <div id="food-card" class="card" style="width: 18rem; margin: 0  auto">
+            <div id="food-card" class="card" style= margin: 0  auto">
                 <img src=${result.image
         } class="card-img-top custom-image-style" alt="feature-image">
                 <div class="card-body">

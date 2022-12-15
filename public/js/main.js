@@ -241,7 +241,7 @@
     };
   });
 
-    // Load More Functionality For 
+    // Load More Functionality  
     var work = document.querySelector("#outer-container");
   var items = Array.from(work.querySelectorAll(".sliced-content"));
   var loadMore = document.getElementById("loadMore");
@@ -271,6 +271,7 @@
     });
   });
 
- 
+
+
 
 })(jQuery);

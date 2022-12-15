@@ -9,7 +9,7 @@
   let content = "";
   var imgArray = new Array();
   let imageholders = "";
-  let element = ""
+  let element = "";
 
   let slideIndex = 1;
   let recentBlogs = "";
@@ -143,7 +143,38 @@
         "https://ik.imagekit.io/vi9aepz6c/Resturando/img/meal-g97705a369_1280.jpg",
       ],
       date_publish: "12/2/2022",
-      date_update: "12/2/2022",
+      date_update: "12/14/2022",
+    },
+
+    {
+      id: 9,
+      title: "This is Title-One",
+      categories: ["catgory1", "catgory2", "catgory3"],
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
+      imageSlider: [
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/high-angle-delicious-pita.jpg",
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/feature-image.jpg",
+      ],
+      date_publish: "11/5/2022",
+      date_update: "11/18/2022",
+    },
+    {
+      id: 10,
+      title: "This is Title-One",
+      categories: ["catgory1", "catgory2", "catgory3"],
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
+      imageSlider: [
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/high-angle-delicious-pita.jpg",
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/feature-image.jpg",
+      ],
+      date_publish: "11/5/2022",
+      date_update: "12/14/2022",
     },
   ];
   function ellipsify(str) {
@@ -156,7 +187,6 @@
 
   const renderBlogs = () => {
     apiResult.forEach((result, idx) => {
-
       content = `<div id="sliced-content" class="card sliced-content">
   <div class="card-body">
       <div class="slider-container-blog">
@@ -173,8 +203,7 @@
           <p class="card-text">${ellipsify(result.content)}</p>
       </div>
       <div class="card-body">
-      <a href="single.html?id=${result.id
-        }" class="custom-links"> 
+      <a href="single.html?id=${result.id}" class="custom-links"> 
       <h5 class="card-title btn-styling" >Read more</h5>
       </a>
         
@@ -183,9 +212,7 @@
   </div> 
   `;
 
-
       targetContainer.innerHTML += content;
-
 
       imageholders = document.getElementsByClassName("bg-images-blog");
 
@@ -197,25 +224,21 @@
         imgArray[indeximg].id = `${indeximg}`;
       }
       // console.log(element);
-      for (let index = 0; index < Array.from(imageholders).length + 1; index++) {
+      for (
+        let index = 0;
+        index < Array.from(imageholders).length + 1;
+        index++
+      ) {
         element = Array.from(imageholders)[index];
         if (element !== undefined) {
           imgArray.forEach((eleeement) => {
             element.append(eleeement);
           });
         }
-
       }
     });
-
-
-  }
+  };
   renderBlogs();
-
-
-
-
-
 
   const myTimeout = setInterval(myTimer, 2000);
 
@@ -280,13 +303,17 @@
   let start = "";
   let date = "";
   let end = "";
-  apiResult.map((blogs) => {
-    //let dateUpdatedFormatted = formatDate(dates.date_update);
-    date = new Date(blogs.date_update);
-    start = new Date(previousFormatted);
-    end = new Date(todayFormatted);
-    if (date > start && date < end) {
-      recentBlogs = ` <span class="p-2 ">
+
+  apiResult
+    .sort(function (a, b) {
+      return b.id - a.id;
+    })
+    .map((blogs) => {
+      date = new Date(blogs.date_update);
+      start = new Date(previousFormatted);
+      end = new Date(todayFormatted);
+      if (date > start && date < end) {
+        recentBlogs = ` <span class="p-2 custom-options">
         <div class="custom-container">
             <div class="d-lg-flex d-xl-flex d-md-flex d-sm-flex flex-lg-row flex-xl-row flex-sm-column flex-md-column">
                 <div class="col-lg-7 col-xl-7 col-md-12 col-sm-12">
@@ -301,34 +328,33 @@
         </div>
     </span>
       `;
-      targetPostsContainer.innerHTML += recentBlogs;
-    }
-  });
+
+        targetPostsContainer.innerHTML += recentBlogs;
+        console.log(targetPostsContainer);
+        $(`.custom-options`).hide().slice(0, 4).show();
+      }
+    });
 
   //*************************** Update Cart On Navbar*********************************** */
-  const upDateCartOnNavbar = ()=>{
-
-
+  const upDateCartOnNavbar = () => {
     let cartOnNavbar = document.getElementById("tbody-cart");
-  
+
     let sum = 0;
     let sumDecrease = 0;
     let idsNav = [];
     let contentNav = "";
     let contentCartNav = "";
-  
+
     let spanCartCount = document.getElementById("cart-num");
-  
+
     if (
       JSON.parse(localStorage.getItem("addToCart")) !== null &&
       JSON.parse(localStorage.getItem("addToCart")).length !== 0
     ) {
-  
-  
       spanCartCount.innerHTML = JSON.parse(
         localStorage.getItem("addToCart")
       ).length;
-  
+
       // ******************************** Runs When Add Cart Items **********************************//
       contentNav =
         JSON.parse(localStorage.getItem("addToCart")) !== null ||
@@ -368,16 +394,15 @@
         </tr>`
           : `No Food Items In The Cart Yet!`;
       cartOnNavbar.innerHTML = contentNav;
-  
+
       //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
       $(document).on("click", "td#close-row-cart", function (event) {
-     
         var dataId = event.target.getAttribute("data-itemid");
         let itemsInCart = JSON.parse(localStorage.getItem("addToCart"));
         itemsInCart = itemsInCart.filter(function (obj) {
           return obj.id !== dataId.toString();
         });
-  
+
         let updatedItems = itemsInCart.map(({ price }) =>
           Number(price.replace(/\$/g, ""))
         );
@@ -402,11 +427,11 @@
                 })
                 .join("")
             : `No Food Items In The Cart Yet!`;
-  
+
         sumDecrease = updatedItems.reduce((accumulator, value) => {
           return accumulator + value;
         }, 0);
-  
+
         contentCartNav +=
           JSON.parse(localStorage.getItem("addToCart")).length !== 0
             ? ` 
@@ -419,23 +444,22 @@
         <td></td>
         </tr>`
             : ``;
-            cartOnNavbar.innerHTML = contentCartNav;
-  
-        if(JSON.parse(localStorage.getItem("addToCart")).length === 0){
+        cartOnNavbar.innerHTML = contentCartNav;
+
+        if (JSON.parse(localStorage.getItem("addToCart")).length === 0) {
           contentNav = "No Food Items In The Cart Yet!";
           cartOnNavbar.innerHTML = contentNav;
-          spanCartCount.innerHTML = JSON.parse(localStorage.getItem("addToCart")).length;
+          spanCartCount.innerHTML = JSON.parse(
+            localStorage.getItem("addToCart")
+          ).length;
         }
-    
       });
-  
-  
     } else {
       contentNav = "No Food Items In The Cart Yet!";
       cartOnNavbar.innerHTML = contentNav;
       spanCartCount.innerHTML = "0";
     }
-  }
-  
-  upDateCartOnNavbar()
+  };
+
+  upDateCartOnNavbar();
 })(jQuery);

@@ -118,8 +118,8 @@
     categories.map((cat) => {
       content = `<div class="container">
           <div class="row">
-            <div class="col-4"><i class="fa-solid fa-table-list"></i></div>
-            <div class="col-6"> ${cat.cat}</div>
+            <div class="col-xl-4 col-lg-4 col-sm-6 col-md-6"><i class="fa-solid fa-table-list"></i></div>
+            <div class="col-xl-6 col-lg-6 col-sm-6 col-md-6 "> ${cat.cat}</div>
           </div>
         </div>
         `;
@@ -143,15 +143,15 @@
     let date = "";
     let end = "";
     apiResult.map((blogs) => {
-      //let dateUpdatedFormatted = formatDate(dates.date_update);
+   
       date = new Date(blogs.date_update);
       start = new Date(previousFormatted);
       end = new Date(todayFormatted);
       if (date > start && date < end) {
         console.log(blogs);
-        recentBlogs = ` <span class="d-block p-2 ">
+        recentBlogs = ` <span class="d-lg-block p-2 ">
           <div class="container ">
-              <div class="d-flex flex-row ">
+              <div class="d-xl-flex d-lg-flex flex-xl-row flex-lg-row d-md-block d-sm-block">
                   <div class="col-lg-7 ">
                       <img loading="lazy" class="sidebar-image" src=${blogs.imageSlider[0]} alt="sidebar-image"/>
                   </div>
