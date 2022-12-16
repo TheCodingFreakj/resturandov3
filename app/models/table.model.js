@@ -18,7 +18,6 @@ class TableAllotment {
         [userExistingId, userExistingId, vBooked],
         (err) => {
           if (err) {
-            console.log("error: ", err);
             result(err, null);
             return;
           }
@@ -34,7 +33,6 @@ class TableAllotment {
 
     connection.query(tableBooked, [tableDetails.id], (err, results) => {
       if (err) {
-        console.log("error: ", err);
         result(err, null);
         return;
       }
@@ -58,7 +56,6 @@ class TableAllotment {
       [tableId, startTime, endTime, date],
       (err, results, fields) => {
         if (err) {
-          console.log("error: ", err);
           result(err, null);
           return;
         }
@@ -80,7 +77,6 @@ class TableAllotment {
 
     connection.query(tableIdRetrival, [tableId], (err, results, fields) => {
       if (err) {
-        console.log("error: ", err);
         result(err, null);
         return;
       }
@@ -132,7 +128,6 @@ class TableAllotment {
       ],
       (err, results) => {
         if (err) {
-          console.log("error: ", err);
           result(err, null);
           return;
         }

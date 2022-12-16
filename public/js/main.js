@@ -1,8 +1,6 @@
-
 // Menu Section
 (function ($) {
   "use strict";
-
 
   // Menu style One
 
@@ -37,7 +35,6 @@
     }
   });
 
-
   // Menu style Two
 
   var $filtersv2 = $(".filter-menu2 [data-fill]"),
@@ -50,7 +47,6 @@
     $thisv2.addClass("active");
 
     var $selectedFilterv2 = $thisv2.attr("data-fill");
-
 
     if ($selectedFilterv2 === "all") {
       $boxesv2.addClass("is-animated").fadeIn(450);
@@ -135,7 +131,7 @@
       // On-page links
       if (
         location.pathname.replace(/^\//, "") ==
-        this.pathname.replace(/^\//, "") &&
+          this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
         // Figure out element to scroll to
@@ -175,7 +171,7 @@
     loader.style.display = "none";
   });
 
-  //Include Header 
+  //Include Header
   includeHTML();
   function includeHTML() {
     var z, i, elmnt, file, xhttp;
@@ -190,36 +186,37 @@
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
           if (this.readyState == 4) {
-            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-            if (this.status == 404) { elmnt.innerHTML = "<h1>Page not found.</h1>"; }
+            if (this.status == 200) {
+              elmnt.innerHTML = this.responseText;
+            }
+            if (this.status == 404) {
+              elmnt.innerHTML = "<h1>Page not found.</h1>";
+            }
             /* Remove the attribute, and call this function once more: */
             elmnt.removeAttribute("w3-include-html");
             includeHTML();
           }
-        }
+        };
         xhttp.open("GET", file, true);
-        xhttp.send();   
+        xhttp.send();
         /* Exit the function: */
         return;
       }
     }
-
-
   }
-  const tabs = document.querySelectorAll('[data-tab-value]')
-  const tabInfos = document.querySelectorAll('[data-tab-info]')
+  const tabs = document.querySelectorAll("[data-tab-value]");
+  const tabInfos = document.querySelectorAll("[data-tab-info]");
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = document
-        .querySelector(tab.dataset.tabValue);
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = document.querySelector(tab.dataset.tabValue);
 
-      tabInfos.forEach(tabInfo => {
-        tabInfo.classList.remove('active')
-      })
-      target.classList.add('active');
-    })
-  })
+      tabInfos.forEach((tabInfo) => {
+        tabInfo.classList.remove("active");
+      });
+      target.classList.add("active");
+    });
+  });
 
   const accordionBtns = document.querySelectorAll(".accordion");
 
@@ -241,37 +238,35 @@
     };
   });
 
-    // Load More Functionality  
-    var work = document.querySelector("#outer-container");
-  var items = Array.from(work.querySelectorAll(".sliced-content"));
-  var loadMore = document.getElementById("loadMore");
-  let maxItems = 3;
-  let loadItems = 3;
-  let hiddenClass = "hiddenStyle";
+  // Load More Functionality
+  var work = document.querySelector("#outer-container");
 
+  if (work !== null) {
+    var items = Array.from(work.querySelectorAll(".sliced-content"));
+    var loadMore = document.getElementById("loadMore");
+    let maxItems = 3;
+    let loadItems = 3;
+    let hiddenClass = "hiddenStyle";
 
-  items.forEach(function (item, index) {
-    if (index > maxItems - 1) {
-      item.classList.add(hiddenClass);
-    }
-  });
-
-  loadMore.addEventListener("click", function () {
-    [].forEach.call(document.querySelectorAll("." + hiddenClass), function (
-      item,
-      index
-    ) {
-      if (index < loadItems) {
-        item.classList.remove(hiddenClass);
-      }
-
-      if (document.querySelectorAll("." + hiddenClass).length === 0) {
-        loadMore.style.display = "none";
+    items.forEach(function (item, index) {
+      if (index > maxItems - 1) {
+        item.classList.add(hiddenClass);
       }
     });
-  });
 
+    loadMore.addEventListener("click", function () {
+      [].forEach.call(
+        document.querySelectorAll("." + hiddenClass),
+        function (item, index) {
+          if (index < loadItems) {
+            item.classList.remove(hiddenClass);
+          }
 
-
-
+          if (document.querySelectorAll("." + hiddenClass).length === 0) {
+            loadMore.style.display = "none";
+          }
+        }
+      );
+    });
+  }
 })(jQuery);

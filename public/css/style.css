@@ -773,9 +773,22 @@ div#display-products {
   display: none;
 }
 
+input#add-value {
+  width: 20px;
+  margin-right: 10px;
+}
+
+i#add-quantity {
+  font-size: 14px;
+}
+i#remove-quantity {
+  font-size: 14px;
+}
+
 #table {
   background: linear-gradient(rgb(255 203 72), #000000);
   color: #ffff;
+  font-size: 14px;
 }
 
 tbody#add {

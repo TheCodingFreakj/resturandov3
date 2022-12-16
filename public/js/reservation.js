@@ -38,7 +38,12 @@
       type: "POST",
       data: FormData,
       success: function (data) {
-        console.log(data);
+        $("#my-form").find('input[name="email"]').val("");
+        $("#my-form").find('input[name="name"]').val("");
+        $("#my-form").find('input[name="phone"]').val("");
+        $("#my-form").find('input[name="guests"]').val("");
+        $("#my-form").find('input[name="time"]').val("");
+        $("#my-form").find('input[name="date"]').val("");
         $("#sendmessage").removeClass("hideSuccessMessage");
         $("#sendmessage").addClass("showSuccessMessage");
 
@@ -51,12 +56,27 @@
         } else {
           $("#sendmessage").text(`${data.ReservationData}`);
         }
+
+        setTimeout(() => {
+          $("#sendmessage").removeClass("showSuccessMessage");
+          $("#sendmessage").addClass("hideSuccessMessage");
+        }, [3000]);
       },
       error: function (err) {
-        console.log(err);
+        $("#my-form").find('input[name="email"]').val("");
+        $("#my-form").find('input[name="name"]').val("");
+        $("#my-form").find('input[name="phone"]').val("");
+        $("#my-form").find('input[name="guests"]').val("");
+        $("#my-form").find('input[name="time"]').val("");
+        $("#my-form").find('input[name="date"]').val("");
         $("#errormessage").removeClass("hideErrorMessage");
         $("#errormessage").addClass("showErrorMessage");
         $("#errormessage").text(err.responseJSON.message);
+
+        setTimeout(() => {
+          $("#sendmessage").removeClass("showErrorMessage");
+          $("#sendmessage").addClass("hideErrorMessage");
+        }, [3000]);
       },
     });
   });

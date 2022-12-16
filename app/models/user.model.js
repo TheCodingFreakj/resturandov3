@@ -13,7 +13,6 @@ class Users {
     var values = [[newUser.phone, newUser.name]];
     connection.query(user, [values], (err, results) => {
       if (err) {
-        console.log("error: ", err);
         result(err, null);
         return;
       }
@@ -28,7 +27,6 @@ class Users {
 
     connection.query(userAsking, [oldUser.phone], (err, results, fields) => {
       if (err) {
-        console.log("error: ", err);
         result(err, null);
         return;
       }
@@ -51,7 +49,6 @@ class Users {
 
     connection.query(userAsking, [user.phone], (err, results) => {
       if (err) {
-        console.log("error: ", err);
         result(err, null);
         return;
       }
@@ -60,12 +57,11 @@ class Users {
     });
   }
   static deleteUser(user, result) {
-    console.log(user);
+
     var reservationToDelete =
       "SELECT tableId , fk_user_id, date FROM reservations WHERE phone = ?";
     connection.query(reservationToDelete, [user.phone], (err, usersTables) => {
       if (err) {
-        console.log("error: ", err);
         result(err, null);
         return;
       }
@@ -77,25 +73,14 @@ class Users {
         [usersTables[0].tableId],
         (err, results) => {
           if (err) {
-            console.log("error: ", err);
             result(err, null);
             return;
           }
 
           var today = new Date();
-          console.log();
-          let timeNow12HourFormat = moment(today).format("hh:mm a");
 
-          var todayTime = moment(timeNow12HourFormat, "hh:mm A").format(
-            "HH:mm"
-          );
-          var selectedTime = moment(results[0].endTime, "hh:mm A").format(
-            "HH:mm"
-          );
-console.log(new Date(usersTables[0].date).getTime() , today.getTime());
           if (new Date(usersTables[0].date) < today) {
             if (new Date(usersTables[0].date).getTime() < today.getTime()) {
-              console.log("jjh");
 
               var deleteReser = `DELETE w,t,tw,ur FROM  reservations w
                   INNER JOIN user ur ON ur.user_id=w.fk_user_id
@@ -106,15 +91,12 @@ console.log(new Date(usersTables[0].date).getTime() , today.getTime());
               connection.query(deleteReser, (err, rows) => {
                 if (err) throw err;
 
-                console.log("Cleared users Table", rows);
               });
             }
             result(null, "Your Reservation has expired! Book Again");
-          }else{
+          } else {
             result(null, "Your Reservation is Active");
           }
-
-          
         }
       );
     });

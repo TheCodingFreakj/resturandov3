@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "@vonage/server-sdk": "^3.0.11",
     "bootstrap": "^5.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -21,8 +22,10 @@
     "jQuery": "^1.7.4",
     "moment": "^2.29.4",
     "mysql": "^2.18.1",
+    "node-cron": "^3.0.2",
     "nodemon": "^2.0.20",
     "tiny-slider": "^2.9.4",
+    "twilio": "^3.84.0",
     "uuid": "^9.0.0"
   }
 }

@@ -148,7 +148,6 @@
       start = new Date(previousFormatted);
       end = new Date(todayFormatted);
       if (date > start && date < end) {
-        console.log(blogs);
         recentBlogs = ` <span class="d-lg-block p-2 ">
           <div class="container ">
               <div class="d-xl-flex d-lg-flex flex-xl-row flex-lg-row d-md-block d-sm-block">

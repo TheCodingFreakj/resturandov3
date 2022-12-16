@@ -12,12 +12,13 @@ $(function () {
   let contentCart = null;
   // Cart Item Model
   class cartAdd {
-    constructor(id, price, title, quantity) {
+    constructor(id, price, title, quantity, image) {
       this.id = id;
       this.price = price;
       this.price = price;
       this.title = title;
       this.quantity = quantity;
+      this.image = image
     }
   }
 
@@ -26,7 +27,8 @@ $(function () {
     {
       id: 1,
       quantity: 33,
-      title: "This is Title-One",
+      category: "dinner",
+      title: "This is Food Item1",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -36,7 +38,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -58,7 +61,8 @@ $(function () {
     {
       id: 2,
       quantity: 14,
-      title: "This is Title-Two",
+      category: "dinner",
+      title: "This is Food Item2",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -68,7 +72,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -90,7 +95,8 @@ $(function () {
     {
       id: 3,
       quantity: 133,
-      title: "This is Title-Three",
+      title: "This is Food Item3",
+      category: "desserts",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -100,7 +106,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -123,7 +130,8 @@ $(function () {
     {
       id: 4,
       quantity: 30,
-      title: "This is Title-four",
+      title: "This is Food Item4",
+      category: "breakfast",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -133,7 +141,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -155,7 +164,8 @@ $(function () {
     {
       id: 5,
       quantity: 3340,
-      title: "This is Title-Five",
+      title: "This is Food Item5",
+      category: "desserts",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -165,7 +175,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/vegetables-ge8fccf0e8_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/vegetables-ge8fccf0e8_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -187,7 +198,8 @@ $(function () {
     {
       id: 6,
       quantity: 60,
-      title: "This is Title-Six",
+      title: "This is Food Item6",
+      category: "lunch",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -197,7 +209,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/meal-g97705a369_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/meal-g97705a369_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -219,7 +232,8 @@ $(function () {
     {
       id: 7,
       quantity: 44,
-      title: "This is Title-Seven",
+      title: "This is Food Item7",
+      category: "breakfast",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -229,7 +243,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -251,7 +266,8 @@ $(function () {
     {
       id: 8,
       quantity: 84,
-      title: "This is Title-Eight",
+      title: "This is Food Item8",
+      category: "breakfast",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -261,7 +277,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/indian-condiments-with-copy-space-view.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/indian-condiments-with-copy-space-view.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -283,7 +300,8 @@ $(function () {
     {
       id: 9,
       quantity: 94,
-      title: "This is Title-Ten",
+      title: "This is Food Item9",
+      category: "lunch",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -293,7 +311,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/high-angle-delicious-pita.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/high-angle-delicious-pita.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -315,7 +334,8 @@ $(function () {
     {
       id: 10,
       quantity: 14,
-      title: "This is Title-Ten",
+      title: "This is Food Item10",
+      category: "lunch",
       nutrition: [
         { Nutrient: "Protein", DV: "3.2 gm", Percentage: "34%" },
         { Nutrient: "Fat", DV: "3.2 gm", Percentage: "34%" },
@@ -325,7 +345,8 @@ $(function () {
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/cookies-gf43494f23_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/cookies-gf43494f23_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -349,38 +370,85 @@ $(function () {
     container.innerHTML += `<h2>No Product Found</h2>`;
   }
 
-    //*************************** Update Cart On Navbar*********************************** */
-    const upDateCartOnNavbar = ()=>{
+  //*************************** Update Cart On Navbar*********************************** */
+  const upDateCartOnNavbar = () => {
+    let cartOnNavbar = document.getElementById("tbody-cart");
 
+    let sum = 0;
+    let sumDecrease = 0;
+    let idsNav = [];
+    let contentNav = "";
+    let contentCartNav = "";
 
-      let cartOnNavbar = document.getElementById("tbody-cart");
-    
-      let sum = 0;
-      let sumDecrease = 0;
-      let idsNav = [];
-      let contentNav = "";
-      let contentCartNav = "";
-    
-      let spanCartCount = document.getElementById("cart-num");
-    
-      if (
-        JSON.parse(localStorage.getItem("addToCart")) !== null &&
-        JSON.parse(localStorage.getItem("addToCart")).length !== 0
-      ) {
-    
-    
+    let spanCartCount = document.getElementById("cart-num");
+
+    if (
+      JSON.parse(localStorage.getItem("addToCart")) !== null &&
+      JSON.parse(localStorage.getItem("addToCart")).length !== 0
+    ) {
+      spanCartCount.innerHTML = JSON.parse(
+        localStorage.getItem("addToCart")
+      ).length;
+
+      // ******************************** Runs When Add Cart Items **********************************//
+      contentNav =
+        JSON.parse(localStorage.getItem("addToCart")) !== null ||
+        JSON.parse(localStorage.getItem("addToCart")) !== []
+          ? JSON.parse(localStorage.getItem("addToCart"))
+              .map((item) => {
+                let ReplacedAmount = item.price.replace(/\$/g, "");
+                idsNav.push(Number(ReplacedAmount));
+                return `<tr class="custom-cart-row">
+              <th scope="row">
+                <img class="cart-img"
+                  src=${item.image}
+                  alt="cart-item-image" />
+              </th>
+              <td>${item.title}</td>
+              <td>${item.price}</td>
+              <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
+            </tr>`;
+              })
+              .join("")
+          : `No Food Items In The Cart Yet!`;
+      sum = idsNav.reduce((accumulator, value) => {
+        return accumulator + value;
+      }, 0);
+      contentNav +=
+        JSON.parse(localStorage.getItem("addToCart")) !== null ||
+        JSON.parse(localStorage.getItem("addToCart")) !== []
+          ? ` 
+          <td>Total</td>
+          <td>$ ${sum}</td>
+          <tr class="custom-cart-col">
+          <td>
+            <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
+          </td>
+          <td>
+          </td>
+          </tr>`
+          : `No Food Items In The Cart Yet!`;
+      cartOnNavbar.innerHTML = contentNav;
+
+      //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
+      $(document).on("click", "td#close-row-cart", function (event) {
+        var dataId = event.target.getAttribute("data-itemid");
+        let itemsInCart = JSON.parse(localStorage.getItem("addToCart"));
+        itemsInCart = itemsInCart.filter(function (obj) {
+          return obj.id !== dataId.toString();
+        });
+
+        let updatedItems = itemsInCart.map(({ price }) =>
+          Number(price.replace(/\$/g, ""))
+        );
+        localStorage.setItem("addToCart", JSON.stringify(itemsInCart));
         spanCartCount.innerHTML = JSON.parse(
           localStorage.getItem("addToCart")
         ).length;
-    
-        // ******************************** Runs When Add Cart Items **********************************//
-        contentNav =
-          JSON.parse(localStorage.getItem("addToCart")) !== null ||
-          JSON.parse(localStorage.getItem("addToCart")) !== []
+        contentCartNav =
+          JSON.parse(localStorage.getItem("addToCart")).length !== 0
             ? JSON.parse(localStorage.getItem("addToCart"))
                 .map((item) => {
-                  let ReplacedAmount = item.price.replace(/\$/g, "");
-                  idsNav.push(Number(ReplacedAmount));
                   return `<tr class="custom-cart-row">
               <th scope="row">
                 <img class="cart-img"
@@ -394,66 +462,14 @@ $(function () {
                 })
                 .join("")
             : `No Food Items In The Cart Yet!`;
-        sum = idsNav.reduce((accumulator, value) => {
+
+        sumDecrease = updatedItems.reduce((accumulator, value) => {
           return accumulator + value;
         }, 0);
-        contentNav +=
-          JSON.parse(localStorage.getItem("addToCart")) !== null ||
-          JSON.parse(localStorage.getItem("addToCart")) !== []
+
+        contentCartNav +=
+          JSON.parse(localStorage.getItem("addToCart")).length !== 0
             ? ` 
-          <td>Total</td>
-          <td>$ ${sum}</td>
-          <tr class="custom-cart-col">
-          <td>
-            <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
-          </td>
-          <td>
-          </td>
-          </tr>`
-            : `No Food Items In The Cart Yet!`;
-        cartOnNavbar.innerHTML = contentNav;
-    
-        //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
-        $(document).on("click", "td#close-row-cart", function (event) {
-       
-          var dataId = event.target.getAttribute("data-itemid");
-          let itemsInCart = JSON.parse(localStorage.getItem("addToCart"));
-          itemsInCart = itemsInCart.filter(function (obj) {
-            return obj.id !== dataId.toString();
-          });
-    
-          let updatedItems = itemsInCart.map(({ price }) =>
-            Number(price.replace(/\$/g, ""))
-          );
-          localStorage.setItem("addToCart", JSON.stringify(itemsInCart));
-          spanCartCount.innerHTML = JSON.parse(
-            localStorage.getItem("addToCart")
-          ).length;
-          contentCartNav =
-            JSON.parse(localStorage.getItem("addToCart")).length !== 0
-              ? JSON.parse(localStorage.getItem("addToCart"))
-                  .map((item) => {
-                    return `<tr class="custom-cart-row">
-              <th scope="row">
-                <img class="cart-img"
-                  src=${item.image}
-                  alt="cart-item-image" />
-              </th>
-              <td>${item.title}</td>
-              <td>${item.price}</td>
-              <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
-            </tr>`;
-                  })
-                  .join("")
-              : `No Food Items In The Cart Yet!`;
-    
-          sumDecrease = updatedItems.reduce((accumulator, value) => {
-            return accumulator + value;
-          }, 0);
-    
-          contentCartNav +=
-            JSON.parse(localStorage.getItem("addToCart")).length !== 0
-              ? ` 
           <td>Total</td>
           <td>$ ${sumDecrease} </td>
           <tr class="custom-cart-col">
@@ -462,31 +478,28 @@ $(function () {
           </td>
           <td></td>
           </tr>`
-              : ``;
-              cartOnNavbar.innerHTML = contentCartNav;
-    
-          if(JSON.parse(localStorage.getItem("addToCart")).length === 0){
-            contentNav = "No Food Items In The Cart Yet!";
-            cartOnNavbar.innerHTML = contentNav;
-            spanCartCount.innerHTML = JSON.parse(localStorage.getItem("addToCart")).length;
-          }
-      
-        });
-    
-    
-      } else {
-        contentNav = "No Food Items In The Cart Yet!";
-        cartOnNavbar.innerHTML = contentNav;
-        spanCartCount.innerHTML = "0";
-      }
+            : ``;
+        cartOnNavbar.innerHTML = contentCartNav;
+
+        if (JSON.parse(localStorage.getItem("addToCart")).length === 0) {
+          contentNav = "No Food Items In The Cart Yet!";
+          cartOnNavbar.innerHTML = contentNav;
+          spanCartCount.innerHTML = JSON.parse(
+            localStorage.getItem("addToCart")
+          ).length;
+        }
+      });
+    } else {
+      contentNav = "No Food Items In The Cart Yet!";
+      cartOnNavbar.innerHTML = contentNav;
+      spanCartCount.innerHTML = "0";
     }
-    
-    upDateCartOnNavbar()
+  };
+
+  upDateCartOnNavbar();
 
   //******************* Add To Cart Functionality ******************//
   const AddToCart = (product) => {
-
-
     if (JSON.parse(localStorage.getItem("addToCart")) === null) {
       localStorage.removeItem("addToCart");
       productsAddedFromPage.length = 0;
@@ -500,35 +513,68 @@ $(function () {
         cartContainer.innerHTML = "";
       }
     }
-    let newCartItem = new cartAdd(
-      product.dataId,
-      product.dataPrice,
-      product.dataTitle,
-      product.dataQuantity
-    );
-    productsAddedFromPage.push(newCartItem);
-    const array3 = [
-      ...productsAddedFromPage,
-      ...JSON.parse(localStorage.getItem("addToCart")) || [],
-    ];
-    localStorage.setItem("addToCart", JSON.stringify(array3));
-    // if (JSON.parse(localStorage.getItem("addToCart")) !== null) {
-    if (productsAddedFromPage.length > 1) {
-      productsAddedFromPage = [
-        ...new Map(
-          JSON.parse(localStorage.getItem("addToCart")).map((item) => [
-            item["id"],
-            item,
-          ])
-        ).values(),
-      ];
+
+    let newCartItem;
+
+    if (JSON.parse(localStorage.getItem("addToCart")) === null) {
+      newCartItem = new cartAdd(
+        product.dataId,
+        product.dataPrice,
+        product.dataTitle,
+        product.dataQuantity,
+        product.dataImg
+      );
+      console.log("3344");
+      productsAddedFromPage.push(newCartItem);
       localStorage.setItem("addToCart", JSON.stringify(productsAddedFromPage));
+      upDateCartOnNavbar();
+    } else {
+      if (
+        JSON.parse(localStorage.getItem("addToCart")).filter(
+          (e) => e.id === product.dataId
+        ).length === 0
+      ) {
+        newCartItem = new cartAdd(
+          product.dataId,
+          product.dataPrice,
+          product.dataTitle,
+          product.dataQuantity,
+          product.dataImg
+        );
+        productsAddedFromPage.push(newCartItem);
+        const array3 = [
+          ...productsAddedFromPage,
+          ...(JSON.parse(localStorage.getItem("addToCart")) || []),
+        ];
+        localStorage.setItem("addToCart", JSON.stringify(array3));
+        upDateCartOnNavbar();
+      } else {
+        return;
+      }
     }
-    contentCart =
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          return `
+
+    if (JSON.parse(localStorage.getItem("addToCart")) !== null) {
+      if (productsAddedFromPage.length > 1) {
+        productsAddedFromPage = [
+          ...new Map(
+            JSON.parse(localStorage.getItem("addToCart")).map((item) => [
+              item["id"],
+              item,
+            ])
+          ).values(),
+        ];
+
+        console.log(productsAddedFromPage);
+        localStorage.setItem(
+          "addToCart",
+          JSON.stringify(productsAddedFromPage)
+        );
+      }
+      contentCart =
+        JSON.parse(localStorage.getItem("addToCart")) !== null &&
+        JSON.parse(localStorage.getItem("addToCart"))
+          .map((item) => {
+            return `
       <tr >
       <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
       <td>${item.title}</td>
@@ -536,11 +582,12 @@ $(function () {
       <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
       </tr>        
           `;
-        })
-        .join("");
-    cartContainer.innerHTML = contentCart;
-    toggleCart.classList.add("slider-class", "custom-index");
-    toggleCart.style.display = "block";
+          })
+          .join("");
+      cartContainer.innerHTML = contentCart;
+      toggleCart.classList.add("slider-class", "custom-index");
+      toggleCart.style.display = "block";
+    }
   };
 
   //******************* Rendering Fetched Products Dynamically ******************//
@@ -611,29 +658,36 @@ $(function () {
       var dataTitle = $("p#add-to-cart").attr("data-title");
       var dataPrice = $("p#add-to-cart").attr("data-price");
       var dataId = $("p#add-to-cart").attr("data-id");
+      var dataImg = $("p#add-to-cart").attr("data-image");
+      
       let selectedObject = {
         dataQuantity,
         dataTitle,
         dataPrice,
         dataId,
+        dataImg
       };
       AddToCart(selectedObject);
     });
-    // class="d-lg-block d-xl-block p-2 
+    // class="d-lg-block d-xl-block p-2
     apiResult.map((product) => {
       if (product.id === id) {
         let content = `<div class="container text-center">
         <div class="row justify-content-md-around ">
         <div class="card-body d-xl-flex flex-sm-column flex-md-column justify-content-xl-end">
-                <p class="card-link" id="add-to-cart" data-quantity=${Number(
-          product.quantity
-        )} data-id=${Number(product.id)} data-price=${product.price
-          } data-title=${product.title
-          }><i class="fa-solid fa-cart-shopping" ></i> Add To Cart</a>
+                <p class="card-link" id="add-to-cart" data-image=${
+                  product.image
+                } data-quantity=${Number(product.quantity)} data-id=${Number(
+          product.id
+        )} data-price=${product.price} data-title=${JSON.stringify(
+          product.title
+        )}><i class="fa-solid fa-cart-shopping" ></i> Add To Cart</a>
                 <p class="card-link"><i class="fa-solid fa-heart"></i>Favorite</a>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                <img class="product-image" src=${product.image} alt="explore image" />
+                <img class="product-image" src=${
+                  product.image
+                } alt="explore image" />
             </div>
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="product-lists">
@@ -805,7 +859,6 @@ $(function () {
       JSON.parse(localStorage.getItem("addToCart")) !== null &&
       JSON.parse(localStorage.getItem("addToCart"))
         .map((item) => {
-          console.log(item);
           return `
 <tr >
 <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>

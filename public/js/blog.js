@@ -212,7 +212,7 @@
   </div> 
   `;
 
-      targetContainer.innerHTML += content;
+ if(targetContainer !== null) targetContainer.innerHTML += content;
 
       imageholders = document.getElementsByClassName("bg-images-blog");
 
@@ -223,7 +223,7 @@
         imgArray[indeximg].className = "imageSlides lazy";
         imgArray[indeximg].id = `${indeximg}`;
       }
-      // console.log(element);
+
       for (
         let index = 0;
         index < Array.from(imageholders).length + 1;
@@ -284,7 +284,7 @@
         </div>
       </div>
       `;
-    targetCatContainer.innerHTML += content;
+      if(targetContainer !== null) targetCatContainer.innerHTML += content;
   });
 
   //Displaying Recent Posts
@@ -329,8 +329,7 @@
     </span>
       `;
 
-        targetPostsContainer.innerHTML += recentBlogs;
-        console.log(targetPostsContainer);
+      if(targetContainer !== null) targetPostsContainer.innerHTML += recentBlogs;
         $(`.custom-options`).hide().slice(0, 4).show();
       }
     });

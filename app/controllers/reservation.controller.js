@@ -27,7 +27,6 @@ export function createReservationProcess(req, res) {
 
     if (userExisting === true) {
       Users.deleteUser(user, (err, data) => {
-        console.log(data);
         res.status(200).send({
           ReservationData: data,
         });
@@ -67,9 +66,7 @@ export function createReservationProcess(req, res) {
                 });
               }
               var time = timesel;
-              console.log(timesel);
       
-
               function addTimeToString(timeString, addHours, addMinutes) {
                 // The third argument is optional.
                 if (addMinutes === undefined) {
@@ -100,7 +97,6 @@ export function createReservationProcess(req, res) {
 
               var bookingDurationToHour = addTimeToString(timesel, 2, 0);
 
-              console.log(bookingDurationToHour);
               TableAllotment.addBookingHours(
                 windowsSet,
                 bookingDurationToHour,
@@ -134,7 +130,6 @@ export function createReservationProcess(req, res) {
                               "Some error occurred while creating the reservation.",
                           });
                         }
-                        console.log("searchExistingUser", user, fields);
                         TableAllotment.createReservation(
                           req.body,
                           results,
@@ -146,7 +141,7 @@ export function createReservationProcess(req, res) {
                                   "Some error occurred while creating the reservation.",
                               });
                             }
-                            console.log(results, fields);
+
 
                             res.status(200).send({
                               message: "Reservation Done",
