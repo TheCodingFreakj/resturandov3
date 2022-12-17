@@ -51,6 +51,7 @@ p {
 section.outer-section {
   padding-bottom: 175px;
   text-align: center;
+  z-index: 1;
 }
 
 section.footer-section {
@@ -111,6 +112,8 @@ ul#cart-form {
   position: absolute;
   z-index: 199;
   margin-left: -1%;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 .show-dropdown {
   display: none;
@@ -140,6 +143,24 @@ ul#cart-form {
 
 .show-dropdown li {
   border-bottom: 1px solid;
+}
+
+button#submit-button {
+  position: relative;
+  left: -90px;
+}
+
+button#submit-button-load-more {
+  position: relative;
+}
+
+.gap {
+  margin-left: 9px;
+}
+
+tr.summary {
+  display: flex;
+  justify-content: space-between;
 }
 
 /*******************************************Message Alerts********************************************/
@@ -721,6 +742,7 @@ li.ui-timepicker-selected,
 .product-basic-styling {
   font-size: 16px;
   color: var(--secondary);
+  position: relative;
 }
 
 /* **************************************************Product Section Styling************************************************/
@@ -753,6 +775,7 @@ div#food-card {
 /* **************************************************Single Product Page Styling**************************************************/
 div#display-products {
   color: var(--secondary);
+  cursor: pointer;
 }
 
 .product-image {
@@ -768,6 +791,15 @@ div#display-products {
 }
 
 /* **************************************************Cart Section**************************************************/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5); /*dim the background*/
+}
 #add-cart {
   position: fixed;
   display: none;
@@ -789,16 +821,32 @@ i#remove-quantity {
   background: linear-gradient(rgb(255 203 72), #000000);
   color: #ffff;
   font-size: 14px;
+  cursor: pointer;
+}
+
+#close-cart {
+  cursor: pointer;
+}
+
+tbody#addCart {
+  color: #fff;
+  border-width: none !important;
 }
 
 tbody#add {
   color: #fff;
+  border-width: unset !important;
 }
 
 .slider-class {
   animation: 0.5s slide-right;
 }
-
+div#checkout {
+  width: 2px;
+  padding: 8%;
+  position: relative;
+  left: 130px;
+}
 @keyframes slide-right {
   from {
     margin-left: -100%;
@@ -2231,6 +2279,13 @@ button:hover {
     font-size: 17px;
     text-align: center;
   }
+  button#submit-button {
+    position: relative;
+    left: 0px;
+  }
+  .custom-index {
+    width: 100%;
+  }
 
   /* Navbar Styling */
   ul#cart-form {
@@ -2238,6 +2293,17 @@ button:hover {
     z-index: 199;
     left: 0;
     margin-left: 0%;
+    font-size: 14px;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  div#checkout {
+    width: 2px;
+    padding: 8%;
+    position: relative;
+    left: 0px;
   }
   .custom-color:hover + .show-dropdown {
     display: block;
@@ -2370,7 +2436,13 @@ button:hover {
   section.outer-section {
     padding-bottom: 80px;
   }
-
+  button#submit-button {
+    position: relative;
+    left: 0px;
+  }
+  .custom-index {
+    width: 100%;
+  }
 
   /* Navbar Styling */
 
@@ -2397,8 +2469,6 @@ button:hover {
     padding: 2%;
     width: 100%;
   }
-
- 
 
   /*Feature Section Styling*/
   .section-image-03 {
@@ -2507,6 +2577,9 @@ button:hover {
     z-index: 199;
     left: 0;
     margin-left: 0%;
+    font-size: 14px;
+    max-height: 300px;
+    overflow-y: scroll;
   }
   .show-dropdown {
     display: none;
@@ -2540,7 +2613,6 @@ button:hover {
   .show-dropdown li {
     border-bottom: 1px solid;
   }
-  
 
   /*Feature Section Styling*/
   .section-image-03 {
@@ -2634,7 +2706,11 @@ button:hover {
     position: absolute;
     left: 0;
   }
-  
+  ul#cart-form {
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }
 
 @media only screen and (max-width: 3000.98px) and (min-width: 1500px) {

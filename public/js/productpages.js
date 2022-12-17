@@ -3,13 +3,20 @@ $(function () {
   //get elements
   const container = document.getElementById("display-products");
   const toggleCart = document.getElementById("add-cart");
-  const cartContainer = document.getElementById("add");
+  const cartContainer = document.getElementById("addCart");
+  const emptyCart = document.getElementById("no-cart-items");
+  const overlay = document.getElementById("overlay");
+
+
   let paramString = window.location.href.split("?")[1];
   let queryString = new URLSearchParams(paramString);
 
   //default declaration
   let productsAddedFromPage = [];
   let contentCart = null;
+  let idsCart = [];
+  let sumCart = 0;
+  let sumDecreaseCart = 0;
   // Cart Item Model
   class cartAdd {
     constructor(id, price, title, quantity, image) {
@@ -18,7 +25,7 @@ $(function () {
       this.price = price;
       this.title = title;
       this.quantity = quantity;
-      this.image = image
+      this.image = image;
     }
   }
 
@@ -404,8 +411,8 @@ $(function () {
                   src=${item.image}
                   alt="cart-item-image" />
               </th>
-              <td>${item.title}</td>
-              <td>${item.price}</td>
+              <td class="gap">${item.title}</td>
+              <td class="gap">${item.price}</td>
               <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
             </tr>`;
               })
@@ -418,8 +425,10 @@ $(function () {
         JSON.parse(localStorage.getItem("addToCart")) !== null ||
         JSON.parse(localStorage.getItem("addToCart")) !== []
           ? ` 
-          <td>Total</td>
+          <tr class="summary" >
+          <td >Total</td>
           <td>$ ${sum}</td>
+          </tr>
           <tr class="custom-cart-col">
           <td>
             <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
@@ -427,7 +436,7 @@ $(function () {
           <td>
           </td>
           </tr>`
-          : `No Food Items In The Cart Yet!`;
+            : `No Food Items In The Cart Yet!`;
       cartOnNavbar.innerHTML = contentNav;
 
       //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
@@ -455,8 +464,8 @@ $(function () {
                   src=${item.image}
                   alt="cart-item-image" />
               </th>
-              <td>${item.title}</td>
-              <td>${item.price}</td>
+              <td class="gap">${item.title}</td>
+              <td class="gap">${item.price}</td>
               <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
             </tr>`;
                 })
@@ -469,16 +478,19 @@ $(function () {
 
         contentCartNav +=
           JSON.parse(localStorage.getItem("addToCart")).length !== 0
-            ? ` 
-          <td>Total</td>
-          <td>$ ${sumDecrease} </td>
+          ? ` 
+          <tr class="summary" >
+          <td >Total</td>
+          <td>$ ${sumDecrease}</td>
+          </tr>
           <tr class="custom-cart-col">
           <td>
             <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
           </td>
-          <td></td>
+          <td>
+          </td>
           </tr>`
-            : ``;
+            : `No Food Items In The Cart Yet!`;
         cartOnNavbar.innerHTML = contentCartNav;
 
         if (JSON.parse(localStorage.getItem("addToCart")).length === 0) {
@@ -524,7 +536,7 @@ $(function () {
         product.dataQuantity,
         product.dataImg
       );
-      console.log("3344");
+
       productsAddedFromPage.push(newCartItem);
       localStorage.setItem("addToCart", JSON.stringify(productsAddedFromPage));
       upDateCartOnNavbar();
@@ -564,29 +576,57 @@ $(function () {
           ).values(),
         ];
 
-        console.log(productsAddedFromPage);
         localStorage.setItem(
           "addToCart",
           JSON.stringify(productsAddedFromPage)
         );
       }
       contentCart =
-        JSON.parse(localStorage.getItem("addToCart")) !== null &&
-        JSON.parse(localStorage.getItem("addToCart"))
-          .map((item) => {
-            return `
-      <tr >
-      <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-      <td>${item.title}</td>
-      <td>${item.price}</td>
-      <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
-      </tr>        
-          `;
-          })
-          .join("");
+        JSON.parse(localStorage.getItem("addToCart")) !== null ||
+        JSON.parse(localStorage.getItem("addToCart")) !== []
+          ? JSON.parse(localStorage.getItem("addToCart"))
+              .map((item) => {
+                return `
+    <tr >
+    <td style="width: 2px;" data-idx="${item.id}" id="close-row" class="close-row" scope="row" >X</td>
+    <td class="food-title">${item.title}</td>
+    <td>${item.price}</td>
+    <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
+    </tr>        
+        `;
+              })
+              .join("")
+          : `No Food Items In The Cart Yet!`;
+
+      JSON.parse(localStorage.getItem("addToCart")).map((p) => {
+        if (idsCart.filter((e) => e.id === p.id).length === 0) {
+          idsCart.push({
+            price: p.price,
+            id: p.id,
+          });
+        }
+      });
+
+      sumCart = idsCart.reduce((accumulator, value) => {
+        return accumulator + Number(value.price.replace(/\$/g, ""));
+      }, 0);
+      contentCart +=
+        JSON.parse(localStorage.getItem("addToCart")) !== null ||
+        JSON.parse(localStorage.getItem("addToCart")) !== []
+          ? `
+        <tr> 
+      <td style="width: 2px;" scope="row">Total</td>
+      <td>$ ${sumCart}</td>
+      <td></td>
+      </tr> 
+      <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
+          : `No Food Items In The Cart Yet!`;
       cartContainer.innerHTML = contentCart;
+
       toggleCart.classList.add("slider-class", "custom-index");
       toggleCart.style.display = "block";
+      overlay.classList.add("overlay");
+      upDateCartOnNavbar();
     }
   };
 
@@ -659,13 +699,13 @@ $(function () {
       var dataPrice = $("p#add-to-cart").attr("data-price");
       var dataId = $("p#add-to-cart").attr("data-id");
       var dataImg = $("p#add-to-cart").attr("data-image");
-      
+
       let selectedObject = {
         dataQuantity,
         dataTitle,
         dataPrice,
         dataId,
-        dataImg
+        dataImg,
       };
       AddToCart(selectedObject);
     });
@@ -770,7 +810,7 @@ $(function () {
           return (
             `
     <tr >
-    <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
+    <td data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</td>
     <td>${item.title}</td>
     <td>${item.price}</td>
     
@@ -782,9 +822,35 @@ $(function () {
           );
         })
         .join("");
+    JSON.parse(localStorage.getItem("addToCart")).map((p) => {
+      if (idsCart.filter((e) => e.id === p.id).length === 0) {
+        idsCart.push({
+          price: p.price,
+          id: p.id,
+        });
+      }
+    });
+
+    sumCart = JSON.parse(localStorage.getItem("addToCart")).reduce(
+      (accumulator, value) => {
+        return accumulator + Number(value.price.replace(/\$/g, ""));
+      },
+      0
+    );
+    contentCart +=
+      JSON.parse(localStorage.getItem("addToCart")) !== null ||
+      JSON.parse(localStorage.getItem("addToCart")) !== []
+        ? `
+                            <tr> 
+                          <td style="width: 2px;" scope="row">Total</td>
+                          <td>$ ${sumCart}</td>
+                          </tr> 
+                          <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
+        : `No Food Items In The Cart Yet!`;
     cartContainer.innerHTML = contentCart;
     toggleCart.classList.add("slider-class", "custom-index");
     toggleCart.style.display = "block";
+    overlay.classList.add("overlay");
   });
 
   //******************* Runs When User Wants To Enter The Edit Quanity From Cart View  ******************//
@@ -806,32 +872,62 @@ $(function () {
   $(document).on("click", "i#update-cart", function (event) {
     var idx = event.target.getAttribute("data-idx");
     contentCart =
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          return (
-            `
+      JSON.parse(localStorage.getItem("addToCart")) !== null ||
+      JSON.parse(localStorage.getItem("addToCart")) !== []
+        ? JSON.parse(localStorage.getItem("addToCart"))
+            .map((item) => {
+              return (
+                `
     <tr >
-    <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
+    <td data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</td>
     <td>${item.title}</td>
     <td>${item.price}</td>
     
     ` +
-            renderInput(item, item.id, idx) +
-            `
+                renderInput(item, item.id, idx) +
+                `
     </tr>        
         `
-          );
-        })
-        .join("");
+              );
+            })
+            .join("")
+        : `No Food Items In The Cart Yet!`;
+    JSON.parse(localStorage.getItem("addToCart")).map((p) => {
+      if (idsCart.filter((e) => e.id === p.id).length === 0) {
+        idsCart.push({
+          price: p.price,
+          id: p.id,
+        });
+      }
+    });
+
+    sumCart = JSON.parse(localStorage.getItem("addToCart")).reduce(
+      (accumulator, value) => {
+        return accumulator + Number(value.price.replace(/\$/g, ""));
+      },
+      0
+    );
+    contentCart +=
+      JSON.parse(localStorage.getItem("addToCart")) !== null ||
+      JSON.parse(localStorage.getItem("addToCart")) !== []
+        ? `
+                        <tr> 
+                      <td style="width: 2px;" scope="row">Total</td>
+                      <td>$ ${sumCart}</td>
+                      </tr> 
+                      <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
+        : `No Food Items In The Cart Yet!`;
     cartContainer.innerHTML = contentCart;
     toggleCart.classList.add("slider-class", "custom-index");
     toggleCart.style.display = "block";
+    overlay.classList.add("overlay");
+    upDateCartOnNavbar();
   });
 
   //******************* Runs When User Escapes The Cart View ******************//
   $(document).on("click", "div#close-cart", function () {
     toggleCart.classList.remove("slider-class", "custom-index");
+    overlay.classList.remove("overlay");
     toggleCart.classList.add("slider-remove");
     toggleCart.style.display = "none";
     setTimeout(function () {
@@ -850,31 +946,53 @@ $(function () {
       if (idx.toString() === obj.id) {
         if (inputQuantityValue !== "") {
           obj.quantity = inputQuantityValue;
+          let price = Number(obj.price.replace(/\$/g, "")) * inputQuantityValue;
+          obj.price = `$${price}`;
         }
         localStorage.setItem("addToCart", JSON.stringify(cartItems));
       }
     });
 
     contentCart =
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          return `
+      JSON.parse(localStorage.getItem("addToCart")) !== null ||
+      JSON.parse(localStorage.getItem("addToCart")) !== []
+        ? JSON.parse(localStorage.getItem("addToCart"))
+            .map((item) => {
+              return `
 <tr >
-<th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-<td>${item.title}</td>
+<td data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</td>
+<td class="food-title">${item.title}</td>
 <td>${item.price}</td>
 <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
 </tr>        
-    `;
-        })
-        .join("");
+  `;
+            })
+            .join("")
+        : `No Food Items In The Cart Yett!`;
+
+    sumCart = JSON.parse(localStorage.getItem("addToCart")).reduce(
+      (accumulator, value) => {
+        return accumulator + Number(value.price.replace(/\$/g, ""));
+      },
+      0
+    );
+    contentCart +=
+      JSON.parse(localStorage.getItem("addToCart")) !== null ||
+      JSON.parse(localStorage.getItem("addToCart")) !== []
+        ? `
+              <tr>
+            <td style="width: 2px;" scope="row">Total</td>
+            <td>$ ${sumCart}</td>
+            </tr>
+            <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
+        : `No Food Items In The Cart Yet!`;
     cartContainer.innerHTML = contentCart;
     toggleCart.classList.add("slider-class", "custom-index");
     toggleCart.style.display = "block";
+    overlay.classList.add("overlay");
   });
   //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
-  $(document).on("click", "th#close-row", function (event) {
+  $(document).on("click", "td#close-row", function (event) {
     var dataId = event.target.getAttribute("data-idx");
     let itemsInCart = JSON.parse(localStorage.getItem("addToCart"));
     itemsInCart = itemsInCart.filter(function (obj) {
@@ -882,28 +1000,62 @@ $(function () {
     });
 
     localStorage.setItem("addToCart", JSON.stringify(itemsInCart));
-    contentCart =
+    let updatedItems = itemsInCart.map(({ price }) =>
+      Number(price.replace(/\$/g, ""))
+    );
+
+    if (
       JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          return `
-    <tr >
-    <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-    <td>${item.title}</td>
-    <td>${item.price}</td>
-    <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
-    </tr>        
+      JSON.parse(localStorage.getItem("addToCart")).length !== 0
+    ) {
+      contentCart =
+        JSON.parse(localStorage.getItem("addToCart")) !== null ||
+        JSON.parse(localStorage.getItem("addToCart")) !== []
+          ? JSON.parse(localStorage.getItem("addToCart"))
+              .map((item) => {
+                return `
+                <tr >
+                <td data-idx=${item.id} id="close-row" class="close-row" scope="row">X</td>
+                <td>${item.title}</td>
+                <td>${item.price}</td>
+                <td >${item.quantity} <i data-idx=${item.id} id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
+                </tr>        
         `;
-        })
-        .join("");
-    cartContainer.innerHTML = contentCart;
+              })
+              .join("")
+          : `   <tr >No Food Items In The Cart Yetttt!     </tr> `;
+      sumDecreaseCart = updatedItems.reduce((accumulator, value) => {
+        return accumulator + value;
+      }, 0);
+
+      contentCart +=
+        JSON.parse(localStorage.getItem("addToCart")).length !== 0
+          ? `
+                <tr> 
+              <td style="width: 2px;" scope="row">Total</td>
+              <td>$ ${sumDecreaseCart}</td>
+              </tr> 
+              <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
+          : `   <tr > No Food Items In The Cart Yetttt! </tr> `;
+      cartContainer.innerHTML = contentCart;
+
+      if (JSON.parse(localStorage.getItem("addToCart")).length === 0) {
+        contentCart = "No Food Items In The Cart Yet!";
+        cartContainer.innerHTML = contentCart;
+      }
+    } else {
+      emptyCart.innerHTML = "No Cart Items";
+      cartContainer.innerHTML = null;
+    }
     toggleCart.classList.add("slider-class", "custom-index");
     toggleCart.style.display = "block";
+    upDateCartOnNavbar();
   });
 
   //******************* Runs When User Hit On Empty Button ON Ui ******************//
   $(document).on("click", "div#empty-cart", function () {
     localStorage.removeItem("addToCart");
+    overlay.classList.remove("overlay");
     productsAddedFromPage.length = 0;
     contentCart = null;
     cartContainer.innerHTML = "";

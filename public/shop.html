@@ -18,15 +18,16 @@
 
   <body>
     <div id="pre-loader"></div>
+    <div id="overlay"></div>
     <div id="add-cart">
       <div class="container-md">
         <div id="close-cart" class="row text-end p-2">
           <div class="col-12">X</div>
         </div>
-        <table id="table" class="table">
+        <table id="table" class="table table-bordered" >
           <thead>
-            <tr>
-              <th scope="col">Action</th>
+            <tr >
+              <th style="width: 2px;"  scope="row" >Action</th>
               <th scope="col">Product Name</th>
               <th scope="col">Price</th>
               <th scope="col">Quantity</th>
@@ -34,6 +35,7 @@
           </thead>
           <tbody id="add"></tbody>
         </table>
+        <div id="no-cart-items"></div>
         <div id="empty-cart">Empty</div>
       </div>
     </div>
@@ -79,7 +81,7 @@
       <div class="container text-center dynamic-render">
         <div id="display-products" class="row"></div>
         <div id="loadMore">
-          <button id="submit-button" class="glow-on-hover" type="submit">
+          <button id="submit-button-load-more" class="glow-on-hover" type="submit">
             Load More
           </button>
         </div>
@@ -89,7 +91,7 @@
 
     <!-- Footer Section Start -->
 
-    
+    <div w3-include-html="./common/footer.html"></div>
     <!-- Footer Section End -->
 
     <!-- Jquery Include -->

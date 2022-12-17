@@ -3,7 +3,9 @@ $(function () {
   //get elements
   const container = document.getElementById("display-products");
   const toggleCart = document.getElementById("add-cart");
+  const overlay = document.getElementById("overlay");
   const cartContainer = document.getElementById("add");
+  const emptyCart = document.getElementById("no-cart-items");
 
   //Declarations
   let contentCart = null;
@@ -458,9 +460,9 @@ $(function () {
                 src=${item.image}
                 alt="cart-item-image" />
             </th>
-            <td>${item.title}</td>
-            <td>${item.price}</td>
-            <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
+            <td class="gap">${item.title}</td>
+            <td class="gap">${item.price}</td>
+            <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart gap" scope="row">X</td>
           </tr>`;
               })
               .join("")
@@ -472,8 +474,10 @@ $(function () {
         JSON.parse(localStorage.getItem("addToCart")) !== null ||
         JSON.parse(localStorage.getItem("addToCart")) !== []
           ? ` 
-        <td>Total</td>
+          <tr class="summary" >
+        <td >Total</td>
         <td>$ ${sum}</td>
+        </tr>
         <tr class="custom-cart-col">
         <td>
           <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
@@ -509,8 +513,8 @@ $(function () {
                 src=${item.image}
                 alt="cart-item-image" />
             </th>
-            <td>${item.title}</td>
-            <td>${item.price}</td>
+            <td class="gap">${item.title}</td>
+            <td class="gap">${item.price}</td>
             <td data-itemid="${item.id}" id="close-row-cart" class="close-row-cart" scope="row">X</td>
           </tr>`;
                 })
@@ -523,16 +527,20 @@ $(function () {
 
         contentCartNav +=
           JSON.parse(localStorage.getItem("addToCart")).length !== 0
-            ? ` 
-        <td>Total</td>
-        <td>$ ${sumDecrease} </td>
+            ? `
+
+            <tr class="summary" >
+        <td >Total</td>
+        <td>$ ${sumDecrease}</td>
+        </tr>
         <tr class="custom-cart-col">
         <td>
           <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
         </td>
-        <td></td>
+        <td>
+        </td>
         </tr>`
-            : ``;
+          : `No Food Items In The Cart Yet!`;
         cartOnNavbar.innerHTML = contentCartNav;
 
         if (JSON.parse(localStorage.getItem("addToCart")).length === 0) {
@@ -627,8 +635,8 @@ $(function () {
               .map((item) => {
                 return `
       <tr >
-      <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-      <td>${item.title}</td>
+      <td style="width: 2px;" data-idx="${item.id}" id="close-row" class="close-row" scope="row" >X</td>
+      <td class="food-title">${item.title}</td>
       <td>${item.price}</td>
       <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
       </tr>        
@@ -647,26 +655,23 @@ $(function () {
       });
 
       sumCart = idsCart.reduce((accumulator, value) => {
-        return accumulator + Number(value.price.replace(/\$/g, ""))
+        return accumulator + Number(value.price.replace(/\$/g, ""));
       }, 0);
       contentCart +=
         JSON.parse(localStorage.getItem("addToCart")) !== null ||
         JSON.parse(localStorage.getItem("addToCart")) !== []
-          ? ` 
-        <td>Total</td>
+          ? `
+          <tr> 
+        <td style="width: 2px;" scope="row">Total</td>
         <td>$ ${sumCart}</td>
-        <tr>
-        <td>
-          <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
-        </td>
-        <td>
-        </td>
-        </tr>`
+        </tr> 
+        <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
           : `No Food Items In The Cart Yet!`;
       cartContainer.innerHTML = contentCart;
 
       toggleCart.classList.add("slider-class", "custom-index");
       toggleCart.style.display = "block";
+      overlay.classList.add("overlay");
       upDateCartOnNavbar();
     }
   };
@@ -770,7 +775,7 @@ $(function () {
           return (
             `
     <tr >
-    <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
+    <td data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</td>
     <td>${item.title}</td>
     <td>${item.price}</td>
     
@@ -782,8 +787,34 @@ $(function () {
           );
         })
         .join("");
+    JSON.parse(localStorage.getItem("addToCart")).map((p) => {
+      if (idsCart.filter((e) => e.id === p.id).length === 0) {
+        idsCart.push({
+          price: p.price,
+          id: p.id,
+        });
+      }
+    });
+
+    sumCart = JSON.parse(localStorage.getItem("addToCart")).reduce(
+      (accumulator, value) => {
+        return accumulator + Number(value.price.replace(/\$/g, ""));
+      },
+      0
+    );
+    contentCart +=
+      JSON.parse(localStorage.getItem("addToCart")) !== null ||
+      JSON.parse(localStorage.getItem("addToCart")) !== []
+        ? `
+                        <tr> 
+                      <td style="width: 2px;" scope="row">Total</td>
+                      <td>$ ${sumCart}</td>
+                      </tr> 
+                      <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
+        : `No Food Items In The Cart Yet!`;
     cartContainer.innerHTML = contentCart;
     toggleCart.classList.add("slider-class", "custom-index");
+    overlay.classList.add("overlay");
     toggleCart.style.display = "block";
   });
 
@@ -806,33 +837,65 @@ $(function () {
   $(document).on("click", "i#update-cart", function (event) {
     var idx = event.target.getAttribute("data-idx");
     contentCart =
-      JSON.parse(localStorage.getItem("addToCart")) !== null &&
-      JSON.parse(localStorage.getItem("addToCart"))
-        .map((item) => {
-          return (
-            `
+      JSON.parse(localStorage.getItem("addToCart")) !== null ||
+      JSON.parse(localStorage.getItem("addToCart")) !== []
+        ? JSON.parse(localStorage.getItem("addToCart")) !== null &&
+          JSON.parse(localStorage.getItem("addToCart"))
+            .map((item) => {
+              return (
+                `
     <tr >
-    <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-    <td>${item.title}</td>
+    <td data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</td>
+    <td class="food-title">${item.title}</td>
     <td>${item.price}</td>
     
     ` +
-            renderInput(item, item.id, idx) +
-            `
+                renderInput(item, item.id, idx) +
+                `
     </tr>        
         `
-          );
-        })
-        .join("");
+              );
+            })
+            .join("")
+        : `No Food Items In The Cart Yet!`;
+
+    JSON.parse(localStorage.getItem("addToCart")).map((p) => {
+      if (idsCart.filter((e) => e.id === p.id).length === 0) {
+        idsCart.push({
+          price: p.price,
+          id: p.id,
+        });
+      }
+    });
+
+    sumCart = JSON.parse(localStorage.getItem("addToCart")).reduce(
+      (accumulator, value) => {
+        return accumulator + Number(value.price.replace(/\$/g, ""));
+      },
+      0
+    );
+    contentCart +=
+      JSON.parse(localStorage.getItem("addToCart")) !== null ||
+      JSON.parse(localStorage.getItem("addToCart")) !== []
+        ? `
+                    <tr> 
+                  <td style="width: 2px;" scope="row">Total</td>
+                  <td>$ ${sumCart}</td>
+                  </tr> 
+                  <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
+        : `No Food Items In The Cart Yet!`;
     cartContainer.innerHTML = contentCart;
     toggleCart.classList.add("slider-class", "custom-index");
     toggleCart.style.display = "block";
+    overlay.classList.add("overlay");
+    upDateCartOnNavbar();
   });
 
   //******************* Runs When User Escapes The Cart View ******************//
   $(document).on("click", "div#close-cart", function () {
     toggleCart.classList.remove("slider-class", "custom-index");
     toggleCart.classList.add("slider-remove");
+    overlay.classList.remove("overlay");
     toggleCart.style.display = "none";
     setTimeout(function () {
       toggleCart.classList.remove("slider-remove");
@@ -848,8 +911,11 @@ $(function () {
     let cartItems = JSON.parse(localStorage.getItem("addToCart"));
     cartItems = cartItems.map(function (obj) {
       if (idx.toString() === obj.id) {
+        console.log("hg");
         if (inputQuantityValue !== "") {
           obj.quantity = inputQuantityValue;
+          let price = Number(obj.price.replace(/\$/g, "")) * inputQuantityValue;
+          obj.price = `$${price}`;
         }
         localStorage.setItem("addToCart", JSON.stringify(cartItems));
       }
@@ -861,22 +927,40 @@ $(function () {
             .map((item) => {
               return `
 <tr >
-<th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
-<td>${item.title}</td>
+<td data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</td>
+<td class="food-title">${item.title}</td>
 <td>${item.price}</td>
 <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
 </tr>        
     `;
             })
             .join("")
+        : `No Food Items In The Cart Yett!`;
+
+    sumCart = JSON.parse(localStorage.getItem("addToCart")).reduce(
+      (accumulator, value) => {
+        return accumulator + Number(value.price.replace(/\$/g, ""));
+      },
+      0
+    );
+    contentCart +=
+      JSON.parse(localStorage.getItem("addToCart")) !== null ||
+      JSON.parse(localStorage.getItem("addToCart")) !== []
+        ? `
+                <tr>
+              <td style="width: 2px;" scope="row">Total</td>
+              <td>$ ${sumCart}</td>
+              </tr>
+              <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
         : `No Food Items In The Cart Yet!`;
     cartContainer.innerHTML = contentCart;
     toggleCart.classList.add("slider-class", "custom-index");
+    overlay.classList.add("overlay");
     toggleCart.style.display = "block";
   });
 
   //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
-  $(document).on("click", "th#close-row", function (event) {
+  $(document).on("click", "td#close-row", function (event) {
     var dataId = event.target.getAttribute("data-idx");
     let itemsInCart = JSON.parse(localStorage.getItem("addToCart"));
     itemsInCart = itemsInCart.filter(function (obj) {
@@ -886,6 +970,8 @@ $(function () {
     let updatedItems = itemsInCart.map(({ price }) =>
       Number(price.replace(/\$/g, ""))
     );
+
+ 
     if (
       JSON.parse(localStorage.getItem("addToCart")) !== null &&
       JSON.parse(localStorage.getItem("addToCart")).length !== 0
@@ -897,15 +983,15 @@ $(function () {
               .map((item) => {
                 return `
     <tr >
-    <th data-idx="${item.id}" id="close-row" class="close-row" scope="row">X</th>
+    <td data-idx=${item.id} id="close-row" class="close-row" scope="row">X</td>
     <td>${item.title}</td>
     <td>${item.price}</td>
-    <td >${item.quantity} <i data-idx="${item.id}" id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
+    <td >${item.quantity} <i data-idx=${item.id} id=update-cart class="fa-solid fa-pen-to-square"></i></td> 
     </tr>        
         `;
               })
               .join("")
-          : `No Food Items In The Cart Yet!`;
+          : `   <tr >No Food Items In The Cart Yetttt!     </tr> `;
 
       sumDecreaseCart = updatedItems.reduce((accumulator, value) => {
         return accumulator + value;
@@ -913,16 +999,13 @@ $(function () {
 
       contentCart +=
         JSON.parse(localStorage.getItem("addToCart")).length !== 0
-          ? ` 
-        <td>Total</td>
-        <td>$ ${sumDecreaseCart} </td>
-        <tr class="custom-cart-col">
-        <td>
-          <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>
-        </td>
-        <td></td>
-        </tr>`
-          : ``;
+          ? `
+        <tr> 
+      <td style="width: 2px;" scope="row">Total</td>
+      <td>$ ${sumDecreaseCart}</td>
+      </tr> 
+      <div id="checkout"><button id="submit-button" class="glow-on-hover" type="submit">Check Out</button></div>`
+          : `   <tr > No Food Items In The Cart Yetttt! </tr> `;
       cartContainer.innerHTML = contentCart;
 
       if (JSON.parse(localStorage.getItem("addToCart")).length === 0) {
@@ -930,11 +1013,13 @@ $(function () {
         cartContainer.innerHTML = contentCart;
       }
     } else {
-      contentCart = "No Food Items In The Cart Yet!";
-      cartContainer.innerHTML = contentCart;
+      emptyCart.innerHTML = "No Cart Items";
+      cartContainer.innerHTML = null;
     }
+
     toggleCart.classList.add("slider-class", "custom-index");
     toggleCart.style.display = "block";
+    overlay.classList.add("overlay");
     upDateCartOnNavbar();
   });
 
@@ -942,6 +1027,7 @@ $(function () {
 
   $(document).on("click", "div#empty-cart", function () {
     localStorage.removeItem("addToCart");
+    overlay.classList.remove("overlay");
     productsAdded.length = 0;
     contentCart = null;
     cartContainer.innerHTML = "";
