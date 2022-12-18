@@ -1,6 +1,29 @@
+/***************************************************************************************************************
+
+Template Name: Resturando - Resturant Website
+Template URL: [demo url]
+Description: This is semi dynamic resturant website made with bootstrap 5.2, html and css
+Author: Programming Chunks
+Author URL: https://themeforest.net/user/resturando
+Version: 1.0
+
+****************************************************************************************************************
+
+JS INDEX
+
+******************************
+1.Reservation Table 
+2.Update Cart On Navbar
+
+
+
+****************************************************************************************************************/
 (function ($) {
   "use strict";
 
+  /* *************************************************************************************************************
+   * 1.Reservation Table
+   ****************************************************************************************************************/
   $("#datepicker")
     .datepicker({
       autoclose: true,
@@ -33,8 +56,7 @@
     };
 
     $.ajax({
-      url: "http://localhost:9090/api/reservations",
-      //url: "https://resturando.onrender.com/api/reservations",
+      url: "https://resturando.onrender.com/api/reservations",
       type: "POST",
       data: FormData,
       success: function (data) {
@@ -80,6 +102,10 @@
       },
     });
   });
+
+  /* *************************************************************************************************************
+   * 2.Update Cart On Navbar
+   ****************************************************************************************************************/
 
   //*************************** Update Cart On Navbar*********************************** */
   const upDateCartOnNavbar = () => {

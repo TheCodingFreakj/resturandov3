@@ -1,7 +1,32 @@
+
+/***************************************************************************************************************
+
+Template Name: Resturando - Resturant Website
+Template URL: [demo url]
+Description: This is semi dynamic resturant website made with bootstrap 5.2, html and css
+Author: Programming Chunks
+Author URL: https://themeforest.net/user/resturando
+Version: 1.0
+
+****************************************************************************************************************
+
+JS INDEX
+
+******************************
+1.Variable Declarations
+2.Add or Remove CartItems
+
+
+****************************************************************************************************************/
+
+
+
 (function ($) {
   "use strict";
 
-
+  /* *************************************************************************************************************
+   * 1.Variable Declarations
+   ****************************************************************************************************************/
   
 
   let cartOnNavbar = document.getElementById("tbody-cart");
@@ -14,6 +39,11 @@
 
   let spanCartCount = document.getElementById("cart-num");
 
+
+
+    /* *************************************************************************************************************
+   * 2.Add or Remove CartItems
+   ****************************************************************************************************************/
   if (
     JSON.parse(localStorage.getItem("addToCart")) !== null &&
     JSON.parse(localStorage.getItem("addToCart")).length !== 0

@@ -1,6 +1,39 @@
+/***************************************************************************************************************
+
+Template Name: Resturando - Resturant Website
+Template URL: [demo url]
+Description: This is semi dynamic resturant website made with bootstrap 5.2, html and css
+Author: Programming Chunks
+Author URL: https://themeforest.net/user/resturando
+Version: 1.0
+
+****************************************************************************************************************
+
+JS INDEX
+
+******************************
+1.Variable Declarations
+ 2.Ratings For Products
+3.Data Declarations
+4.Update Cart On Navbar
+5.Add To Cart
+6.Render Product Information
+7.Load More of Products
+8.Cancel Edit Quantity In Cart
+9. Edit Quantity In Cart
+10. Cart View Close
+11. Update Quantity In Cart
+12. Remove Items In Cart
+13. Empty Button In Cart
+
+
+****************************************************************************************************************/
+
 $(function () {
   "use strict";
-  //get elements
+  /* *************************************************************************************************************
+   * 1.Variable Declarations
+   ****************************************************************************************************************/
   const container = document.getElementById("display-products");
   const toggleCart = document.getElementById("add-cart");
   const overlay = document.getElementById("overlay");
@@ -23,6 +56,10 @@ $(function () {
       this.image = image;
     }
   }
+
+  /* *************************************************************************************************************
+   * 2.Ratings For Products
+   ****************************************************************************************************************/
   const data = {
     currentRating: 0,
     ratings: [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }],
@@ -76,7 +113,9 @@ $(function () {
     }
   }, 2000);
 
-  //Api Call
+  /* *************************************************************************************************************
+   * 3.Data Declarations
+   ****************************************************************************************************************/
   const apiResult = [
     {
       id: 1,
@@ -426,7 +465,9 @@ $(function () {
     container.innerHTML += `<h2>No Product Found</h2>`;
   }
 
-  //*************************** Update Cart On Navbar*********************************** */
+  /* *************************************************************************************************************
+   * 4.Update Cart On Navbar
+   ****************************************************************************************************************/
   const upDateCartOnNavbar = () => {
     let cartOnNavbar = document.getElementById("tbody-cart");
 
@@ -540,7 +581,7 @@ $(function () {
         <td>
         </td>
         </tr>`
-          : `No Food Items In The Cart Yet!`;
+            : `No Food Items In The Cart Yet!`;
         cartOnNavbar.innerHTML = contentCartNav;
 
         if (JSON.parse(localStorage.getItem("addToCart")).length === 0) {
@@ -559,6 +600,10 @@ $(function () {
   };
 
   upDateCartOnNavbar();
+
+  /* *************************************************************************************************************
+   * 5.Add To Cart
+   ****************************************************************************************************************/
   //******************* Add To Cart Functionality ******************//
   const AddToCart = (product) => {
     if (JSON.parse(localStorage.getItem("addToCart")) === null) {
@@ -676,6 +721,9 @@ $(function () {
     }
   };
 
+  /* *************************************************************************************************************
+   * 6.Render Product Information
+   ****************************************************************************************************************/
   //******************* Rendering Fetched Products Dynamically ******************//
   const configureProducts = () => {
     $(document).on("click", "p#add-to-cart", function (event) {
@@ -734,7 +782,9 @@ $(function () {
   };
   configureProducts();
 
-  //Load More Feature
+  /* *************************************************************************************************************
+   * 7.Load More of Products
+   ****************************************************************************************************************/
   var work = document.querySelector("#display-products");
   var items = Array.from(work.querySelectorAll(".sliced-content"));
   var loadMore = document.getElementById("loadMore");
@@ -762,6 +812,10 @@ $(function () {
       }
     );
   });
+
+  /* *************************************************************************************************************
+   * 8.Cancel Edit Quantity In Cart
+   ****************************************************************************************************************/
 
   //******************* Runs When User Wants To Cancel Edit Quanity From Cart View  ******************//
   const removeInput = (itemObj) => {
@@ -818,6 +872,9 @@ $(function () {
     toggleCart.style.display = "block";
   });
 
+  /* *************************************************************************************************************
+   * 9.Edit Quantity In Cart
+   ****************************************************************************************************************/
   //******************* Runs When User Wants To Enter The Edit Quanity From Cart View  ******************//
   const renderInput = (itemObj, itemId, id) => {
     if (itemId === id) {
@@ -891,6 +948,9 @@ $(function () {
     upDateCartOnNavbar();
   });
 
+  /* *************************************************************************************************************
+   * 10. Cart View Close
+   ****************************************************************************************************************/
   //******************* Runs When User Escapes The Cart View ******************//
   $(document).on("click", "div#close-cart", function () {
     toggleCart.classList.remove("slider-class", "custom-index");
@@ -901,6 +961,10 @@ $(function () {
       toggleCart.classList.remove("slider-remove");
     }, 1000);
   });
+
+  /* *************************************************************************************************************
+   * 11. Update Quantity In Cart
+   ****************************************************************************************************************/
 
   //******************* Runs When User Wants To To Update Quanity From Items From Cart View  ******************//
   $(document).on("click", "#add-quantity", function (event) {
@@ -959,6 +1023,10 @@ $(function () {
     toggleCart.style.display = "block";
   });
 
+  /* *************************************************************************************************************
+   * 12. Remove Items In Cart
+   ****************************************************************************************************************/
+
   //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
   $(document).on("click", "td#close-row", function (event) {
     var dataId = event.target.getAttribute("data-idx");
@@ -971,7 +1039,6 @@ $(function () {
       Number(price.replace(/\$/g, ""))
     );
 
- 
     if (
       JSON.parse(localStorage.getItem("addToCart")) !== null &&
       JSON.parse(localStorage.getItem("addToCart")).length !== 0
@@ -1022,6 +1089,10 @@ $(function () {
     overlay.classList.add("overlay");
     upDateCartOnNavbar();
   });
+
+  /* *************************************************************************************************************
+   * 12. Empty Button In Cart
+   ****************************************************************************************************************/
 
   //******************* Runs When User Hit On Empty Button ON Ui ******************//
 

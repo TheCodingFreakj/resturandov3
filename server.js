@@ -23,10 +23,10 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-// parse requests of content-type - application/json
+
 app.use(json());
 
-// parse requests of content-type - application/x-www-form-urlencoded
+
 app.use(urlencoded({ extended: true }));
 
 cron.schedule("* * * * *", () => {

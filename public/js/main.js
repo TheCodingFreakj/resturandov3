@@ -1,8 +1,35 @@
-// Menu Section
+/***************************************************************************************************************
+
+Template Name: Resturando - Resturant Website
+Template URL: [demo url]
+Description: This is semi dynamic resturant website made with bootstrap 5.2, html and css
+Author: Programming Chunks
+Author URL: https://themeforest.net/user/resturando
+Version: 1.0
+
+****************************************************************************************************************
+
+JS INDEX
+
+******************************
+1.Menu Style One
+2.Menu Style Two
+3.Lazy Load Images
+4.Smooth Scroll
+5.Loader Configuration
+6.Include Html Snippets
+7.Tabs Configuration
+8.Accordions Configuration
+9.Load More Configuration
+
+
+****************************************************************************************************************/
 (function ($) {
   "use strict";
 
-  // Menu style One
+  /* *************************************************************************************************************
+   * 1.Menu Style One
+   ****************************************************************************************************************/
 
   var $filters = $(".filter [data-filter]"),
     $boxes = $(".boxes [data-category]");
@@ -35,7 +62,9 @@
     }
   });
 
-  // Menu style Two
+  /* *************************************************************************************************************
+   * 2.Menu Style Two
+   ****************************************************************************************************************/
 
   var $filtersv2 = $(".filter-menu2 [data-fill]"),
     $boxesv2 = $(".custom-flex [data-cat]");
@@ -67,7 +96,9 @@
     }
   });
 
-  //Lazy Load The Images
+  /* *************************************************************************************************************
+   * 3.Lazy Load Images
+   ****************************************************************************************************************/
   document.addEventListener("DOMContentLoaded", function () {
     var lazyloadImages;
 
@@ -120,28 +151,24 @@
     }
   });
 
-  //Smooth Scroll
-
-  // Select all links with hashes
+  /* *************************************************************************************************************
+   * 4.Smooth Scroll
+   ****************************************************************************************************************/
   $('a[href*="#"]')
-    // Remove links that don't actually link to anything
     .not('[href="#"]')
     .not('[href="#0"]')
     .click(function (event) {
-      // On-page links
       if (
         location.pathname.replace(/^\//, "") ==
           this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
-        // Figure out element to scroll to
         var target = $(this.hash);
         target = target.length
           ? target
           : $("[name=" + this.hash.slice(1) + "]");
-        // Does a scroll target exist?
+
         if (target.length) {
-          // Only prevent default if animation is actually gonna happen
           event.preventDefault();
           $("html, body").animate(
             {
@@ -149,16 +176,13 @@
             },
             1000,
             function () {
-              // Callback after animation
-              // Must change focus!
               var $target = $(target);
               $target.focus();
               if ($target.is(":focus")) {
-                // Checking if the target was focused
                 return false;
               } else {
-                $target.attr("tabindex", "-1"); // Adding tabindex for elements not focusable
-                $target.focus(); // Set focus again
+                $target.attr("tabindex", "-1");
+                $target.focus();
               }
             }
           );
@@ -166,23 +190,26 @@
       }
     });
 
+  /* *************************************************************************************************************
+   * 5.Loader Configuration
+   ****************************************************************************************************************/
+
   var loader = document.getElementById("pre-loader");
   window.addEventListener("load", function () {
     loader.style.display = "none";
   });
 
-  //Include Header
+  /* *************************************************************************************************************
+   * 6.Include Html Snippets
+   ****************************************************************************************************************/
   includeHTML();
   function includeHTML() {
     var z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
     z = document.getElementsByTagName("*");
     for (i = 0; i < z.length; i++) {
       elmnt = z[i];
-      /*search for elements with a certain atrribute:*/
       file = elmnt.getAttribute("w3-include-html");
       if (file) {
-        /* Make an HTTP request using the attribute value as the file name: */
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
           if (this.readyState == 4) {
@@ -192,7 +219,6 @@
             if (this.status == 404) {
               elmnt.innerHTML = "<h1>Page not found.</h1>";
             }
-            /* Remove the attribute, and call this function once more: */
             elmnt.removeAttribute("w3-include-html");
             includeHTML();
           }
@@ -204,6 +230,10 @@
       }
     }
   }
+
+  /* *************************************************************************************************************
+   * 7.Tabs Configuration
+   ****************************************************************************************************************/
   const tabs = document.querySelectorAll("[data-tab-value]");
   const tabInfos = document.querySelectorAll("[data-tab-info]");
 
@@ -218,6 +248,12 @@
     });
   });
 
+
+  
+  /* *************************************************************************************************************
+   * 8.Accordions Configuration
+   ****************************************************************************************************************/
+
   const accordionBtns = document.querySelectorAll(".accordion");
 
   accordionBtns.forEach((accordion) => {
@@ -228,17 +264,17 @@
       console.log(content);
 
       if (content.style.maxHeight) {
-        //this is if the accordion is open
         content.style.maxHeight = null;
       } else {
-        //if the accordion is currently closed
         content.style.maxHeight = content.scrollHeight + "px";
         console.log(content.style.maxHeight);
       }
     };
   });
 
-  // Load More Functionality
+  /* *************************************************************************************************************
+   * 9.Load More Configuration
+   ****************************************************************************************************************/
   var work = document.querySelector("#outer-container");
 
   if (work !== null) {

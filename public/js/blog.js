@@ -1,7 +1,33 @@
+/***************************************************************************************************************
+
+Template Name: Resturando - Resturant Website
+Template URL: [demo url]
+Description: This is semi dynamic resturant website made with bootstrap 5.2, html and css
+Author: Programming Chunks
+Author URL: https://themeforest.net/user/resturando
+Version: 1.0
+
+****************************************************************************************************************
+
+JS INDEX
+
+******************************
+1.Variable Declarations
+2.Data Declarations
+3.Render Blogs
+4.Display Categories
+5.Display Recent Posts
+6.Update Cart On Navbar
+
+
+****************************************************************************************************************/
+
 (function ($) {
   "use strict";
 
-  //Declarations
+  /* *************************************************************************************************************
+   * 1.Variable Declarations
+   ****************************************************************************************************************/
   let targetContainer = document.getElementById("outer-container");
   let targetCatContainer = document.getElementById("categories-container");
   let targetPostsContainer = document.getElementById("recentposts-container");
@@ -13,6 +39,10 @@
 
   let slideIndex = 1;
   let recentBlogs = "";
+
+  /* *************************************************************************************************************
+   * 2.Data Declarations
+   ****************************************************************************************************************/
 
   const categories = [
     { id: 1, cat: "catgory1" },
@@ -177,6 +207,10 @@
       date_update: "12/14/2022",
     },
   ];
+
+  /* *************************************************************************************************************
+   * 3.Render Blogs
+   ****************************************************************************************************************/
   function ellipsify(str) {
     if (str.length > 100) {
       return str.substring(0, 100) + "...";
@@ -212,7 +246,7 @@
   </div> 
   `;
 
- if(targetContainer !== null) targetContainer.innerHTML += content;
+      if (targetContainer !== null) targetContainer.innerHTML += content;
 
       imageholders = document.getElementsByClassName("bg-images-blog");
 
@@ -275,7 +309,9 @@
     });
   }
 
-  ////Displaying The Catgories
+  /* *************************************************************************************************************
+   * 4.Display Categories
+   ****************************************************************************************************************/
   categories.map((cat) => {
     content = `<div class="container">
         <div class="row">
@@ -284,10 +320,12 @@
         </div>
       </div>
       `;
-      if(targetContainer !== null) targetCatContainer.innerHTML += content;
+    if (targetContainer !== null) targetCatContainer.innerHTML += content;
   });
 
-  //Displaying Recent Posts
+  /* *************************************************************************************************************
+   * 5.Display Recent Posts
+   ****************************************************************************************************************/
 
   const formatDate = (today) => {
     var newdate =
@@ -329,12 +367,16 @@
     </span>
       `;
 
-      if(targetContainer !== null) targetPostsContainer.innerHTML += recentBlogs;
+        if (targetContainer !== null)
+          targetPostsContainer.innerHTML += recentBlogs;
         $(`.custom-options`).hide().slice(0, 4).show();
       }
     });
 
-  //*************************** Update Cart On Navbar*********************************** */
+  /* *************************************************************************************************************
+   * 6.Update Cart On Navbar
+   ****************************************************************************************************************/
+
   const upDateCartOnNavbar = () => {
     let cartOnNavbar = document.getElementById("tbody-cart");
 

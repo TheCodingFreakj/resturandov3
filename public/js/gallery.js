@@ -1,24 +1,58 @@
+/***************************************************************************************************************
+
+Template Name: Resturando - Resturant Website
+Template URL: [demo url]
+Description: This is semi dynamic resturant website made with bootstrap 5.2, html and css
+Author: Programming Chunks
+Author URL: https://themeforest.net/user/resturando
+Version: 1.0
+
+****************************************************************************************************************
+
+JS INDEX
+
+******************************
+1.Variable Declarations
+2.Data Declarations
+3.Show Gallery Images
+4.Update Cart On Navbar
+
+
+****************************************************************************************************************/
+
 (function ($) {
   "use strict";
+
+  /* *************************************************************************************************************
+   * 1.Variable Declarations
+   ****************************************************************************************************************/
+
   const container = document.getElementById("gallery");
-  //Api Call
+
+  /* *************************************************************************************************************
+   * 2.Data Declarations
+   ****************************************************************************************************************/
+
   const apiResultImages = [
     {
       foodiId: 1,
       group: [
         {
           fid: 1,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/high-angle-delicious-pita.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/high-angle-delicious-pita.jpg",
           imageDesc: "This is Title One",
         },
         {
           fid: 2,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
           imageDesc: "This is Title One",
         },
         {
           fid: 3,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
           imageDesc: "This is Title One",
         },
       ],
@@ -28,17 +62,20 @@
       group: [
         {
           fid: 1,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg",
           imageDesc: "This is Title One",
         },
         {
           fid: 2,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/raspberries-g1c95018cf_1280.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/raspberries-g1c95018cf_1280.jpg",
           imageDesc: "This is Title One",
         },
         {
           fid: 3,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/meal-g97705a369_1280.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/meal-g97705a369_1280.jpg",
           imageDesc: "This is Title One",
         },
       ],
@@ -49,17 +86,20 @@
       group: [
         {
           fid: 4,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg",
           imageDesc: "This is Title One",
         },
         {
           fid: 5,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/onions-g167385904_1280.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/onions-g167385904_1280.jpg",
           imageDesc: "This is Title One",
         },
         {
           fid: 6,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
           imageDesc: "This is Title One",
         },
       ],
@@ -70,17 +110,20 @@
       group: [
         {
           fid: 7,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/indian-condiments-with-copy-space-view.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/indian-condiments-with-copy-space-view.jpg",
           imageDesc: "This is Title One",
         },
         {
           fid: 8,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/cookies-gf43494f23_1280.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/cookies-gf43494f23_1280.jpg",
           imageDesc: "This is Title One",
         },
         {
           fid: 9,
-          imageSrc: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/vegetables-ge8fccf0e8_1280.jpg",
+          imageSrc:
+            "https://ik.imagekit.io/vi9aepz6c/Resturando/img/vegetables-ge8fccf0e8_1280.jpg",
           imageDesc: "This is Title One",
         },
       ],
@@ -101,7 +144,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/breakfast-ga99def90b_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -133,7 +177,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -165,7 +210,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/close-up-hands-holding-indian-food-bowl.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -198,7 +244,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/pancakes-g7bc86f486_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -230,7 +277,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/vegetables-ge8fccf0e8_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/vegetables-ge8fccf0e8_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -262,7 +310,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/meal-g97705a369_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/meal-g97705a369_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -294,7 +343,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/flat-lay-delicious-food-plate__1_.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -326,7 +376,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/indian-condiments-with-copy-space-view.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/indian-condiments-with-copy-space-view.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -358,7 +409,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/high-angle-delicious-pita.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/high-angle-delicious-pita.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -390,7 +442,8 @@
       longdesc:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui. Mauris pharetra, nunc vitae dictum efficitur, velit odio semper ipsum, vitae dictum augue metus ac metus. Proin a nunc ultricies risus placerat euismod. Etiam sit amet sollicitudin ex. Mauris ullamcorper mauris nec dolor posuere, in rutrum erat dignissim. Mauris efficitur tristique ornare. Maecenas sit amet magna non est pharetra tristique sit amet quis tellus. Maecenas vel purus ultricies massa imperdiet eleifend eu at ex. Donec sollicitudin pharetra dignissim.",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at ipsum quis lacus tempor gravida a et eros. Praesent non mollis nisl, quis commodo velit. Cras lobortis tincidunt cursus. Etiam scelerisque finibus leo. Nullam turpis quam, finibus a ligula ac, blandit sodales dui.",
-      image: "https://ik.imagekit.io/vi9aepz6c/Resturando/img/cookies-gf43494f23_1280.jpg",
+      image:
+        "https://ik.imagekit.io/vi9aepz6c/Resturando/img/cookies-gf43494f23_1280.jpg",
       ingredients: [
         "1/2 cup chopped red onions",
         "2 ounce lemon drops ",
@@ -410,6 +463,11 @@
       price: "$100",
     },
   ];
+
+  /* *************************************************************************************************************
+   * 3.Show Gallery Images
+   ****************************************************************************************************************/
+
   const loadFoodPage = (loadPage) => {
     return apiResult
       .map((food) => {
@@ -431,8 +489,8 @@
           n.imageDesc
         } class="gallery__image">
                     <figcaption class="gallery__caption">${
-                          n.imageDesc
-                        }</figcaption>
+                      n.imageDesc
+                    }</figcaption>
                     </figure>
                 </a>
       `;
@@ -455,31 +513,32 @@
   };
   configureImages();
 
-  
-  //*************************** Update Cart On Navbar*********************************** */
-  const upDateCartOnNavbar = ()=>{
 
 
+    /* *************************************************************************************************************
+   * 4.Update Cart On Navbar
+   ****************************************************************************************************************/
+
+ 
+  const upDateCartOnNavbar = () => {
     let cartOnNavbar = document.getElementById("tbody-cart");
-  
+
     let sum = 0;
     let sumDecrease = 0;
     let idsNav = [];
     let contentNav = "";
     let contentCartNav = "";
-  
+
     let spanCartCount = document.getElementById("cart-num");
-  
+
     if (
       JSON.parse(localStorage.getItem("addToCart")) !== null &&
       JSON.parse(localStorage.getItem("addToCart")).length !== 0
     ) {
-  
-  
       spanCartCount.innerHTML = JSON.parse(
         localStorage.getItem("addToCart")
       ).length;
-  
+
       // ******************************** Runs When Add Cart Items **********************************//
       contentNav =
         JSON.parse(localStorage.getItem("addToCart")) !== null ||
@@ -519,16 +578,15 @@
         </tr>`
           : `No Food Items In The Cart Yet!`;
       cartOnNavbar.innerHTML = contentNav;
-  
+
       //******************* Runs When User Wants To Remove Cart Items From Cart View  ******************//
       $(document).on("click", "td#close-row-cart", function (event) {
-     
         var dataId = event.target.getAttribute("data-itemid");
         let itemsInCart = JSON.parse(localStorage.getItem("addToCart"));
         itemsInCart = itemsInCart.filter(function (obj) {
           return obj.id !== dataId.toString();
         });
-  
+
         let updatedItems = itemsInCart.map(({ price }) =>
           Number(price.replace(/\$/g, ""))
         );
@@ -553,11 +611,11 @@
                 })
                 .join("")
             : `No Food Items In The Cart Yet!`;
-  
+
         sumDecrease = updatedItems.reduce((accumulator, value) => {
           return accumulator + value;
         }, 0);
-  
+
         contentCartNav +=
           JSON.parse(localStorage.getItem("addToCart")).length !== 0
             ? ` 
@@ -570,23 +628,21 @@
         <td></td>
         </tr>`
             : ``;
-            cartOnNavbar.innerHTML = contentCartNav;
-  
-        if(JSON.parse(localStorage.getItem("addToCart")).length === 0){
+        cartOnNavbar.innerHTML = contentCartNav;
+
+        if (JSON.parse(localStorage.getItem("addToCart")).length === 0) {
           contentNav = "No Food Items In The Cart Yet!";
           cartOnNavbar.innerHTML = contentNav;
-          spanCartCount.innerHTML = JSON.parse(localStorage.getItem("addToCart")).length;
+          spanCartCount.innerHTML = JSON.parse(
+            localStorage.getItem("addToCart")
+          ).length;
         }
-    
       });
-  
-  
     } else {
       contentNav = "No Food Items In The Cart Yet!";
       cartOnNavbar.innerHTML = contentNav;
       spanCartCount.innerHTML = "0";
     }
-  }
-  upDateCartOnNavbar()
-
+  };
+  upDateCartOnNavbar();
 })(jQuery);
