@@ -122,7 +122,7 @@ ul#cart-form {
 .custom-color:hover + .show-dropdown {
   display: inline-block;
   position: fixed;
-  z-index: 99;
+  z-index: 0;
   background-color: var(--secondary);
   color: #fff;
   list-style: none;
@@ -240,7 +240,7 @@ header {
 
 .custom-hero-text {
   position: absolute;
-  left: 70px;
+  left: 6%;
   top: 400px;
   color: #ffff;
   text-align: center;
@@ -1177,6 +1177,13 @@ img.about-us {
   color: var(--secondary);
 }
 
+.gapUp {
+  margin-bottom: 4%;
+}
+.custom-desc {
+  text-align: initial;
+}
+
 /* **************************************************Menu Views Page Styling******************************************************** */
 img.menu-view {
   width: 90%;
@@ -1451,6 +1458,10 @@ main button:hover {
 .ot-powered-by {
   display: none;
 }
+div#wrapper-reservation {
+  height: 180px;
+}
+
 
 /* **************************************************ShortCode Page Styling******************************************************** */
 
@@ -1461,7 +1472,11 @@ main button:hover {
 .inner-container-demo {
   display: flex;
 }
-
+.button-styles {
+  margin-top: 20px;
+  display: flex;
+  width: 15%;
+}
 .glow-on-hoverv2 {
   border: none;
   outline: none;
@@ -1679,6 +1694,10 @@ button.accordion.is-open {
   transition: max-height 0.2s ease-in-out;
 }
 
+.accordion-content p {
+  text-align: left;
+}
+
 .search-function {
   display: flex;
   flex-direction: column;
@@ -1687,6 +1706,7 @@ button.accordion.is-open {
 .search-content {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   color: var(--secondary);
 }
 
@@ -1778,7 +1798,9 @@ i.fas.fa-search {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-
+.new {
+  margin-top: 5%;
+}
 [type="radio"]:checked,
 [type="radio"]:not(:checked) {
   position: absolute;
@@ -1973,7 +1995,7 @@ section {
 
 .pricing-palden .pricing-action {
   font-weight: bold;
-  margin: auto 3em 2em 3em;
+  margin: 9px 0;
   padding: 1em 2em;
   color: #fff;
   border-radius: 30px;
@@ -2250,6 +2272,10 @@ button:hover {
   cursor: pointer;
   background: #5eb105;
 }
+.pricing-table-style {
+  font-size: 2.5em;
+  color: white;
+}
 
 /* ************************************ Responsive Custom Styling ***************************************************/
 
@@ -2428,6 +2454,58 @@ button:hover {
     width: 100%;
     margin: 0 auto;
   }
+  /* About Us  */
+  .button-styles {
+    display: block;
+    width: 100%;
+  }
+
+  /* Shotcode */
+  .form {
+    width: 100%;
+    padding: 5%;
+    margin: 0 auto;
+    color: var(--secondary);
+    background: #dfd5d5;
+  }
+
+  .wrapper {
+    background-color: #fff;
+    width: 100%;
+    padding: 25px;
+    margin: 25px auto 0;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 50%);
+  }
+  .pricing-table-style {
+    font-size: 24px;
+    color: white;
+  }
+
+  .td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 80px;
+    column-width: auto;
+    column-width: 60%;
+    column-width: 60px;
+    margin-bottom: 10%;
+    font-size: 14px;
+    overflow-wrap: break-word;
+  }
+
+  .search-content {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    color: var(--secondary);
+  }
+
+  /* Reservations */
+
+  form.ot-dtp-picker-form {
+    display: flex !important;
+    flex-direction: column !important;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -2589,7 +2667,7 @@ button:hover {
     display: inline-block;
     position: fixed;
     left: 3px;
-    z-index: 99;
+    z-index: 0;
     background-color: var(--secondary);
     color: #fff;
     list-style: none;
@@ -2602,6 +2680,7 @@ button:hover {
     display: inline-block;
     position: fixed;
     z-index: 99;
+    left: 0.1%;
     background-color: var(--secondary);
     color: #fff;
     list-style: none;
@@ -2697,14 +2776,23 @@ button:hover {
     width: 100%;
   }
 }
+
 @media (max-width: 1500.98px) {
+  #pre-loader {
+    background: #000000 url(../img/pre-loader.gif) no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    /* width: 100%; */
+    position: fixed;
+    z-index: 100;
+}
   /*Menu Section Styling*/
   .outer-container-customizer {
     width: 100%;
   }
   .custom-hero-text {
     position: absolute;
-    left: 0;
+    left: 3%;
   }
   ul#cart-form {
     max-height: 300px;
@@ -2714,8 +2802,4 @@ button:hover {
 }
 
 @media only screen and (max-width: 3000.98px) and (min-width: 1500px) {
-  .custom-hero-text {
-    position: absolute;
-    left: 0;
-  }
 }

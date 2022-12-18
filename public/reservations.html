@@ -25,15 +25,24 @@
 
         <!-- Header Section Starts -->
         <div id="header-main"></div>
-    
+
         <!-- Header Section End -->
 
         <!-- Reservations Tables Section Starts -->
         <section class="outer-section ">
+            <!-- narrowed -->
+            <div id="wrapper-reservation">
+                <script type='text/javascript'
+                    src='//www.opentable.com/widget/reservation/loader?rid=108955&type=standard&theme=wide&color=4&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website'></script>
+            </div>
 
 
-            <script type='text/javascript'
-                src='//www.opentable.com/widget/reservation/loader?rid=108955&type=standard&theme=wide&color=4&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website'></script>
+            <div class="wrapper-reservation-mobile">
+                <script type='text/javascript'
+                    src='//www.opentable.com/widget/reservation/loader?rid=108955&type=standard&theme=tall&color=4&iframe=true&domain=com&lang=en-US&newtab=false&ot_source=Restaurant%20website'></script>
+            </div>
+
+
         </section>
         <!-- Reservations Tables Section Ends -->
 
@@ -45,7 +54,6 @@
         <!-- Jquery Include -->
         <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-       
         <!-- Tiny Slider Include -->
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
@@ -59,6 +67,14 @@
 
         <!-- Main Include -->
         <script src="./js/main.js"></script>
+        <script>
+   
+  const wrapperReservation = document.getElementById("wrapper-reservation");
+            if(window.screen.width <= 768){
+                wrapperReservation.style.display="none";
+               
+            }
+        </script>
     </body>
 
 </html>

@@ -2,8 +2,8 @@
   "use strict";
   let headerMain = document.getElementById("header-main");
 
-  const showHeaderText = ()=>{
-    if(window.location.href.indexOf("shop") > -1){
+  const showHeaderText = () => {
+    if (window.location.href.indexOf("shop") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
@@ -11,10 +11,10 @@
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
 
-    if(window.location.href.indexOf("blog") > -1){
+    if (window.location.href.indexOf("blog") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
@@ -22,10 +22,10 @@
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
-    
-    if(window.location.href.indexOf("reservations") > -1){
+
+    if (window.location.href.indexOf("reservations") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
@@ -33,11 +33,10 @@
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
 
-    
-    if(window.location.href.indexOf("aboutus") > -1){
+    if (window.location.href.indexOf("aboutus") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
@@ -45,11 +44,10 @@
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
 
-    
-    if(window.location.href.indexOf("gallery") > -1){
+    if (window.location.href.indexOf("gallery") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
@@ -57,11 +55,10 @@
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
 
-    
-    if(window.location.href.indexOf("404") > -1){
+    if (window.location.href.indexOf("404") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
@@ -69,11 +66,10 @@
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
 
-    
-    if(window.location.href.indexOf("menu-view") > -1){
+    if (window.location.href.indexOf("menu-view") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
@@ -81,10 +77,10 @@
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
-       
-    if(window.location.href.indexOf("shortcodes") > -1){
+
+    if (window.location.href.indexOf("shortcodes") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
@@ -92,23 +88,21 @@
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
 
-       
-    if(window.location.href.indexOf("single") > -1){
+    if (window.location.href.indexOf("single") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
-          <h1>Blog View Page</h1>
+          <h1>Single Blog View Page</h1>
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
 
-       
-    if(window.location.href.indexOf("productpages") > -1){
+    if (window.location.href.indexOf("productpages") > -1) {
       return ` <!-- Header Section Starts -->
 
       <div id="showText" class="container z-index-n1 custom-blog-hero-text">
@@ -116,9 +110,13 @@
           <p class="custom-paragraph">Potato is a delitious restaurant website template</p>
       </div>
 
-  <!-- Header Section End -->`
+  <!-- Header Section End -->`;
     }
-  }
+
+ 
+  };
+
+  console.log(window.location.href);
   headerMain.innerHTML = `
 
   <header>
@@ -210,6 +208,5 @@
   </div>
 
 
-</header>`
-
+</header>`;
 })(jQuery);
