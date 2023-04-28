@@ -56,7 +56,7 @@ JS INDEX
     };
 
     $.ajax({
-      url: "https://resturando.onrender.com/api/reservations",
+      url: "https://resturandov3.vercel.app/api/reservations",
       type: "POST",
       data: FormData,
       success: function (data) {
